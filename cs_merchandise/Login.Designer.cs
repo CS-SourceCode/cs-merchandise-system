@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.roundedCorners = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.login_cslogo = new System.Windows.Forms.PictureBox();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,8 +45,18 @@
             this.login_close = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.roundedLoginbtn = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login_cslogo)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedCorners
@@ -50,12 +66,82 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.login_cslogo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 600);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::cs_merchandise.Properties.Resources.Source_Code;
+            this.pictureBox2.Location = new System.Drawing.Point(203, 431);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(157, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 17);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "System Logo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(50, 326);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(294, 34);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Merchandise System";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Purple;
+            this.label3.Location = new System.Drawing.Point(67, 292);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(258, 34);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Computer Studies";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::cs_merchandise.Properties.Resources.CSSEC_Logo__Final_;
+            this.pictureBox1.Location = new System.Drawing.Point(160, 363);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // login_cslogo
+            // 
+            this.login_cslogo.Image = global::cs_merchandise.Properties.Resources.CS_Final;
+            this.login_cslogo.Location = new System.Drawing.Point(127, 431);
+            this.login_cslogo.Name = "login_cslogo";
+            this.login_cslogo.Size = new System.Drawing.Size(70, 70);
+            this.login_cslogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.login_cslogo.TabIndex = 1;
+            this.login_cslogo.TabStop = false;
             // 
             // txtUsername
             // 
@@ -63,7 +149,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.HintForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.HintText = "Username";
+            this.txtUsername.HintText = "Enter User Name";
             this.txtUsername.isPassword = false;
             this.txtUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtUsername.LineIdleColor = System.Drawing.Color.Purple;
@@ -88,6 +174,7 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
@@ -106,7 +193,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.HintForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.HintText = "Password";
+            this.txtPassword.HintText = "Enter Password";
             this.txtPassword.isPassword = true;
             this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtPassword.LineIdleColor = System.Drawing.Color.Purple;
@@ -116,8 +203,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(325, 45);
-            this.txtPassword.TabIndex = 5;
-            this.txtPassword.Text = "Username";
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
@@ -136,12 +222,15 @@
             this.login_close.AutoSize = true;
             this.login_close.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_close.ForeColor = System.Drawing.Color.Purple;
-            this.login_close.Location = new System.Drawing.Point(764, 9);
+            this.login_close.Location = new System.Drawing.Point(764, 10);
             this.login_close.Name = "login_close";
             this.login_close.Size = new System.Drawing.Size(24, 23);
             this.login_close.TabIndex = 7;
             this.login_close.Text = "X";
             this.login_close.Click += new System.EventHandler(this.login_close_Click);
+            this.login_close.MouseEnter += new System.EventHandler(this.login_close_MouseEnter);
+            this.login_close.MouseLeave += new System.EventHandler(this.login_close_MouseLeave);
+            this.login_close.MouseHover += new System.EventHandler(this.login_close_MouseHover);
             // 
             // label4
             // 
@@ -161,21 +250,77 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // label3
+            // roundedLoginbtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 244);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "DIRI ANG LOGOS";
+            this.roundedLoginbtn.ElipseRadius = 5;
+            this.roundedLoginbtn.TargetControl = this.btnLogin;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Purple;
+            this.panel2.Location = new System.Drawing.Point(0, -3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(400, 10);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Purple;
+            this.panel3.Location = new System.Drawing.Point(399, -3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(400, 10);
+            this.panel3.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.Location = new System.Drawing.Point(-9, 7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 602);
+            this.panel4.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(797, 7);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 602);
+            this.panel5.TabIndex = 12;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Location = new System.Drawing.Point(0, 598);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(400, 10);
+            this.panel6.TabIndex = 13;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.Location = new System.Drawing.Point(399, 598);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(400, 10);
+            this.panel7.TabIndex = 14;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(399, 7);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 602);
+            this.panel8.TabIndex = 15;
             // 
             // Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.login_close);
             this.Controls.Add(this.label2);
@@ -190,6 +335,9 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login_cslogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +355,19 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox login_cslogo;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuElipse roundedLoginbtn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
     }
 }
