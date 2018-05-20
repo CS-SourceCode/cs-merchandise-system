@@ -42,10 +42,10 @@
             this.browser_sales = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sales_pos = new System.Windows.Forms.TabPage();
-            this.orderline = new System.Windows.Forms.Panel();
+            this.panel_orderdetails = new System.Windows.Forms.Panel();
             this.btnAdditem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.sell_merchandise = new System.Windows.Forms.DataGridView();
             this.sales_Orders = new System.Windows.Forms.TabPage();
             this.browser_merchandise = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -79,7 +79,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel_orderline = new System.Windows.Forms.Panel();
+            this.orderline = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCheckout = new System.Windows.Forms.Button();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
@@ -87,12 +90,14 @@
             this.browser_sales.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.sales_pos.SuspendLayout();
-            this.orderline.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel_orderdetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).BeginInit();
             this.browser_merchandise.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.admin_panel.SuspendLayout();
+            this.panel_orderline.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderline)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -222,8 +227,8 @@
             // 
             // sales_pos
             // 
-            this.sales_pos.Controls.Add(this.panel9);
-            this.sales_pos.Controls.Add(this.orderline);
+            this.sales_pos.Controls.Add(this.panel_orderline);
+            this.sales_pos.Controls.Add(this.panel_orderdetails);
             this.sales_pos.Location = new System.Drawing.Point(4, 25);
             this.sales_pos.Name = "sales_pos";
             this.sales_pos.Padding = new System.Windows.Forms.Padding(3);
@@ -232,17 +237,17 @@
             this.sales_pos.Text = "POS";
             this.sales_pos.UseVisualStyleBackColor = true;
             // 
-            // orderline
+            // panel_orderdetails
             // 
-            this.orderline.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.orderline.Controls.Add(this.btnAdditem);
-            this.orderline.Controls.Add(this.label5);
-            this.orderline.Controls.Add(this.dataGridView2);
-            this.orderline.Location = new System.Drawing.Point(6, 6);
-            this.orderline.Name = "orderline";
-            this.orderline.Size = new System.Drawing.Size(1061, 855);
-            this.orderline.TabIndex = 2;
+            this.panel_orderdetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_orderdetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_orderdetails.Controls.Add(this.btnAdditem);
+            this.panel_orderdetails.Controls.Add(this.label5);
+            this.panel_orderdetails.Controls.Add(this.sell_merchandise);
+            this.panel_orderdetails.Location = new System.Drawing.Point(6, 6);
+            this.panel_orderdetails.Name = "panel_orderdetails";
+            this.panel_orderdetails.Size = new System.Drawing.Size(1061, 855);
+            this.panel_orderdetails.TabIndex = 2;
             // 
             // btnAdditem
             // 
@@ -260,23 +265,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(-1, 0);
+            this.label5.Location = new System.Drawing.Point(3, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 34);
+            this.label5.Size = new System.Drawing.Size(164, 28);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Order No.";
+            this.label5.Text = "Merchandise";
             // 
-            // dataGridView2
+            // sell_merchandise
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(-1, 37);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1061, 534);
-            this.dataGridView2.TabIndex = 0;
+            this.sell_merchandise.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.sell_merchandise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sell_merchandise.Location = new System.Drawing.Point(-1, 37);
+            this.sell_merchandise.Name = "sell_merchandise";
+            this.sell_merchandise.RowTemplate.Height = 24;
+            this.sell_merchandise.Size = new System.Drawing.Size(1061, 534);
+            this.sell_merchandise.TabIndex = 0;
             // 
             // sales_Orders
             // 
@@ -628,14 +633,54 @@
             // roundedCorners_Orderline
             // 
             this.roundedCorners_Orderline.ElipseRadius = 5;
-            this.roundedCorners_Orderline.TargetControl = this.orderline;
+            this.roundedCorners_Orderline.TargetControl = this.panel_orderdetails;
             // 
-            // panel9
+            // panel_orderline
             // 
-            this.panel9.Location = new System.Drawing.Point(1073, 7);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(532, 854);
-            this.panel9.TabIndex = 3;
+            this.panel_orderline.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_orderline.Controls.Add(this.btnCheckout);
+            this.panel_orderline.Controls.Add(this.label6);
+            this.panel_orderline.Controls.Add(this.orderline);
+            this.panel_orderline.Location = new System.Drawing.Point(1073, 6);
+            this.panel_orderline.Name = "panel_orderline";
+            this.panel_orderline.Size = new System.Drawing.Size(532, 855);
+            this.panel_orderline.TabIndex = 3;
+            // 
+            // orderline
+            // 
+            this.orderline.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.orderline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderline.Location = new System.Drawing.Point(-1, 37);
+            this.orderline.Name = "orderline";
+            this.orderline.RowTemplate.Height = 24;
+            this.orderline.Size = new System.Drawing.Size(533, 534);
+            this.orderline.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Purple;
+            this.label6.Location = new System.Drawing.Point(3, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 28);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Order No.";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCheckout
+            // 
+            this.btnCheckout.BackColor = System.Drawing.Color.Green;
+            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckout.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckout.ForeColor = System.Drawing.Color.White;
+            this.btnCheckout.Location = new System.Drawing.Point(3, 783);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(524, 67);
+            this.btnCheckout.TabIndex = 10;
+            this.btnCheckout.Text = "CHECKOUT";
+            this.btnCheckout.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
@@ -663,13 +708,16 @@
             this.browser_sales.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.sales_pos.ResumeLayout(false);
-            this.orderline.ResumeLayout(false);
-            this.orderline.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel_orderdetails.ResumeLayout(false);
+            this.panel_orderdetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).EndInit();
             this.browser_merchandise.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.admin_panel.ResumeLayout(false);
+            this.panel_orderline.ResumeLayout(false);
+            this.panel_orderline.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderline)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,8 +763,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel orderline;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel_orderdetails;
+        private System.Windows.Forms.DataGridView sell_merchandise;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuElipse roundedCorners_Orderline;
         private System.Windows.Forms.Button btnAdditem;
@@ -727,6 +775,9 @@
         private System.Windows.Forms.Panel btnSell_active;
         private System.Windows.Forms.Panel btnSales_active;
         private System.Windows.Forms.Panel btnDashboard_active;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel_orderline;
+        private System.Windows.Forms.Button btnCheckout;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView orderline;
     }
 }
