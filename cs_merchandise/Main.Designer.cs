@@ -42,41 +42,57 @@
             this.browser_sales = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sales_pos = new System.Windows.Forms.TabPage();
+            this.orderline = new System.Windows.Forms.Panel();
+            this.btnAdditem = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.sales_Orders = new System.Windows.Forms.TabPage();
             this.browser_merchandise = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.browser_reports = new System.Windows.Forms.TabPage();
             this.browser_users = new System.Windows.Forms.TabPage();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.admin_panel = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnUsers_active = new System.Windows.Forms.Panel();
+            this.btnReports_active = new System.Windows.Forms.Panel();
+            this.btnMerch_active = new System.Windows.Forms.Panel();
+            this.btnOrders_active = new System.Windows.Forms.Panel();
+            this.btnSell_active = new System.Windows.Forms.Panel();
+            this.btnSales_active = new System.Windows.Forms.Panel();
+            this.btnDashboard_active = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
+            this.btnSell = new System.Windows.Forms.Button();
+            this.btnMerch = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.main_close = new System.Windows.Forms.Label();
             this.roundedCorners_Orders1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.roundedCorners_Orders2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel9 = new System.Windows.Forms.Panel();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
             this.panel_orders1.SuspendLayout();
             this.browser_sales.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.sales_pos.SuspendLayout();
+            this.orderline.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.browser_merchandise.SuspendLayout();
-            this.admin_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.admin_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -201,25 +217,73 @@
             this.tabControl1.Location = new System.Drawing.Point(-4, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1558, 918);
+            this.tabControl1.Size = new System.Drawing.Size(1627, 918);
             this.tabControl1.TabIndex = 0;
             // 
             // sales_pos
             // 
+            this.sales_pos.Controls.Add(this.panel9);
+            this.sales_pos.Controls.Add(this.orderline);
             this.sales_pos.Location = new System.Drawing.Point(4, 25);
             this.sales_pos.Name = "sales_pos";
             this.sales_pos.Padding = new System.Windows.Forms.Padding(3);
-            this.sales_pos.Size = new System.Drawing.Size(1550, 889);
+            this.sales_pos.Size = new System.Drawing.Size(1619, 889);
             this.sales_pos.TabIndex = 0;
             this.sales_pos.Text = "POS";
             this.sales_pos.UseVisualStyleBackColor = true;
+            // 
+            // orderline
+            // 
+            this.orderline.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.orderline.Controls.Add(this.btnAdditem);
+            this.orderline.Controls.Add(this.label5);
+            this.orderline.Controls.Add(this.dataGridView2);
+            this.orderline.Location = new System.Drawing.Point(6, 6);
+            this.orderline.Name = "orderline";
+            this.orderline.Size = new System.Drawing.Size(1061, 855);
+            this.orderline.TabIndex = 2;
+            // 
+            // btnAdditem
+            // 
+            this.btnAdditem.BackColor = System.Drawing.Color.Purple;
+            this.btnAdditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdditem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdditem.ForeColor = System.Drawing.Color.White;
+            this.btnAdditem.Location = new System.Drawing.Point(660, 668);
+            this.btnAdditem.Name = "btnAdditem";
+            this.btnAdditem.Size = new System.Drawing.Size(176, 91);
+            this.btnAdditem.TabIndex = 4;
+            this.btnAdditem.Text = "Add Item";
+            this.btnAdditem.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(-1, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(146, 34);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Order No.";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(-1, 37);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1061, 534);
+            this.dataGridView2.TabIndex = 0;
             // 
             // sales_Orders
             // 
             this.sales_Orders.Location = new System.Drawing.Point(4, 25);
             this.sales_Orders.Name = "sales_Orders";
             this.sales_Orders.Padding = new System.Windows.Forms.Padding(3);
-            this.sales_Orders.Size = new System.Drawing.Size(1550, 889);
+            this.sales_Orders.Size = new System.Drawing.Size(1619, 889);
             this.sales_Orders.TabIndex = 1;
             this.sales_Orders.Text = "Orders";
             this.sales_Orders.UseVisualStyleBackColor = true;
@@ -234,6 +298,33 @@
             this.browser_merchandise.TabIndex = 2;
             this.browser_merchandise.Text = "Merchandise";
             this.browser_merchandise.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.Location = new System.Drawing.Point(0, 916);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1617, 10);
+            this.panel4.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(38, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(784, 440);
+            this.panel1.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(784, 397);
+            this.dataGridView1.TabIndex = 0;
             // 
             // browser_reports
             // 
@@ -263,126 +354,235 @@
             // admin_panel
             // 
             this.admin_panel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.admin_panel.Controls.Add(this.btnUsers_active);
+            this.admin_panel.Controls.Add(this.btnReports_active);
+            this.admin_panel.Controls.Add(this.btnMerch_active);
+            this.admin_panel.Controls.Add(this.btnOrders_active);
+            this.admin_panel.Controls.Add(this.btnSell_active);
+            this.admin_panel.Controls.Add(this.btnSales_active);
+            this.admin_panel.Controls.Add(this.btnDashboard_active);
             this.admin_panel.Controls.Add(this.panel8);
             this.admin_panel.Controls.Add(this.panel5);
             this.admin_panel.Controls.Add(this.panel6);
             this.admin_panel.Controls.Add(this.panel2);
-            this.admin_panel.Controls.Add(this.button6);
-            this.admin_panel.Controls.Add(this.button5);
-            this.admin_panel.Controls.Add(this.button4);
-            this.admin_panel.Controls.Add(this.button3);
-            this.admin_panel.Controls.Add(this.button2);
-            this.admin_panel.Controls.Add(this.button1);
-            this.admin_panel.Controls.Add(this.btnLogin);
+            this.admin_panel.Controls.Add(this.btnReports);
+            this.admin_panel.Controls.Add(this.btnUsers);
+            this.admin_panel.Controls.Add(this.btnOrders);
+            this.admin_panel.Controls.Add(this.btnSell);
+            this.admin_panel.Controls.Add(this.btnMerch);
+            this.admin_panel.Controls.Add(this.btnSales);
+            this.admin_panel.Controls.Add(this.btnDashboard);
             this.admin_panel.Location = new System.Drawing.Point(0, -1);
             this.admin_panel.Name = "admin_panel";
             this.admin_panel.Size = new System.Drawing.Size(303, 1081);
             this.admin_panel.TabIndex = 1;
             // 
-            // button6
+            // btnUsers_active
             // 
-            this.button6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Purple;
-            this.button6.Location = new System.Drawing.Point(-9, 548);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(325, 48);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "   | Reports";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnUsers_active.BackColor = System.Drawing.Color.Purple;
+            this.btnUsers_active.Location = new System.Drawing.Point(1, 602);
+            this.btnUsers_active.Name = "btnUsers_active";
+            this.btnUsers_active.Size = new System.Drawing.Size(10, 48);
+            this.btnUsers_active.TabIndex = 16;
             // 
-            // button5
+            // btnReports_active
             // 
-            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Purple;
-            this.button5.Location = new System.Drawing.Point(-9, 602);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(325, 48);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "   | Users";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnReports_active.BackColor = System.Drawing.Color.Purple;
+            this.btnReports_active.Location = new System.Drawing.Point(1, 548);
+            this.btnReports_active.Name = "btnReports_active";
+            this.btnReports_active.Size = new System.Drawing.Size(10, 48);
+            this.btnReports_active.TabIndex = 16;
             // 
-            // button4
+            // btnMerch_active
             // 
-            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Purple;
-            this.button4.Location = new System.Drawing.Point(-9, 436);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(325, 48);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "        | Orders";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnMerch_active.BackColor = System.Drawing.Color.Purple;
+            this.btnMerch_active.Location = new System.Drawing.Point(1, 494);
+            this.btnMerch_active.Name = "btnMerch_active";
+            this.btnMerch_active.Size = new System.Drawing.Size(10, 48);
+            this.btnMerch_active.TabIndex = 16;
             // 
-            // button3
+            // btnOrders_active
             // 
-            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Purple;
-            this.button3.Location = new System.Drawing.Point(-9, 382);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(325, 48);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "        | Point of Sale";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnOrders_active.BackColor = System.Drawing.Color.Purple;
+            this.btnOrders_active.Location = new System.Drawing.Point(-4, 436);
+            this.btnOrders_active.Name = "btnOrders_active";
+            this.btnOrders_active.Size = new System.Drawing.Size(10, 48);
+            this.btnOrders_active.TabIndex = 16;
             // 
-            // button2
+            // btnSell_active
             // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Purple;
-            this.button2.Location = new System.Drawing.Point(-9, 494);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(325, 48);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "   | Merchandise";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSell_active.BackColor = System.Drawing.Color.Purple;
+            this.btnSell_active.Location = new System.Drawing.Point(-4, 382);
+            this.btnSell_active.Name = "btnSell_active";
+            this.btnSell_active.Size = new System.Drawing.Size(10, 48);
+            this.btnSell_active.TabIndex = 16;
             // 
-            // button1
+            // btnSales_active
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Purple;
-            this.button1.Location = new System.Drawing.Point(-9, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(325, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "   | Sales";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSales_active.BackColor = System.Drawing.Color.Purple;
+            this.btnSales_active.Location = new System.Drawing.Point(0, 328);
+            this.btnSales_active.Name = "btnSales_active";
+            this.btnSales_active.Size = new System.Drawing.Size(10, 48);
+            this.btnSales_active.TabIndex = 16;
             // 
-            // btnLogin
+            // btnDashboard_active
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Purple;
-            this.btnLogin.Location = new System.Drawing.Point(-9, 274);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(325, 48);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "   | Dashboard";
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnDashboard_active.BackColor = System.Drawing.Color.Purple;
+            this.btnDashboard_active.Location = new System.Drawing.Point(0, 274);
+            this.btnDashboard_active.Name = "btnDashboard_active";
+            this.btnDashboard_active.Size = new System.Drawing.Size(10, 48);
+            this.btnDashboard_active.TabIndex = 15;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(302, 9);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 980);
+            this.panel8.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(-9, 9);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 980);
+            this.panel5.TabIndex = 15;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Location = new System.Drawing.Point(0, 979);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(303, 10);
+            this.panel6.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Purple;
+            this.panel2.Location = new System.Drawing.Point(0, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(303, 10);
+            this.panel2.TabIndex = 10;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.Purple;
+            this.btnReports.Location = new System.Drawing.Point(30, 548);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(244, 48);
+            this.btnReports.TabIndex = 10;
+            this.btnReports.Text = "Reports";
+            this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Enter += new System.EventHandler(this.btnReports_Enter);
+            this.btnReports.Leave += new System.EventHandler(this.btnReports_Leave);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.ForeColor = System.Drawing.Color.Purple;
+            this.btnUsers.Location = new System.Drawing.Point(30, 602);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(244, 48);
+            this.btnUsers.TabIndex = 9;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Enter += new System.EventHandler(this.btnUsers_Enter);
+            this.btnUsers.Leave += new System.EventHandler(this.btnUsers_Leave);
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOrders.FlatAppearance.BorderSize = 0;
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.ForeColor = System.Drawing.Color.Purple;
+            this.btnOrders.Location = new System.Drawing.Point(30, 436);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(244, 48);
+            this.btnOrders.TabIndex = 8;
+            this.btnOrders.Text = "       Orders";
+            this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Enter += new System.EventHandler(this.btnOrders_Enter);
+            this.btnOrders.Leave += new System.EventHandler(this.btnOrders_Leave);
+            // 
+            // btnSell
+            // 
+            this.btnSell.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSell.FlatAppearance.BorderSize = 0;
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSell.ForeColor = System.Drawing.Color.Purple;
+            this.btnSell.Location = new System.Drawing.Point(30, 382);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(244, 48);
+            this.btnSell.TabIndex = 7;
+            this.btnSell.Text = "       Sell";
+            this.btnSell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Enter += new System.EventHandler(this.btnSell_Enter);
+            this.btnSell.Leave += new System.EventHandler(this.btnSell_Leave);
+            // 
+            // btnMerch
+            // 
+            this.btnMerch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMerch.FlatAppearance.BorderSize = 0;
+            this.btnMerch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMerch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMerch.ForeColor = System.Drawing.Color.Purple;
+            this.btnMerch.Location = new System.Drawing.Point(30, 494);
+            this.btnMerch.Name = "btnMerch";
+            this.btnMerch.Size = new System.Drawing.Size(244, 48);
+            this.btnMerch.TabIndex = 6;
+            this.btnMerch.Text = "Merchandise";
+            this.btnMerch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMerch.UseVisualStyleBackColor = false;
+            this.btnMerch.Enter += new System.EventHandler(this.btnMerch_Enter);
+            this.btnMerch.Leave += new System.EventHandler(this.btnMerch_Leave);
+            // 
+            // btnSales
+            // 
+            this.btnSales.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSales.FlatAppearance.BorderSize = 0;
+            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.ForeColor = System.Drawing.Color.Purple;
+            this.btnSales.Location = new System.Drawing.Point(30, 328);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(244, 48);
+            this.btnSales.TabIndex = 5;
+            this.btnSales.Text = "Sales";
+            this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Enter += new System.EventHandler(this.btnSales_Enter);
+            this.btnSales.Leave += new System.EventHandler(this.btnSales_Leave);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Purple;
+            this.btnDashboard.Location = new System.Drawing.Point(30, 274);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(244, 48);
+            this.btnDashboard.TabIndex = 4;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Enter += new System.EventHandler(this.btnDashboard_Enter);
+            this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
             // 
             // main_close
             // 
@@ -409,33 +609,6 @@
             this.roundedCorners_Orders2.ElipseRadius = 5;
             this.roundedCorners_Orders2.TargetControl = this.panel_orders2;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 397);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(38, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 440);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Purple;
-            this.panel2.Location = new System.Drawing.Point(0, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 10);
-            this.panel2.TabIndex = 10;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Purple;
@@ -443,30 +616,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1617, 10);
             this.panel3.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(0, 979);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(303, 10);
-            this.panel6.TabIndex = 14;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(0, 916);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1617, 10);
-            this.panel4.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(-9, 9);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 980);
-            this.panel5.TabIndex = 15;
             // 
             // panel7
             // 
@@ -476,13 +625,17 @@
             this.panel7.Size = new System.Drawing.Size(10, 980);
             this.panel7.TabIndex = 16;
             // 
-            // panel8
+            // roundedCorners_Orderline
             // 
-            this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(302, 9);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 980);
-            this.panel8.TabIndex = 16;
+            this.roundedCorners_Orderline.ElipseRadius = 5;
+            this.roundedCorners_Orderline.TargetControl = this.orderline;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(1073, 7);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(532, 854);
+            this.panel9.TabIndex = 3;
             // 
             // Main
             // 
@@ -509,10 +662,14 @@
             this.panel_orders1.PerformLayout();
             this.browser_sales.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.sales_pos.ResumeLayout(false);
+            this.orderline.ResumeLayout(false);
+            this.orderline.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.browser_merchandise.ResumeLayout(false);
-            this.admin_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.admin_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,14 +683,14 @@
         private System.Windows.Forms.TabPage browser_sales;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel admin_panel;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnOrders;
+        private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Button btnMerch;
+        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Label main_close;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.TabPage browser_merchandise;
         private System.Windows.Forms.TabPage browser_reports;
         private System.Windows.Forms.TabPage browser_users;
@@ -558,5 +715,18 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel orderline;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuElipse roundedCorners_Orderline;
+        private System.Windows.Forms.Button btnAdditem;
+        private System.Windows.Forms.Panel btnUsers_active;
+        private System.Windows.Forms.Panel btnReports_active;
+        private System.Windows.Forms.Panel btnMerch_active;
+        private System.Windows.Forms.Panel btnOrders_active;
+        private System.Windows.Forms.Panel btnSell_active;
+        private System.Windows.Forms.Panel btnSales_active;
+        private System.Windows.Forms.Panel btnDashboard_active;
+        private System.Windows.Forms.Panel panel9;
     }
 }
