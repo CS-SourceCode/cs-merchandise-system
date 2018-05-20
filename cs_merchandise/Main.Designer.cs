@@ -42,6 +42,10 @@
             this.browser_sales = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sales_pos = new System.Windows.Forms.TabPage();
+            this.panel_orderline = new System.Windows.Forms.Panel();
+            this.btnCheckout = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.orderline = new System.Windows.Forms.DataGridView();
             this.panel_orderdetails = new System.Windows.Forms.Panel();
             this.btnAdditem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,10 +83,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel_orderline = new System.Windows.Forms.Panel();
-            this.orderline = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnCheckout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.button4 = new System.Windows.Forms.Button();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
@@ -90,14 +103,16 @@
             this.browser_sales.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.sales_pos.SuspendLayout();
+            this.panel_orderline.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderline)).BeginInit();
             this.panel_orderdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).BeginInit();
             this.browser_merchandise.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.admin_panel.SuspendLayout();
-            this.panel_orderline.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderline)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -237,11 +252,69 @@
             this.sales_pos.Text = "POS";
             this.sales_pos.UseVisualStyleBackColor = true;
             // 
+            // panel_orderline
+            // 
+            this.panel_orderline.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_orderline.Controls.Add(this.bunifuMetroTextbox3);
+            this.panel_orderline.Controls.Add(this.label9);
+            this.panel_orderline.Controls.Add(this.button2);
+            this.panel_orderline.Controls.Add(this.bunifuMetroTextbox2);
+            this.panel_orderline.Controls.Add(this.btnCheckout);
+            this.panel_orderline.Controls.Add(this.label6);
+            this.panel_orderline.Controls.Add(this.orderline);
+            this.panel_orderline.Location = new System.Drawing.Point(1073, 6);
+            this.panel_orderline.Name = "panel_orderline";
+            this.panel_orderline.Size = new System.Drawing.Size(532, 855);
+            this.panel_orderline.TabIndex = 3;
+            // 
+            // btnCheckout
+            // 
+            this.btnCheckout.BackColor = System.Drawing.Color.Green;
+            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckout.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckout.ForeColor = System.Drawing.Color.White;
+            this.btnCheckout.Location = new System.Drawing.Point(3, 783);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(524, 67);
+            this.btnCheckout.TabIndex = 10;
+            this.btnCheckout.Text = "CHECKOUT";
+            this.btnCheckout.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Purple;
+            this.label6.Location = new System.Drawing.Point(3, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 28);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Order No.";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // orderline
+            // 
+            this.orderline.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.orderline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderline.Location = new System.Drawing.Point(-1, 59);
+            this.orderline.Name = "orderline";
+            this.orderline.RowTemplate.Height = 24;
+            this.orderline.Size = new System.Drawing.Size(533, 512);
+            this.orderline.TabIndex = 0;
+            // 
             // panel_orderdetails
             // 
             this.panel_orderdetails.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_orderdetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_orderdetails.Controls.Add(this.btnAdditem);
+            this.panel_orderdetails.Controls.Add(this.bunifuMetroTextbox4);
+            this.panel_orderdetails.Controls.Add(this.button3);
+            this.panel_orderdetails.Controls.Add(this.dataGridView2);
+            this.panel_orderdetails.Controls.Add(this.label8);
+            this.panel_orderdetails.Controls.Add(this.bunifuMetroTextbox1);
+            this.panel_orderdetails.Controls.Add(this.panel9);
+            this.panel_orderdetails.Controls.Add(this.label7);
+            this.panel_orderdetails.Controls.Add(this.button1);
             this.panel_orderdetails.Controls.Add(this.label5);
             this.panel_orderdetails.Controls.Add(this.sell_merchandise);
             this.panel_orderdetails.Location = new System.Drawing.Point(6, 6);
@@ -255,9 +328,9 @@
             this.btnAdditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdditem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdditem.ForeColor = System.Drawing.Color.White;
-            this.btnAdditem.Location = new System.Drawing.Point(660, 668);
+            this.btnAdditem.Location = new System.Drawing.Point(3, 3);
             this.btnAdditem.Name = "btnAdditem";
-            this.btnAdditem.Size = new System.Drawing.Size(176, 91);
+            this.btnAdditem.Size = new System.Drawing.Size(204, 60);
             this.btnAdditem.TabIndex = 4;
             this.btnAdditem.Text = "Add Item";
             this.btnAdditem.UseVisualStyleBackColor = false;
@@ -277,10 +350,10 @@
             // 
             this.sell_merchandise.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.sell_merchandise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sell_merchandise.Location = new System.Drawing.Point(-1, 37);
+            this.sell_merchandise.Location = new System.Drawing.Point(-1, 51);
             this.sell_merchandise.Name = "sell_merchandise";
             this.sell_merchandise.RowTemplate.Height = 24;
-            this.sell_merchandise.Size = new System.Drawing.Size(1061, 534);
+            this.sell_merchandise.Size = new System.Drawing.Size(838, 520);
             this.sell_merchandise.TabIndex = 0;
             // 
             // sales_Orders
@@ -635,52 +708,183 @@
             this.roundedCorners_Orderline.ElipseRadius = 5;
             this.roundedCorners_Orderline.TargetControl = this.panel_orderdetails;
             // 
-            // panel_orderline
+            // button1
             // 
-            this.panel_orderline.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_orderline.Controls.Add(this.btnCheckout);
-            this.panel_orderline.Controls.Add(this.label6);
-            this.panel_orderline.Controls.Add(this.orderline);
-            this.panel_orderline.Location = new System.Drawing.Point(1073, 6);
-            this.panel_orderline.Name = "panel_orderline";
-            this.panel_orderline.Size = new System.Drawing.Size(532, 855);
-            this.panel_orderline.TabIndex = 3;
+            this.button1.BackColor = System.Drawing.Color.Purple;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(532, 791);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(524, 59);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Select Customer";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // orderline
+            // label7
             // 
-            this.orderline.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.orderline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderline.Location = new System.Drawing.Point(-1, 37);
-            this.orderline.Name = "orderline";
-            this.orderline.RowTemplate.Height = 24;
-            this.orderline.Size = new System.Drawing.Size(533, 534);
-            this.orderline.TabIndex = 0;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Purple;
+            this.label7.Location = new System.Drawing.Point(3, 574);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(209, 28);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Customer Details";
             // 
-            // label6
+            // panel9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Purple;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 28);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Order No.";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.button4);
+            this.panel9.Controls.Add(this.btnAdditem);
+            this.panel9.Location = new System.Drawing.Point(844, 106);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(212, 465);
+            this.panel9.TabIndex = 12;
             // 
-            // btnCheckout
+            // bunifuMetroTextbox1
             // 
-            this.btnCheckout.BackColor = System.Drawing.Color.Green;
-            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckout.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckout.ForeColor = System.Drawing.Color.White;
-            this.btnCheckout.Location = new System.Drawing.Point(3, 783);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(524, 67);
-            this.btnCheckout.TabIndex = 10;
-            this.btnCheckout.Text = "CHECKOUT";
-            this.btnCheckout.UseVisualStyleBackColor = false;
+            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox1.BorderThickness = 3;
+            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox1.isPassword = false;
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(180, 638);
+            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
+            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(345, 44);
+            this.bunifuMetroTextbox1.TabIndex = 13;
+            this.bunifuMetroTextbox1.Text = "bunifuMetroTextbox1";
+            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Purple;
+            this.label8.Location = new System.Drawing.Point(176, 611);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Name:";
+            // 
+            // bunifuMetroTextbox2
+            // 
+            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox2.BorderThickness = 3;
+            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox2.isPassword = false;
+            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(136, 4);
+            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
+            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(252, 48);
+            this.bunifuMetroTextbox2.TabIndex = 11;
+            this.bunifuMetroTextbox2.Text = "Order No.";
+            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Purple;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(395, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 48);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "New Order";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Purple;
+            this.label9.Location = new System.Drawing.Point(3, 577);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(200, 70);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "TOTAL";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuMetroTextbox3
+            // 
+            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox3.BorderThickness = 3;
+            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox3.isPassword = false;
+            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(201, 579);
+            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
+            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(326, 65);
+            this.bunifuMetroTextbox3.TabIndex = 13;
+            this.bunifuMetroTextbox3.Text = "TOTAL";
+            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(532, 577);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(524, 208);
+            this.dataGridView2.TabIndex = 15;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Purple;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(12, 791);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(513, 59);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Create New Customer";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // bunifuMetroTextbox4
+            // 
+            this.bunifuMetroTextbox4.BorderColorFocused = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox4.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox4.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.bunifuMetroTextbox4.BorderThickness = 3;
+            this.bunifuMetroTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMetroTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox4.isPassword = false;
+            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(840, 51);
+            this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
+            this.bunifuMetroTextbox4.Size = new System.Drawing.Size(215, 48);
+            this.bunifuMetroTextbox4.TabIndex = 14;
+            this.bunifuMetroTextbox4.Text = "Filter";
+            this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Purple;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(3, 69);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(204, 60);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Remove";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
@@ -708,6 +912,9 @@
             this.browser_sales.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.sales_pos.ResumeLayout(false);
+            this.panel_orderline.ResumeLayout(false);
+            this.panel_orderline.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderline)).EndInit();
             this.panel_orderdetails.ResumeLayout(false);
             this.panel_orderdetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).EndInit();
@@ -715,9 +922,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.admin_panel.ResumeLayout(false);
-            this.panel_orderline.ResumeLayout(false);
-            this.panel_orderline.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderline)).EndInit();
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,5 +985,18 @@
         private System.Windows.Forms.Button btnCheckout;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView orderline;
+        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
+        private System.Windows.Forms.Label label8;
+        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
+        private System.Windows.Forms.Button button4;
     }
 }
