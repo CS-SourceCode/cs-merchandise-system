@@ -11,12 +11,17 @@ namespace cs_merchandise
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static bool looper = true;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            while(looper)
+            {
+                if (User.fn != null)
+                    Application.Run(new Main());
+            }
         }
     }
 }

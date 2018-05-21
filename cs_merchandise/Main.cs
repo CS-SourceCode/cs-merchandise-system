@@ -17,7 +17,7 @@ namespace cs_merchandise
         MySqlConnection conn;
 
 
-        public Main(string username, string fn, string ln, string userid)
+        public Main()
         {
             InitializeComponent();
             conn = new MySqlConnection("SERVER=localhost; DATABASE=cs_merchandise; UID=root; PWD=");
