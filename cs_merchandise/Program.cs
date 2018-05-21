@@ -19,7 +19,7 @@ namespace cs_merchandise
             Application.SetCompatibleTextRenderingDefault(false);
             while(looper)
             {
-                if (User.fn != null)
+                if (User.Name != null)
                     Application.Run(new Main());
             }
         }
