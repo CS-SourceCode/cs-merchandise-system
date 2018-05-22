@@ -15,11 +15,12 @@ namespace cs_merchandise
     {
 
         MySqlConnection conn;
+        private DatabaseConn conn = new DatabaseConn();
+        public string username, fn, ln, userid;
 
         public Login()
         {
             InitializeComponent();
-            conn = new MySqlConnection("SERVER=localhost; DATABASE=cs_merchandise; UID=root; PWD=");
         }
 
         // CLOSE BUTTON //
@@ -44,26 +45,20 @@ namespace cs_merchandise
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
+            username = txtUsername.Text;
             string password = txtPassword.Text;
-            string chkuser = "SELECT * FROM users WHERE username ='" + username + "' AND password = '" + password + "'";
-
-            conn.Open();
-            MySqlCommand chkuser_comm = new MySqlCommand(chkuser, conn);
-            MySqlDataAdapter chkuser_adp = new MySqlDataAdapter(chkuser_comm);
-            conn.Close();
-            DataTable users_dt = new DataTable();
+            var users_dt  = conn.Select("users", "*")
+                        .Where("username", username, "password", password)
+                        .GetQueryData();
             chkuser_adp.Fill(users_dt);
 
             if (users_dt.Rows.Count == 1)
             {
-                string userid = users_dt.Rows[0][0].ToString();
-                string fn = users_dt.Rows[0][3].ToString();
-                string ln = users_dt.Rows[0][4].ToString();
-                Main main = new Main(username, fn, ln, userid);
-                main.Login = this;
-                main.Show();
-                this.Hide();
+                userid = users_dt.Rows[0][0].ToString();
+                fn = users_dt.Rows[0][3].ToString();
+                ln = users_dt.Rows[0][4].ToString();
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
         }
 
