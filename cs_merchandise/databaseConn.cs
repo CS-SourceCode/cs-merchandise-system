@@ -3,7 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace AMC
+namespace cs_merchandise
 {
     internal class DatabaseConn
     {
