@@ -13,7 +13,6 @@ namespace cs_merchandise
 {
     public partial class Login : Form
     {
-
         private DatabaseConn conn = new DatabaseConn();
         public string username, fn, ln, userid;
 
@@ -25,6 +24,7 @@ namespace cs_merchandise
         // CLOSE BUTTON //
         private void login_close_Click(object sender, EventArgs e)
         {
+            Program.looper = false;
             this.Close();
         }
 
@@ -49,7 +49,6 @@ namespace cs_merchandise
             var users_dt  = conn.Select("users", "*")
                         .Where("username", username, "password", password)
                         .GetQueryData();
-            chkuser_adp.Fill(users_dt);
 
             if (users_dt.Rows.Count == 1)
             {
