@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AMC
+namespace cs_merchandise
 {
     public sealed class User
     {
@@ -13,7 +13,7 @@ namespace AMC
         public readonly string username, fn, ln, userid; 
         private User (string username, string fn, string ln, string userid)
         {
-            this.username = username
+            this.username = username;
             this.fn = fn;
             this.ln = ln;
             this.userid = userid;
@@ -26,7 +26,7 @@ namespace AMC
                 if (name == null)
                     using (var login = new Login())
                         if (login.ShowDialog() == DialogResult.OK)
-                            name = new User(login.username, login.fn, login.ln, login.userid)
+                            name = new User(login.username, login.fn, login.ln, login.userid);
                 return name;
             }
         }
