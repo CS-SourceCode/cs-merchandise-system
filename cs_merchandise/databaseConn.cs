@@ -17,84 +17,7 @@ namespace cs_merchandise
         {
             RefreshCmd();
         }
-
-        public DataTable storedProc(string procName)
-        {
-            RefreshCmd();
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=root;"))
-            {
-                databasecon.Open();
-                _cmd.CommandText = procName;
-                _cmd.Connection = databasecon;
-                _cmd.CommandType = CommandType.StoredProcedure;
-                _holder.Load(_cmd.ExecuteReader());
-                return _holder;
-            }
-        }
-
-        public DataTable storedProc(string procName, string paraName, int x, string paraName2, int y)
-        {
-            RefreshCmd();
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=amc;Uid=root;Pwd=root;"))
-            {
-                databasecon.Open();
-                _cmd.CommandText = procName;
-                _cmd.Connection = databasecon;
-                _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.Parameters.Clear();
-                MySqlParameter param = new MySqlParameter(paraName, x);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName2, y);
-                _cmd.Parameters.Add(param);
-                _holder.Load(_cmd.ExecuteReader());
-                return _holder;
-            }
-        }
-
-        public DataTable storedProc(string procName, string paraName, int x, string paraName2, int y, string paraName3, string z)
-        {
-            RefreshCmd();
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=amc;Uid=root;Pwd=root;"))
-            {
-                databasecon.Open();
-                _cmd.CommandText = procName;
-                _cmd.Connection = databasecon;
-                _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.Parameters.Clear();
-                MySqlParameter param = new MySqlParameter(paraName, x);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName2, y);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName3, z);
-                _cmd.Parameters.Add(param);
-                _holder.Load(_cmd.ExecuteReader());
-                return _holder;
-            }
-        }
-
-        public DataTable storedProc(string procName, string paraName, int w, string paraName1, int x, string paraName2, int y, string paraName3, string z)
-        {
-            RefreshCmd();
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=amc;Uid=root;Pwd=root;"))
-            {
-                databasecon.Open();
-                _cmd.CommandText = procName;
-                _cmd.Connection = databasecon;
-                _cmd.CommandType = CommandType.StoredProcedure;
-                _cmd.Parameters.Clear();
-                MySqlParameter param = new MySqlParameter(paraName, w);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName1, x);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName2, y);
-                _cmd.Parameters.Add(param);
-                param = new MySqlParameter(paraName3, z);
-                _cmd.Parameters.Add(param);
-                _holder.Load(_cmd.ExecuteReader());
-                return _holder;
-            }
-        }
-
+        
         public string lastID()
         {
             return _cmd.LastInsertedId.ToString();
@@ -107,7 +30,7 @@ namespace cs_merchandise
 
         public dynamic GetQueryData()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=amc;Uid=root;Pwd=root;"))
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=root;"))
             {
                 databasecon.Open();
                 _cmd.CommandText = _sql;
