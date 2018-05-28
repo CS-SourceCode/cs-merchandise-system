@@ -14,7 +14,6 @@ namespace cs_merchandise
     public partial class Login : Form
     {
 
-        MySqlConnection conn;
         private DatabaseConn conn = new DatabaseConn();
         public string username, fn, ln, userid;
 
