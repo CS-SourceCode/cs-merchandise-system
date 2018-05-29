@@ -249,6 +249,37 @@ namespace cs_merchandise
             btnUsers_active.Hide();
         }
 
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            main_browser.SelectTab(1);
+            sales_control.SelectTab(0);
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            main_browser.SelectTab(1);
+            sales_control.SelectTab(1);
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            btnSell_Click(sender, e);
+        }
+
+        private void btnMerch_Click(object sender, EventArgs e)
+        {
+            main_browser.SelectTab(2);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            main_browser.SelectTab(3);
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            main_browser.SelectTab(4);
+        }
         private void btnAdditem_Click(object sender, EventArgs e)
         {
             temp_qty = Convert.ToInt32(item_quantity.Text);
