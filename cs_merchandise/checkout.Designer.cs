@@ -35,24 +35,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.checkout_totaldue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cash_amount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnRecordOrder = new System.Windows.Forms.Button();
+            this.cash_amount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkout_totaldue = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.change = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Purple;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.panel3.Location = new System.Drawing.Point(0, -4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(799, 10);
+            this.panel3.Size = new System.Drawing.Size(488, 10);
             this.panel3.TabIndex = 12;
             // 
             // roundedCorners
@@ -85,7 +87,6 @@
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this.checkout_totaldue;
             // 
             // bunifuDragControl1
             // 
@@ -94,21 +95,12 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // checkout_totaldue
-            // 
-            this.checkout_totaldue.BackColor = System.Drawing.Color.Gainsboro;
-            this.checkout_totaldue.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkout_totaldue.Location = new System.Drawing.Point(134, 87);
-            this.checkout_totaldue.Name = "checkout_totaldue";
-            this.checkout_totaldue.Size = new System.Drawing.Size(307, 39);
-            this.checkout_totaldue.TabIndex = 35;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(25, 88);
+            this.label5.Location = new System.Drawing.Point(25, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 37);
             this.label5.TabIndex = 35;
@@ -129,13 +121,34 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.btnRecordOrder);
             this.panel1.Controls.Add(this.cash_amount);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(-5, 145);
+            this.panel1.Location = new System.Drawing.Point(0, 264);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 248);
+            this.panel1.Size = new System.Drawing.Size(479, 153);
             this.panel1.TabIndex = 38;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.Location = new System.Drawing.Point(-3, 345);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(537, 10);
+            this.panel7.TabIndex = 39;
+            // 
+            // btnRecordOrder
+            // 
+            this.btnRecordOrder.BackColor = System.Drawing.Color.Green;
+            this.btnRecordOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordOrder.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecordOrder.ForeColor = System.Drawing.Color.White;
+            this.btnRecordOrder.Location = new System.Drawing.Point(12, 448);
+            this.btnRecordOrder.Name = "btnRecordOrder";
+            this.btnRecordOrder.Size = new System.Drawing.Size(456, 67);
+            this.btnRecordOrder.TabIndex = 38;
+            this.btnRecordOrder.Text = "Record Order";
+            this.btnRecordOrder.UseVisualStyleBackColor = false;
+            this.btnRecordOrder.Click += new System.EventHandler(this.btnRecordOrder_Click);
             // 
             // cash_amount
             // 
@@ -156,20 +169,6 @@
             this.cash_amount.TabIndex = 37;
             this.cash_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // btnRecordOrder
-            // 
-            this.btnRecordOrder.BackColor = System.Drawing.Color.Green;
-            this.btnRecordOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordOrder.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecordOrder.ForeColor = System.Drawing.Color.White;
-            this.btnRecordOrder.Location = new System.Drawing.Point(17, 166);
-            this.btnRecordOrder.Name = "btnRecordOrder";
-            this.btnRecordOrder.Size = new System.Drawing.Size(456, 67);
-            this.btnRecordOrder.TabIndex = 38;
-            this.btnRecordOrder.Text = "Record Order";
-            this.btnRecordOrder.UseVisualStyleBackColor = false;
-            this.btnRecordOrder.Click += new System.EventHandler(this.btnRecordOrder_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
@@ -186,31 +185,75 @@
             this.panel4.Size = new System.Drawing.Size(10, 387);
             this.panel4.TabIndex = 40;
             // 
-            // panel7
+            // label1
             // 
-            this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(-3, 242);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(537, 10);
-            this.panel7.TabIndex = 39;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Purple;
+            this.label1.Location = new System.Drawing.Point(25, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 37);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "CHANGE";
+            // 
+            // checkout_totaldue
+            // 
+            this.checkout_totaldue.BackColor = System.Drawing.Color.Gainsboro;
+            this.checkout_totaldue.BorderColorFocused = System.Drawing.Color.Blue;
+            this.checkout_totaldue.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkout_totaldue.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.checkout_totaldue.BorderThickness = 3;
+            this.checkout_totaldue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.checkout_totaldue.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkout_totaldue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkout_totaldue.isPassword = false;
+            this.checkout_totaldue.Location = new System.Drawing.Point(137, 88);
+            this.checkout_totaldue.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.checkout_totaldue.Name = "checkout_totaldue";
+            this.checkout_totaldue.Size = new System.Drawing.Size(309, 65);
+            this.checkout_totaldue.TabIndex = 42;
+            this.checkout_totaldue.Text = "TOTAL";
+            this.checkout_totaldue.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // change
+            // 
+            this.change.BackColor = System.Drawing.Color.Gainsboro;
+            this.change.BorderColorFocused = System.Drawing.Color.Blue;
+            this.change.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.change.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.change.BorderThickness = 3;
+            this.change.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.change.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.change.isPassword = false;
+            this.change.Location = new System.Drawing.Point(179, 163);
+            this.change.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(267, 65);
+            this.change.TabIndex = 43;
+            this.change.Text = "CHANGE";
+            this.change.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(480, 390);
+            this.ClientSize = new System.Drawing.Size(480, 527);
+            this.Controls.Add(this.change);
+            this.Controls.Add(this.checkout_totaldue);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.btnRecordOrder);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.login_close);
-            this.Controls.Add(this.checkout_totaldue);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "checkout";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "checkout";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -228,7 +271,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox checkout_totaldue;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox cash_amount;
@@ -236,5 +278,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox change;
+        private Bunifu.Framework.UI.BunifuMetroTextbox checkout_totaldue;
     }
 }

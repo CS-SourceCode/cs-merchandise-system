@@ -34,10 +34,34 @@ namespace cs_merchandise
             setCustomerlist();
             selectedCustIDTxt.Enabled = false;
             selectedCustNameTxt.Enabled = false;
+            getOrderId();
+
 
         }
 
+        
+
         public Login Login { get; internal set; }
+
+        private void getOrderId()
+        {
+            order_no.Enabled = false;
+            price_total.Enabled = false;
+            var orders_dt = conn.Select("orders", "order_id").GetQueryData();
+
+            if (orders_dt.Rows.Count == 0)
+            {
+                
+                //conn.Insert("orders", "order_id", "1").GetQueryData();
+                order_no.Text = "1";
+            }
+            else
+            {
+                int order_id = orders_dt.Rows[orders_dt.Rows.Count - 1][0] + 1;
+                order_no.Text = order_id.ToString();
+            }
+
+        }
 
         private void setMerchandise()
         {
@@ -48,24 +72,17 @@ namespace cs_merchandise
             sell_merchandise.DataSource = merch_dt;
             sell_merchandise.Columns["merch_id"].Visible = false;
             sell_merchandise.Columns["merch_name"].HeaderText = "Description";
-            sell_merchandise.Columns["merch_price"].HeaderText = "Price";   
+            sell_merchandise.Columns["merch_price"].HeaderText = "Price";
+
+            //Default Selected
+            temp_merchname = sell_merchandise.Rows[0].Cells["merch_name"].Value.ToString();
+            temp_price = Convert.ToDecimal(sell_merchandise.Rows[0].Cells["merch_price"].Value);
+            merch_total = Convert.ToDecimal(temp_price) * Convert.ToDecimal(temp_qty);
         }
 
         private void setOrderNo()
         {
             //get latest and increment but is temporary
-        }
-
-        private void setOrderline()
-        {
-            orderline.ColumnCount = 4;
-            orderline.ColumnHeadersVisible = true;
-
-            orderline.Columns[0].Name = "#";
-            orderline.Columns[1].Name = "Description";
-            orderline.Columns[2].Name = "Quantity";
-            orderline.Columns[3].Name = "Price";
-
         }
 
         public void setCustomerlist()
@@ -79,11 +96,20 @@ namespace cs_merchandise
             customer_list.Columns["lastname"].HeaderText = "Last Name";
             customer_list.Columns["contact"].HeaderText = "Contact";
             customer_list.Columns["cluster"].HeaderText = "Cluster";
+
+            currCustomerNo = Convert.ToInt32(customer_list.Rows[0].Cells["customer_id"].Value);
+            custfn = customer_list.Rows[0].Cells["firstname"].Value.ToString();
+            custln = customer_list.Rows[0].Cells["lastname"].Value.ToString();
+            selectedCustIDTxt.Text = currCustomerNo.ToString();
+            selectedCustNameTxt.Text = custfn + " " + custln;
+
+
         }
 
         private void main_close_Click(object sender, EventArgs e)
         {
-           // Prompt to Logout //
+            this.Close();
+            // Prompt to Logout //
         }
 
         private void main_close_MouseEnter(object sender, EventArgs e)
@@ -228,7 +254,6 @@ namespace cs_merchandise
             temp_qty = Convert.ToInt32(item_quantity.Text);
             // Create a new row first as it will include the columns you've created at design-time.
             bool Found = false;
-
             if (orderline.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row1 in orderline.Rows)
@@ -244,6 +269,7 @@ namespace cs_merchandise
                 }
                 if (!Found)
                 {
+                   
                     int rowId = orderline.Rows.Add();
 
                     // Grab the new row!
@@ -257,6 +283,7 @@ namespace cs_merchandise
             }
             else
             {
+                
                 int rowId = orderline.Rows.Add();
 
                 // Grab the new row!
@@ -272,32 +299,7 @@ namespace cs_merchandise
                                 where row.Cells[2].FormattedValue.ToString() != string.Empty
                                 select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum().ToString();
 
-            /*
-            foreach (DataGridViewRow row1 in orderline.Rows)
-            {
-                total_price += Convert.ToDecimal(row1.Cells["merch_price"].Value);
-            }
-
-            price_total.Text = total_price.ToString();
-
-            decimal total = 0;
-            foreach (DataGridViewRow row1 in orderline.Rows)
-            {
-                total += Convert.ToDecimal(row1.Cells["merch_price"].Value) * Convert.ToDecimal(row1.Cells["merch_qty"].Value);
-            }
-
-            txtTotalprice.Text = total.ToString();
-
-            
-            string[] row = new string[] { "test", "test1", "test2", "test3" };
-            object[] rows = new object[] { row };
-
-            foreach(string[] rowArray in rows)
-            {
-                orderline.Rows.Add(rowArray);
-            }
-            */
-            //orderline.DataSource=GetSelectedRows(sell_merchandise);
+            btnAdditem.Text = "Update";
         }
 
         string temp_merchname;
@@ -308,11 +310,34 @@ namespace cs_merchandise
 
         private void sell_merchandise_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex > -1)
             {
                 temp_merchname = sell_merchandise.Rows[e.RowIndex].Cells["merch_name"].Value.ToString();
                 temp_price = Convert.ToDecimal(sell_merchandise.Rows[e.RowIndex].Cells["merch_price"].Value);
                 merch_total = Convert.ToDecimal(temp_price) * Convert.ToDecimal(temp_qty);
+                item_quantity.Text = "1";
+            }
+            bool Found = false;
+            if (orderline.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row1 in orderline.Rows)
+                {
+                    if (Convert.ToString(row1.Cells[0].Value) == temp_merchname)
+                    {
+                        Found = true;
+                        btnAdditem.Text = "Update";
+                    }
+
+                }
+                if (!Found)
+                {
+                    btnAdditem.Text = "Add";
+                }
+            }
+            else
+            {
+                btnAdditem.Text = "Add";
             }
         }
 
@@ -366,7 +391,32 @@ namespace cs_merchandise
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            //order_no.Text = 
+            
+        }
+
+        private void removeall_merch_Click(object sender, EventArgs e)
+        {
+            orderline.Rows.Clear();
+            orderline.Refresh();
+            price_total.Text = "0.00";
+        }
+
+        int currCustomerNo = 0;
+        string custfn;
+        string custln;
+
+        private void customer_list_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void select_customer_Click(object sender, EventArgs e)
+        {
+            currCustomerNo = Convert.ToInt32(customer_list.CurrentRow.Cells["customer_id"].Value);
+            custfn = customer_list.CurrentRow.Cells["firstname"].Value.ToString();
+            custln = customer_list.CurrentRow.Cells["lastname"].Value.ToString();
+            selectedCustIDTxt.Text = currCustomerNo.ToString();
+            selectedCustNameTxt.Text = custfn + " " + custln;
         }
 
         /*
