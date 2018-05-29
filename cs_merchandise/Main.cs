@@ -467,6 +467,7 @@ namespace cs_merchandise
                                "FROM orders " +
                                "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
                 var command = new MySqlCommand(query);
+                command.Connection = databasecon;
                 var holder = new DataTable();
                 holder.Load(command.ExecuteReader());
                 dataGridView2.DataSource = holder;
@@ -474,25 +475,49 @@ namespace cs_merchandise
 
         }
 
-        private DataTable showOrderDetails()
+        private void showOrderDetails()
         {
             using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
             {
                 databasecon.Open();
                 string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-                string query = "SELECT " +
-                               "orders.order_id, orders.order_date, orders.order_status, " +
-                               "CONCAT(customer.lastname, ', ', customer.firstname) as customer, " +
-                               "orders.claim_date, orders.payment_status " +
-                               "FROM orders " +
-                               "WHERE orders.order_id = @id" +
-                               "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
+                string query = "SELECT CONCAT(c.firstname,' ',c.lastname) as name, c.contact, c.cluster, " +
+                    "o.order_date, o.payment_status, o.claim_date, o.order_status " +
+                    "FROM orders as o " +
+                    "NATURAL JOIN customer as c " +
+                    "WHERE o.order_id = @id";
                 var command = new MySqlCommand(query);
+                command.Connection = databasecon;
                 command.Parameters.AddWithValue("@id", selectedOrder);
-                var holder = new DataTable();
-                holder.Load(command.ExecuteReader());
-                return holder;
+                var customerDetails = new DataTable();
+                customerDetails.Load(command.ExecuteReader());
+                orderCname.Text = customerDetails.Rows[0][0].ToString();
+                orderCcontact.Text = customerDetails.Rows[0][1].ToString();
+                orderCcluster.Text = customerDetails.Rows[0][2].ToString();
+                orderOdate.Text = customerDetails.Rows[0][3].ToString();
+                orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
+                orderOcdate.Text = customerDetails.Rows[0][5].ToString();
+                orderOstatus.Text = customerDetails.Rows[0][6].ToString();
+                query = "SELECT m.merch_name, ol.quantity, ol.amount_paid, ol.total_price " +
+                    "FROM orderline as ol " +
+                    "INNER JOIN merchandise AS m " +
+                    "ON ol.merch_id = m.merch_id " +
+                    "INNER JOIN orders AS o " +
+                    "ON ol.order_id = o.order_id " +
+                    "WHERE o.order_id = @id";
+                command = new MySqlCommand(query);
+                command.Connection = databasecon;
+                command.Parameters.AddWithValue("@id", selectedOrder);
+                var orderDetails = new DataTable();
+                orderDetails.Load(command.ExecuteReader());
+                dataGridView3.DataSource = orderDetails;
             }
+                
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            showOrderDetails();
         }
 
         /*
