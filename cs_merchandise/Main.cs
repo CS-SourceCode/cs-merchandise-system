@@ -450,6 +450,51 @@ namespace cs_merchandise
             selectedCustNameTxt.Text = custfn + " " + custln;
         }
 
+        private void sales_control_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(sales_control.SelectedIndex == 1)
+                reloadOrders();
+        }
+
+        private void reloadOrders()
+        {
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
+            {
+                databasecon.Open();
+                string query = "SELECT " +
+                               "orders.order_id, orders.order_date, orders.order_status, CONCAT(customer.lastname, ', ', customer.firstname) as customer, " +
+                               "orders.claim_date, orders.payment_status " +
+                               "FROM orders " +
+                               "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
+                var command = new MySqlCommand(query);
+                var holder = new DataTable();
+                holder.Load(command.ExecuteReader());
+                dataGridView2.DataSource = holder;
+            }
+
+        }
+
+        private DataTable showOrderDetails()
+        {
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
+            {
+                databasecon.Open();
+                string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+                string query = "SELECT " +
+                               "orders.order_id, orders.order_date, orders.order_status, " +
+                               "CONCAT(customer.lastname, ', ', customer.firstname) as customer, " +
+                               "orders.claim_date, orders.payment_status " +
+                               "FROM orders " +
+                               "WHERE orders.order_id = @id" +
+                               "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
+                var command = new MySqlCommand(query);
+                command.Parameters.AddWithValue("@id", selectedOrder);
+                var holder = new DataTable();
+                holder.Load(command.ExecuteReader());
+                return holder;
+            }
+        }
+
         /*
         DataGridView GetSelectedRows(DataGridView dgv)
         {
