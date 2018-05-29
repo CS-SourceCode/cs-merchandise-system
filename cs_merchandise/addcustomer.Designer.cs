@@ -51,7 +51,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Purple;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.panel3.Location = new System.Drawing.Point(-3, -3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(537, 10);
@@ -87,7 +87,7 @@
             // 
             // btnNewCust
             // 
-            this.btnNewCust.BackColor = System.Drawing.Color.Purple;
+            this.btnNewCust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.btnNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCust.ForeColor = System.Drawing.Color.White;
@@ -146,7 +146,7 @@
             this.cluster_select.Location = new System.Drawing.Point(276, 214);
             this.cluster_select.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cluster_select.Name = "cluster_select";
-            this.cluster_select.NomalColor = System.Drawing.Color.Purple;
+            this.cluster_select.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.cluster_select.onHoverColor = System.Drawing.Color.Purple;
             this.cluster_select.selectedIndex = -1;
             this.cluster_select.Size = new System.Drawing.Size(234, 43);
@@ -253,7 +253,7 @@
             // 
             // btnCloseNewCust
             // 
-            this.btnCloseNewCust.BackColor = System.Drawing.Color.Purple;
+            this.btnCloseNewCust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.btnCloseNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseNewCust.ForeColor = System.Drawing.Color.White;

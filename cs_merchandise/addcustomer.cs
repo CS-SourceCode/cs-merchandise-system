@@ -46,7 +46,7 @@ namespace cs_merchandise
             }
             else
             {
-                conn.Insert("customer", "firstname", fname.Text, "lastname", lname.Text, "contact", contact.Text, "cluster", cluster_select.Text).GetQueryData();
+                conn.Insert("customer", "firstname", fname.Text, "lastname", lname.Text, "contact", contact.Text, "cluster", cluster_select.selectedValue).GetQueryData();
             }
             mainMenu.setCustomerlist();
             
