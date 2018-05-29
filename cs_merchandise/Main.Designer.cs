@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.browser_sales = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.sales_control = new System.Windows.Forms.TabControl();
             this.sales_pos = new System.Windows.Forms.TabPage();
             this.panel_orderline = new System.Windows.Forms.Panel();
             this.price_total = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -62,6 +62,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.selectedCustIDTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.removeall_merch = new System.Windows.Forms.Button();
             this.remove_merch = new System.Windows.Forms.Button();
             this.btnAdditem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,6 +70,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.sell_merchandise = new System.Windows.Forms.DataGridView();
             this.sales_Orders = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.bunifuDatepicker2 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cluster_select = new Bunifu.Framework.UI.BunifuDropdown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.browser_merchandise = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -101,29 +117,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.removeall_merch = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cluster_select = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuDatepicker2 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
-            this.label15 = new System.Windows.Forms.Label();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
             this.panel_orders1.SuspendLayout();
             this.browser_sales.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.sales_control.SuspendLayout();
             this.sales_pos.SuspendLayout();
             this.panel_orderline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderline)).BeginInit();
@@ -132,13 +132,13 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).BeginInit();
             this.sales_Orders.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.browser_merchandise.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.admin_panel.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -247,7 +247,7 @@
             // 
             // browser_sales
             // 
-            this.browser_sales.Controls.Add(this.tabControl1);
+            this.browser_sales.Controls.Add(this.sales_control);
             this.browser_sales.Location = new System.Drawing.Point(4, 25);
             this.browser_sales.Name = "browser_sales";
             this.browser_sales.Padding = new System.Windows.Forms.Padding(3);
@@ -256,15 +256,15 @@
             this.browser_sales.Text = "Sales";
             this.browser_sales.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // sales_control
             // 
-            this.tabControl1.Controls.Add(this.sales_pos);
-            this.tabControl1.Controls.Add(this.sales_Orders);
-            this.tabControl1.Location = new System.Drawing.Point(-4, 22);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1627, 918);
-            this.tabControl1.TabIndex = 0;
+            this.sales_control.Controls.Add(this.sales_pos);
+            this.sales_control.Controls.Add(this.sales_Orders);
+            this.sales_control.Location = new System.Drawing.Point(-4, 22);
+            this.sales_control.Name = "sales_control";
+            this.sales_control.SelectedIndex = 0;
+            this.sales_control.Size = new System.Drawing.Size(1627, 918);
+            this.sales_control.TabIndex = 0;
             // 
             // sales_pos
             // 
@@ -471,7 +471,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Purple;
-            this.label11.Location = new System.Drawing.Point(8, 624);
+            this.label11.Location = new System.Drawing.Point(37, 622);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 23);
             this.label11.TabIndex = 18;
@@ -488,10 +488,10 @@
             this.selectedCustNameTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.selectedCustNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.selectedCustNameTxt.isPassword = false;
-            this.selectedCustNameTxt.Location = new System.Drawing.Point(12, 726);
+            this.selectedCustNameTxt.Location = new System.Drawing.Point(41, 724);
             this.selectedCustNameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.selectedCustNameTxt.Name = "selectedCustNameTxt";
-            this.selectedCustNameTxt.Size = new System.Drawing.Size(509, 44);
+            this.selectedCustNameTxt.Size = new System.Drawing.Size(446, 44);
             this.selectedCustNameTxt.TabIndex = 19;
             this.selectedCustNameTxt.Text = "Select Customer";
             this.selectedCustNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -502,9 +502,9 @@
             this.btnNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCust.ForeColor = System.Drawing.Color.White;
-            this.btnNewCust.Location = new System.Drawing.Point(309, 574);
+            this.btnNewCust.Location = new System.Drawing.Point(12, 791);
             this.btnNewCust.Name = "btnNewCust";
-            this.btnNewCust.Size = new System.Drawing.Size(212, 59);
+            this.btnNewCust.Size = new System.Drawing.Size(509, 59);
             this.btnNewCust.TabIndex = 16;
             this.btnNewCust.Text = "New Customer";
             this.btnNewCust.UseVisualStyleBackColor = false;
@@ -517,13 +517,13 @@
             this.customer_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customer_list.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.customer_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customer_list.Location = new System.Drawing.Point(532, 577);
+            this.customer_list.Location = new System.Drawing.Point(528, 577);
             this.customer_list.Name = "customer_list";
             this.customer_list.ReadOnly = true;
             this.customer_list.RowHeadersVisible = false;
             this.customer_list.RowTemplate.Height = 24;
             this.customer_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customer_list.Size = new System.Drawing.Size(524, 208);
+            this.customer_list.Size = new System.Drawing.Size(528, 191);
             this.customer_list.TabIndex = 15;
             this.customer_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_list_CellClick);
             // 
@@ -532,7 +532,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(8, 699);
+            this.label8.Location = new System.Drawing.Point(37, 697);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 23);
             this.label8.TabIndex = 14;
@@ -549,10 +549,10 @@
             this.selectedCustIDTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.selectedCustIDTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.selectedCustIDTxt.isPassword = false;
-            this.selectedCustIDTxt.Location = new System.Drawing.Point(12, 651);
+            this.selectedCustIDTxt.Location = new System.Drawing.Point(41, 649);
             this.selectedCustIDTxt.Margin = new System.Windows.Forms.Padding(4);
             this.selectedCustIDTxt.Name = "selectedCustIDTxt";
-            this.selectedCustIDTxt.Size = new System.Drawing.Size(509, 44);
+            this.selectedCustIDTxt.Size = new System.Drawing.Size(446, 44);
             this.selectedCustIDTxt.TabIndex = 13;
             this.selectedCustIDTxt.Text = "Select Customer";
             this.selectedCustIDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -567,6 +567,20 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(212, 465);
             this.panel9.TabIndex = 12;
+            // 
+            // removeall_merch
+            // 
+            this.removeall_merch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.removeall_merch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeall_merch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeall_merch.ForeColor = System.Drawing.Color.White;
+            this.removeall_merch.Location = new System.Drawing.Point(3, 135);
+            this.removeall_merch.Name = "removeall_merch";
+            this.removeall_merch.Size = new System.Drawing.Size(204, 60);
+            this.removeall_merch.TabIndex = 7;
+            this.removeall_merch.Text = "Remove All";
+            this.removeall_merch.UseVisualStyleBackColor = false;
+            this.removeall_merch.Click += new System.EventHandler(this.removeall_merch_Click);
             // 
             // remove_merch
             // 
@@ -613,9 +627,9 @@
             this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select_customer.ForeColor = System.Drawing.Color.White;
-            this.select_customer.Location = new System.Drawing.Point(12, 791);
+            this.select_customer.Location = new System.Drawing.Point(532, 791);
             this.select_customer.Name = "select_customer";
-            this.select_customer.Size = new System.Drawing.Size(1044, 59);
+            this.select_customer.Size = new System.Drawing.Size(524, 59);
             this.select_customer.TabIndex = 10;
             this.select_customer.Text = "Select Customer";
             this.select_customer.UseVisualStyleBackColor = false;
@@ -660,6 +674,220 @@
             this.sales_Orders.TabIndex = 1;
             this.sales_Orders.Text = "Orders";
             this.sales_Orders.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel11.Controls.Add(this.label15);
+            this.panel11.Location = new System.Drawing.Point(926, 6);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(679, 855);
+            this.panel11.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Purple;
+            this.label15.Location = new System.Drawing.Point(12, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 28);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Order Details";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel10.Controls.Add(this.bunifuDatepicker2);
+            this.panel10.Controls.Add(this.bunifuDatepicker1);
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Controls.Add(this.label14);
+            this.panel10.Controls.Add(this.bunifuMaterialTextbox2);
+            this.panel10.Controls.Add(this.label13);
+            this.panel10.Controls.Add(this.label12);
+            this.panel10.Controls.Add(this.bunifuMaterialTextbox1);
+            this.panel10.Controls.Add(this.bunifuDropdown1);
+            this.panel10.Controls.Add(this.cluster_select);
+            this.panel10.Controls.Add(this.label10);
+            this.panel10.Controls.Add(this.dataGridView2);
+            this.panel10.Location = new System.Drawing.Point(6, 6);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(914, 855);
+            this.panel10.TabIndex = 0;
+            // 
+            // bunifuDatepicker2
+            // 
+            this.bunifuDatepicker2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.bunifuDatepicker2.BorderRadius = 0;
+            this.bunifuDatepicker2.ForeColor = System.Drawing.Color.White;
+            this.bunifuDatepicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.bunifuDatepicker2.FormatCustom = null;
+            this.bunifuDatepicker2.Location = new System.Drawing.Point(381, 57);
+            this.bunifuDatepicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDatepicker2.Name = "bunifuDatepicker2";
+            this.bunifuDatepicker2.Size = new System.Drawing.Size(234, 44);
+            this.bunifuDatepicker2.TabIndex = 26;
+            this.bunifuDatepicker2.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
+            // 
+            // bunifuDatepicker1
+            // 
+            this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.bunifuDatepicker1.BorderRadius = 0;
+            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.bunifuDatepicker1.FormatCustom = null;
+            this.bunifuDatepicker1.Location = new System.Drawing.Point(662, 57);
+            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
+            this.bunifuDatepicker1.Size = new System.Drawing.Size(234, 44);
+            this.bunifuDatepicker1.TabIndex = 25;
+            this.bunifuDatepicker1.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.panel12.Location = new System.Drawing.Point(610, 90);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(55, 10);
+            this.panel12.TabIndex = 32;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Purple;
+            this.label14.Location = new System.Drawing.Point(618, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(42, 28);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "TO";
+            // 
+            // bunifuMaterialTextbox2
+            // 
+            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox2.HintText = "Enter Quantity";
+            this.bunifuMaterialTextbox2.isPassword = false;
+            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Purple;
+            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox2.LineThickness = 3;
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(123, 110);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(186, 45);
+            this.bunifuMaterialTextbox2.TabIndex = 30;
+            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Purple;
+            this.label13.Location = new System.Drawing.Point(39, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 23);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Name:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Purple;
+            this.label12.Location = new System.Drawing.Point(10, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 23);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Order No:";
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox1.HintText = "Enter Quantity";
+            this.bunifuMaterialTextbox1.isPassword = false;
+            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Purple;
+            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuMaterialTextbox1.LineThickness = 3;
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(123, 57);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(186, 45);
+            this.bunifuMaterialTextbox1.TabIndex = 27;
+            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuDropdown1
+            // 
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown1.BorderRadius = 3;
+            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown1.Items = new string[] {
+        "CS",
+        "HUMLET",
+        "EA",
+        "ACC"};
+            this.bunifuDropdown1.Location = new System.Drawing.Point(381, 109);
+            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDropdown1.Name = "bunifuDropdown1";
+            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.Purple;
+            this.bunifuDropdown1.selectedIndex = -1;
+            this.bunifuDropdown1.Size = new System.Drawing.Size(234, 43);
+            this.bunifuDropdown1.TabIndex = 24;
+            // 
+            // cluster_select
+            // 
+            this.cluster_select.BackColor = System.Drawing.Color.Transparent;
+            this.cluster_select.BorderRadius = 3;
+            this.cluster_select.DisabledColor = System.Drawing.Color.Gray;
+            this.cluster_select.ForeColor = System.Drawing.Color.White;
+            this.cluster_select.Items = new string[] {
+        "CS",
+        "HUMLET",
+        "EA",
+        "ACC"};
+            this.cluster_select.Location = new System.Drawing.Point(662, 109);
+            this.cluster_select.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cluster_select.Name = "cluster_select";
+            this.cluster_select.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.cluster_select.onHoverColor = System.Drawing.Color.Purple;
+            this.cluster_select.selectedIndex = -1;
+            this.cluster_select.Size = new System.Drawing.Size(234, 43);
+            this.cluster_select.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Purple;
+            this.label10.Location = new System.Drawing.Point(9, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 28);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "All Orders";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 160);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(914, 632);
+            this.dataGridView2.TabIndex = 1;
             // 
             // browser_merchandise
             // 
@@ -852,6 +1080,7 @@
             this.btnReports.Text = "Reports";
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             this.btnReports.Enter += new System.EventHandler(this.btnReports_Enter);
             this.btnReports.Leave += new System.EventHandler(this.btnReports_Leave);
             // 
@@ -869,6 +1098,7 @@
             this.btnUsers.Text = "Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             this.btnUsers.Enter += new System.EventHandler(this.btnUsers_Enter);
             this.btnUsers.Leave += new System.EventHandler(this.btnUsers_Leave);
             // 
@@ -886,6 +1116,7 @@
             this.btnOrders.Text = "       Orders";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             this.btnOrders.Enter += new System.EventHandler(this.btnOrders_Enter);
             this.btnOrders.Leave += new System.EventHandler(this.btnOrders_Leave);
             // 
@@ -903,6 +1134,7 @@
             this.btnSell.Text = "       Sell";
             this.btnSell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             this.btnSell.Enter += new System.EventHandler(this.btnSell_Enter);
             this.btnSell.Leave += new System.EventHandler(this.btnSell_Leave);
             // 
@@ -920,6 +1152,7 @@
             this.btnMerch.Text = "Merchandise";
             this.btnMerch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMerch.UseVisualStyleBackColor = false;
+            this.btnMerch.Click += new System.EventHandler(this.btnMerch_Click);
             this.btnMerch.Enter += new System.EventHandler(this.btnMerch_Enter);
             this.btnMerch.Leave += new System.EventHandler(this.btnMerch_Leave);
             // 
@@ -937,6 +1170,7 @@
             this.btnSales.Text = "Sales";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             this.btnSales.Enter += new System.EventHandler(this.btnSales_Enter);
             this.btnSales.Leave += new System.EventHandler(this.btnSales_Leave);
             // 
@@ -1003,237 +1237,9 @@
             this.roundedCorners_Orderline.ElipseRadius = 5;
             this.roundedCorners_Orderline.TargetControl = this.panel_orderdetails;
             // 
-            // removeall_merch
-            // 
-            this.removeall_merch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.removeall_merch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeall_merch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeall_merch.ForeColor = System.Drawing.Color.White;
-            this.removeall_merch.Location = new System.Drawing.Point(3, 135);
-            this.removeall_merch.Name = "removeall_merch";
-            this.removeall_merch.Size = new System.Drawing.Size(204, 60);
-            this.removeall_merch.TabIndex = 7;
-            this.removeall_merch.Text = "Remove All";
-            this.removeall_merch.UseVisualStyleBackColor = false;
-            this.removeall_merch.Click += new System.EventHandler(this.removeall_merch_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel10.Controls.Add(this.bunifuDatepicker2);
-            this.panel10.Controls.Add(this.bunifuDatepicker1);
-            this.panel10.Controls.Add(this.panel12);
-            this.panel10.Controls.Add(this.label14);
-            this.panel10.Controls.Add(this.bunifuMaterialTextbox2);
-            this.panel10.Controls.Add(this.label13);
-            this.panel10.Controls.Add(this.label12);
-            this.panel10.Controls.Add(this.bunifuMaterialTextbox1);
-            this.panel10.Controls.Add(this.bunifuDropdown1);
-            this.panel10.Controls.Add(this.cluster_select);
-            this.panel10.Controls.Add(this.label10);
-            this.panel10.Controls.Add(this.dataGridView2);
-            this.panel10.Location = new System.Drawing.Point(6, 6);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(914, 855);
-            this.panel10.TabIndex = 0;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel11.Controls.Add(this.label15);
-            this.panel11.Location = new System.Drawing.Point(926, 6);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(679, 855);
-            this.panel11.TabIndex = 1;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 160);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(914, 632);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Purple;
-            this.label10.Location = new System.Drawing.Point(9, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 28);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "All Orders";
-            // 
-            // cluster_select
-            // 
-            this.cluster_select.BackColor = System.Drawing.Color.Transparent;
-            this.cluster_select.BorderRadius = 3;
-            this.cluster_select.DisabledColor = System.Drawing.Color.Gray;
-            this.cluster_select.ForeColor = System.Drawing.Color.White;
-            this.cluster_select.Items = new string[] {
-        "CS",
-        "HUMLET",
-        "EA",
-        "ACC"};
-            this.cluster_select.Location = new System.Drawing.Point(662, 109);
-            this.cluster_select.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cluster_select.Name = "cluster_select";
-            this.cluster_select.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.cluster_select.onHoverColor = System.Drawing.Color.Purple;
-            this.cluster_select.selectedIndex = -1;
-            this.cluster_select.Size = new System.Drawing.Size(234, 43);
-            this.cluster_select.TabIndex = 23;
-            // 
-            // bunifuDropdown1
-            // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 3;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
-        "CS",
-        "HUMLET",
-        "EA",
-        "ACC"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(381, 109);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.Purple;
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(234, 43);
-            this.bunifuDropdown1.TabIndex = 24;
-            // 
-            // bunifuDatepicker1
-            // 
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(662, 57);
-            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(234, 44);
-            this.bunifuDatepicker1.TabIndex = 25;
-            this.bunifuDatepicker1.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
-            // 
-            // bunifuDatepicker2
-            // 
-            this.bunifuDatepicker2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.bunifuDatepicker2.BorderRadius = 0;
-            this.bunifuDatepicker2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker2.FormatCustom = null;
-            this.bunifuDatepicker2.Location = new System.Drawing.Point(381, 57);
-            this.bunifuDatepicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuDatepicker2.Name = "bunifuDatepicker2";
-            this.bunifuDatepicker2.Size = new System.Drawing.Size(234, 44);
-            this.bunifuDatepicker2.TabIndex = 26;
-            this.bunifuDatepicker2.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
-            // 
-            // bunifuMaterialTextbox1
-            // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "Enter Quantity";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Purple;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(123, 57);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(186, 45);
-            this.bunifuMaterialTextbox1.TabIndex = 27;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Purple;
-            this.label12.Location = new System.Drawing.Point(10, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 23);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Order No:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Purple;
-            this.label13.Location = new System.Drawing.Point(39, 110);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 23);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Name:";
-            // 
-            // bunifuMaterialTextbox2
-            // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox2.HintText = "Enter Quantity";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Purple;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(123, 110);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(186, 45);
-            this.bunifuMaterialTextbox2.TabIndex = 30;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Purple;
-            this.label14.Location = new System.Drawing.Point(618, 60);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 28);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "TO";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.panel12.Location = new System.Drawing.Point(610, 90);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(55, 10);
-            this.panel12.TabIndex = 32;
-            // 
             // bunifuFormFadeTransition1
             // 
             this.bunifuFormFadeTransition1.Delay = 5;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Purple;
-            this.label15.Location = new System.Drawing.Point(12, 10);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(164, 28);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Order Details";
             // 
             // Main
             // 
@@ -1261,7 +1267,7 @@
             this.panel_orders1.ResumeLayout(false);
             this.panel_orders1.PerformLayout();
             this.browser_sales.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.sales_control.ResumeLayout(false);
             this.sales_pos.ResumeLayout(false);
             this.panel_orderline.ResumeLayout(false);
             this.panel_orderline.PerformLayout();
@@ -1272,15 +1278,15 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).EndInit();
             this.sales_Orders.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.browser_merchandise.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.admin_panel.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1305,7 +1311,7 @@
         private System.Windows.Forms.TabPage browser_merchandise;
         private System.Windows.Forms.TabPage browser_reports;
         private System.Windows.Forms.TabPage browser_users;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl sales_control;
         private System.Windows.Forms.TabPage sales_pos;
         private System.Windows.Forms.TabPage sales_Orders;
         private System.Windows.Forms.Panel panel_orders1;
