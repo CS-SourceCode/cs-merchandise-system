@@ -17,7 +17,7 @@ namespace cs_merchandise
         {
             RefreshCmd();
         }
-        
+
         public string lastID()
         {
             return _cmd.LastInsertedId.ToString();
@@ -30,7 +30,7 @@ namespace cs_merchandise
 
         public dynamic GetQueryData()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=root;"))
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
             {
                 databasecon.Open();
                 _cmd.CommandText = _sql;
@@ -44,25 +44,7 @@ namespace cs_merchandise
                 return _holder;
             }
         }
-        //wait
-        /*
-        public dynamic GetQueryData(int x)
-        {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=amc;Uid=root;Pwd=root;"))
-            {
-                databasecon.Open();
-                _cmd.CommandText = _sql;
-                _cmd.Connection = databasecon;
-                if (_flag)
-                {
-                    _cmd.ExecuteNonQuery();
-                    return _flag;
-                }
-                object tae.Load(_cmd.ExecuteScalar());
-                return _holder;
-            }
-        }
-        */
+
         public DataTable GetData()
         {
             return _holder;
@@ -81,7 +63,7 @@ namespace cs_merchandise
             return this;
         }
 
-        public DatabaseConn Select(string table, string[]fields, string[] wheres)
+        public DatabaseConn Select(string table, string[] fields, string[] wheres)
         {
             return Select(table, fields).Where(wheres);
         }
@@ -96,7 +78,7 @@ namespace cs_merchandise
                 for (var i = 0; i < fields.Length; i++)
                 {
                     _sql += fields[i] + " = @" + fields[i] + (i + 2 < fields.Length ? " ,    " : " ");
-                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]); 
+                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]);
                     //Every other parameter added as parameterized value
                 }
                 return this;
@@ -121,7 +103,7 @@ namespace cs_merchandise
                 {
                     _sql += fields[i] + (i + 2 < fields.Length ? " ,    " : ") ");
                     values += "@" + fields[i] + (i + 2 < fields.Length ? " ,    " : ") ");
-                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]); 
+                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]);
                     //Every other parameter added as parameterized value
                 }
                 _sql += values;
@@ -138,7 +120,7 @@ namespace cs_merchandise
                 for (var i = 0; i < fields.Length; i++)
                 {
                     _sql += fields[i] + " = @" + fields[i] + (i + 2 < fields.Length ? " AND " : "");
-                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]); 
+                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]);
                     //Every other parameter added as parameterized value
                 }
                 return this;

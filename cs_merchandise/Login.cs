@@ -13,6 +13,7 @@ namespace cs_merchandise
 {
     public partial class Login : Form
     {
+
         private DatabaseConn conn = new DatabaseConn();
         public string username, fn, ln, userid;
 
