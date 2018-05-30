@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace cs_merchandise
 {
@@ -42,6 +43,39 @@ namespace cs_merchandise
         }
         public Login Login { get; internal set; }
 
+
+        decimal payment;
+        int order_status;
+        decimal change;
+        int customer_id;
+        string paystatus;
+
+
+        public void checkoutOrder(decimal payment, decimal change, string paystatus)
+        {
+
+            DateTime date = DateTime.Now;
+            var order_date = date.Date;
+
+            order_status = 1;
+            customer_id = int.Parse(selectedCustIDTxt.Text);
+            this.paystatus = paystatus;
+            this.payment = payment;
+            this.change = change;
+
+            conn.Insert("orders", "order_date", DateTime.Now.ToString("yyyy-MM-dd")
+                /*order_date.ToString("dd/MM/yyyy")*/, "order_status", "1", "customer_id", customer_id.ToString(), "payment_status", paystatus, "payment", payment.ToString()).GetQueryData();
+            //orderline.ColumnCount = 5;
+            string temp_orderid;
+            temp_orderid = conn.lastID();
+            foreach (DataGridViewRow rows in orderline.Rows)
+            {
+                MessageBox.Show(rows.Cells[0].Value.ToString());
+                conn.Insert("orderline", "order_id", temp_orderid, "merch_id", rows.Cells[3].Value.ToString(), "quantity", rows.Cells[1].Value.ToString(), "total_price", rows.Cells[2].Value.ToString()).GetQueryData();
+            }
+
+
+        }
 
         private void getOrderId()
         {
@@ -311,6 +345,7 @@ namespace cs_merchandise
                     row.Cells["merch_name"].Value = temp_merchname;
                     row.Cells["merch_quantity"].Value = temp_qty;
                     row.Cells["merch_price"].Value = temp_price * temp_qty;
+                    row.Cells["merch_id"].Value = temp_merchid;
                 }
             }
             else
@@ -325,17 +360,22 @@ namespace cs_merchandise
                 row.Cells["merch_name"].Value = temp_merchname;
                 row.Cells["merch_quantity"].Value = temp_qty;
                 row.Cells["merch_price"].Value = temp_price * temp_qty;
+                row.Cells["merch_id"].Value = temp_merchid;
             }
 
             price_total.Text = (from DataGridViewRow row in orderline.Rows
                                 where row.Cells[2].FormattedValue.ToString() != string.Empty
                                 select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum().ToString();
+            total_price = (from DataGridViewRow row in orderline.Rows
+                           where row.Cells[2].FormattedValue.ToString() != string.Empty
+                           select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum();
 
             btnAdditem.Text = "Update";
         }
 
         string temp_merchname;
         int temp_qty = 0;
+        int temp_merchid = 0;
         decimal temp_price;
         decimal merch_total;
         decimal total_price;
@@ -348,6 +388,7 @@ namespace cs_merchandise
                 temp_merchname = sell_merchandise.Rows[e.RowIndex].Cells["merch_name"].Value.ToString();
                 temp_price = Convert.ToDecimal(sell_merchandise.Rows[e.RowIndex].Cells["merch_price"].Value);
                 merch_total = Convert.ToDecimal(temp_price) * Convert.ToDecimal(temp_qty);
+                temp_merchid = Convert.ToInt32(sell_merchandise.Rows[e.RowIndex].Cells["merch_id"].Value);
                 item_quantity.Text = "1";
             }
             bool Found = false;
@@ -392,6 +433,9 @@ namespace cs_merchandise
             price_total.Text = (from DataGridViewRow row in orderline.Rows
                                 where row.Cells[2].FormattedValue.ToString() != string.Empty
                                 select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum().ToString();
+            total_price = (from DataGridViewRow row in orderline.Rows
+                           where row.Cells[2].FormattedValue.ToString() != string.Empty
+                           select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum();
         }
 
         private void btnNewCust_Click(object sender, EventArgs e)
@@ -434,7 +478,7 @@ namespace cs_merchandise
                 p.StartPosition = FormStartPosition.CenterScreen;
                 p.BringToFront();
 
-                checkout chkout = new checkout();
+                checkout chkout = new checkout(this,total_price);
                 chkout.checkoutform = this;
                 chkout.ShowDialog(this);
             }
@@ -489,7 +533,7 @@ namespace cs_merchandise
                 databasecon.Open();
                 string query = "SELECT " +
                                "orders.order_id, orders.order_date, orders.order_status, CONCAT(customer.lastname, ', ', customer.firstname) as customer, " +
-                               "orders.claim_date, orders.payment_status " +
+                               "orders.payment_status " +
                                "FROM orders " +
                                "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
                 var command = new MySqlCommand(query);
@@ -508,7 +552,7 @@ namespace cs_merchandise
                 databasecon.Open();
                 string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
                 string query = "SELECT CONCAT(c.firstname,' ',c.lastname) as name, c.contact, c.cluster, " +
-                    "o.order_date, o.payment_status, o.claim_date, o.order_status " +
+                    "o.order_date, o.payment_status, o.order_status " +
                     "FROM orders as o " +
                     "NATURAL JOIN customer as c " +
                     "WHERE o.order_id = @id";
@@ -522,9 +566,8 @@ namespace cs_merchandise
                 orderCcluster.Text = customerDetails.Rows[0][2].ToString();
                 orderOdate.Text = customerDetails.Rows[0][3].ToString();
                 orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
-                orderOcdate.Text = customerDetails.Rows[0][5].ToString();
-                orderOstatus.Text = customerDetails.Rows[0][6].ToString();
-                query = "SELECT m.merch_name, ol.quantity, ol.amount_paid, ol.total_price " +
+                orderOstatus.Text = customerDetails.Rows[0][5].ToString();
+                query = "SELECT m.merch_name, ol.quantity, o.payment, ol.total_price " +
                     "FROM orderline as ol " +
                     "INNER JOIN merchandise AS m " +
                     "ON ol.merch_id = m.merch_id " +

@@ -54,6 +54,7 @@
             this.merch_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.merch_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_orderdetails = new System.Windows.Forms.Panel();
+            this.select_customer = new System.Windows.Forms.Button();
             this.item_quantity = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label11 = new System.Windows.Forms.Label();
             this.selectedCustNameTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -62,17 +63,46 @@
             this.label8 = new System.Windows.Forms.Label();
             this.selectedCustIDTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.removeall_merch = new System.Windows.Forms.Button();
             this.remove_merch = new System.Windows.Forms.Button();
             this.btnAdditem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.select_customer = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.sell_merchandise = new System.Windows.Forms.DataGridView();
             this.sales_Orders = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.orderOcdate = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.orderOpstatus = new System.Windows.Forms.Label();
+            this.orderCcontact = new System.Windows.Forms.Label();
+            this.orderOstatus = new System.Windows.Forms.Label();
+            this.orderOdate = new System.Windows.Forms.Label();
+            this.orderCcluster = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.orderCname = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.bunifuDatepicker2 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.cluster_select = new Bunifu.Framework.UI.BunifuDropdown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.browser_merchandise = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.browser_reports = new System.Windows.Forms.TabPage();
             this.browser_users = new System.Windows.Forms.TabPage();
@@ -101,37 +131,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.removeall_merch = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cluster_select = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuDatepicker2 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.orderCname = new System.Windows.Forms.Label();
-            this.orderCcluster = new System.Windows.Forms.Label();
-            this.orderCcontact = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.orderOdate = new System.Windows.Forms.Label();
-            this.orderOpstatus = new System.Windows.Forms.Label();
-            this.orderOcdate = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.orderOstatus = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.merch_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
@@ -146,11 +147,14 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).BeginInit();
             this.sales_Orders.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.browser_merchandise.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.admin_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -277,6 +281,7 @@
             this.sales_control.SelectedIndex = 0;
             this.sales_control.Size = new System.Drawing.Size(1627, 918);
             this.sales_control.TabIndex = 0;
+            this.sales_control.SelectedIndexChanged += new System.EventHandler(this.sales_control_SelectedIndexChanged);
             // 
             // sales_pos
             // 
@@ -405,7 +410,8 @@
             this.orderline.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.merch_name,
             this.merch_quantity,
-            this.merch_price});
+            this.merch_price,
+            this.merch_id});
             this.orderline.Location = new System.Drawing.Point(-1, 59);
             this.orderline.Name = "orderline";
             this.orderline.ReadOnly = true;
@@ -458,6 +464,20 @@
             this.panel_orderdetails.Name = "panel_orderdetails";
             this.panel_orderdetails.Size = new System.Drawing.Size(1061, 855);
             this.panel_orderdetails.TabIndex = 2;
+            // 
+            // select_customer
+            // 
+            this.select_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.select_customer.ForeColor = System.Drawing.Color.White;
+            this.select_customer.Location = new System.Drawing.Point(528, 791);
+            this.select_customer.Name = "select_customer";
+            this.select_customer.Size = new System.Drawing.Size(524, 59);
+            this.select_customer.TabIndex = 10;
+            this.select_customer.Text = "Select Customer";
+            this.select_customer.UseVisualStyleBackColor = false;
+            this.select_customer.Click += new System.EventHandler(this.select_customer_Click);
             // 
             // item_quantity
             // 
@@ -633,20 +653,6 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Customer Details";
             // 
-            // select_customer
-            // 
-            this.select_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_customer.ForeColor = System.Drawing.Color.White;
-            this.select_customer.Location = new System.Drawing.Point(528, 791);
-            this.select_customer.Name = "select_customer";
-            this.select_customer.Size = new System.Drawing.Size(524, 59);
-            this.select_customer.TabIndex = 10;
-            this.select_customer.Text = "Select Customer";
-            this.select_customer.UseVisualStyleBackColor = false;
-            this.select_customer.Click += new System.EventHandler(this.select_customer_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -706,10 +712,188 @@
             this.panel11.Controls.Add(this.label16);
             this.panel11.Controls.Add(this.label20);
             this.panel11.Controls.Add(this.label15);
-            this.panel11.Location = new System.Drawing.Point(926, 6);
+            this.panel11.Location = new System.Drawing.Point(925, 6);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(679, 855);
             this.panel11.TabIndex = 1;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 247);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(679, 608);
+            this.dataGridView3.TabIndex = 33;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Purple;
+            this.label24.Location = new System.Drawing.Point(391, 199);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(127, 23);
+            this.label24.TabIndex = 30;
+            this.label24.Text = "Claim Date:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Purple;
+            this.label18.Location = new System.Drawing.Point(47, 204);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(131, 23);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Contact No:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Purple;
+            this.label23.Location = new System.Drawing.Point(360, 135);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(167, 23);
+            this.label23.TabIndex = 29;
+            this.label23.Text = "Payment Status:";
+            // 
+            // orderOcdate
+            // 
+            this.orderOcdate.AutoSize = true;
+            this.orderOcdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderOcdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderOcdate.Location = new System.Drawing.Point(551, 199);
+            this.orderOcdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderOcdate.Name = "orderOcdate";
+            this.orderOcdate.Size = new System.Drawing.Size(0, 23);
+            this.orderOcdate.TabIndex = 29;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Purple;
+            this.label17.Location = new System.Drawing.Point(47, 140);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 23);
+            this.label17.TabIndex = 29;
+            this.label17.Text = "Cluster:";
+            // 
+            // orderOpstatus
+            // 
+            this.orderOpstatus.AutoSize = true;
+            this.orderOpstatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderOpstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderOpstatus.Location = new System.Drawing.Point(558, 135);
+            this.orderOpstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderOpstatus.Name = "orderOpstatus";
+            this.orderOpstatus.Size = new System.Drawing.Size(0, 23);
+            this.orderOpstatus.TabIndex = 29;
+            // 
+            // orderCcontact
+            // 
+            this.orderCcontact.AutoSize = true;
+            this.orderCcontact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderCcontact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderCcontact.Location = new System.Drawing.Point(212, 204);
+            this.orderCcontact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderCcontact.Name = "orderCcontact";
+            this.orderCcontact.Size = new System.Drawing.Size(0, 23);
+            this.orderCcontact.TabIndex = 29;
+            // 
+            // orderOstatus
+            // 
+            this.orderOstatus.AutoSize = true;
+            this.orderOstatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderOstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderOstatus.Location = new System.Drawing.Point(568, 17);
+            this.orderOstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderOstatus.Name = "orderOstatus";
+            this.orderOstatus.Size = new System.Drawing.Size(0, 23);
+            this.orderOstatus.TabIndex = 29;
+            // 
+            // orderOdate
+            // 
+            this.orderOdate.AutoSize = true;
+            this.orderOdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderOdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderOdate.Location = new System.Drawing.Point(591, 71);
+            this.orderOdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderOdate.Name = "orderOdate";
+            this.orderOdate.Size = new System.Drawing.Size(0, 23);
+            this.orderOdate.TabIndex = 29;
+            // 
+            // orderCcluster
+            // 
+            this.orderCcluster.AutoSize = true;
+            this.orderCcluster.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderCcluster.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderCcluster.Location = new System.Drawing.Point(212, 140);
+            this.orderCcluster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderCcluster.Name = "orderCcluster";
+            this.orderCcluster.Size = new System.Drawing.Size(0, 23);
+            this.orderCcluster.TabIndex = 29;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Purple;
+            this.label19.Location = new System.Drawing.Point(420, 71);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(126, 23);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Order Date:";
+            // 
+            // orderCname
+            // 
+            this.orderCname.AutoSize = true;
+            this.orderCname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderCname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderCname.Location = new System.Drawing.Point(212, 76);
+            this.orderCname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.orderCname.Name = "orderCname";
+            this.orderCname.Size = new System.Drawing.Size(0, 23);
+            this.orderCname.TabIndex = 29;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Purple;
+            this.label16.Location = new System.Drawing.Point(47, 76);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(109, 23);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Customer:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Purple;
+            this.label20.Location = new System.Drawing.Point(413, 15);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(133, 23);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Order Status:";
             // 
             // label15
             // 
@@ -1263,183 +1447,12 @@
             // 
             this.bunifuFormFadeTransition1.Delay = 5;
             // 
-            // label16
+            // merch_id
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Purple;
-            this.label16.Location = new System.Drawing.Point(47, 76);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(175, 39);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "Customer:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Purple;
-            this.label17.Location = new System.Drawing.Point(47, 140);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(130, 39);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "Cluster:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Purple;
-            this.label18.Location = new System.Drawing.Point(47, 204);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(210, 39);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Contact No:";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(52, 250);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(941, 988);
-            this.dataGridView3.TabIndex = 33;
-            // 
-            // orderCname
-            // 
-            this.orderCname.AutoSize = true;
-            this.orderCname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderCname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderCname.Location = new System.Drawing.Point(265, 76);
-            this.orderCname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderCname.Name = "orderCname";
-            this.orderCname.Size = new System.Drawing.Size(0, 39);
-            this.orderCname.TabIndex = 29;
-            // 
-            // orderCcluster
-            // 
-            this.orderCcluster.AutoSize = true;
-            this.orderCcluster.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderCcluster.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderCcluster.Location = new System.Drawing.Point(265, 140);
-            this.orderCcluster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderCcluster.Name = "orderCcluster";
-            this.orderCcluster.Size = new System.Drawing.Size(0, 39);
-            this.orderCcluster.TabIndex = 29;
-            // 
-            // orderCcontact
-            // 
-            this.orderCcontact.AutoSize = true;
-            this.orderCcontact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderCcontact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderCcontact.Location = new System.Drawing.Point(265, 204);
-            this.orderCcontact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderCcontact.Name = "orderCcontact";
-            this.orderCcontact.Size = new System.Drawing.Size(0, 39);
-            this.orderCcontact.TabIndex = 29;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Purple;
-            this.label19.Location = new System.Drawing.Point(600, 71);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(203, 39);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "Order Date:";
-            // 
-            // orderOdate
-            // 
-            this.orderOdate.AutoSize = true;
-            this.orderOdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderOdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderOdate.Location = new System.Drawing.Point(818, 71);
-            this.orderOdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderOdate.Name = "orderOdate";
-            this.orderOdate.Size = new System.Drawing.Size(0, 39);
-            this.orderOdate.TabIndex = 29;
-            // 
-            // orderOpstatus
-            // 
-            this.orderOpstatus.AutoSize = true;
-            this.orderOpstatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderOpstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderOpstatus.Location = new System.Drawing.Point(818, 135);
-            this.orderOpstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderOpstatus.Name = "orderOpstatus";
-            this.orderOpstatus.Size = new System.Drawing.Size(0, 39);
-            this.orderOpstatus.TabIndex = 29;
-            // 
-            // orderOcdate
-            // 
-            this.orderOcdate.AutoSize = true;
-            this.orderOcdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderOcdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderOcdate.Location = new System.Drawing.Point(818, 199);
-            this.orderOcdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderOcdate.Name = "orderOcdate";
-            this.orderOcdate.Size = new System.Drawing.Size(0, 39);
-            this.orderOcdate.TabIndex = 29;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Purple;
-            this.label23.Location = new System.Drawing.Point(540, 135);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(263, 39);
-            this.label23.TabIndex = 29;
-            this.label23.Text = "Payment Status:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Purple;
-            this.label24.Location = new System.Drawing.Point(600, 199);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(203, 39);
-            this.label24.TabIndex = 30;
-            this.label24.Text = "Claim Date:";
-            // 
-            // orderOstatus
-            // 
-            this.orderOstatus.AutoSize = true;
-            this.orderOstatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderOstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderOstatus.Location = new System.Drawing.Point(818, 17);
-            this.orderOstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.orderOstatus.Name = "orderOstatus";
-            this.orderOstatus.Size = new System.Drawing.Size(0, 39);
-            this.orderOstatus.TabIndex = 29;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Purple;
-            this.label20.Location = new System.Drawing.Point(593, 18);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(214, 38);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Order Status:";
+            this.merch_id.HeaderText = "Merchandise ID";
+            this.merch_id.Name = "merch_id";
+            this.merch_id.ReadOnly = true;
+            this.merch_id.Visible = false;
             // 
             // Main
             // 
@@ -1480,6 +1493,7 @@
             this.sales_Orders.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1487,7 +1501,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.admin_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1598,5 +1611,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label orderOstatus;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn merch_id;
     }
 }
