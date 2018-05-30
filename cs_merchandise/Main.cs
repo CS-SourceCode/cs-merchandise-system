@@ -23,7 +23,8 @@ namespace cs_merchandise
             btnMerch_active.Hide();
             btnReports_active.Hide();
             btnUsers_active.Hide();
-            this.Size = new Size(1918 , 1030);
+            //this.Size = new Size(1918 , 1030);
+            this.Size = new Size(1918 , 980);
             this.CenterToScreen();
 
             setMerchandise();
@@ -398,9 +399,10 @@ namespace cs_merchandise
 
             using (Plexiglass p = new Plexiglass(this))
             {
-                p.Location = new Point(0, 0);
+                //p.Location = new Point(48, 15);
+                //p.Location = new Point(0, 0);
                 p.Size = this.ClientRectangle.Size;
-                
+                p.StartPosition = FormStartPosition.CenterScreen;
                 p.BringToFront();
                 
                 addcustomer addcust = new addcustomer(this);
@@ -423,9 +425,19 @@ namespace cs_merchandise
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            checkout chkout = new checkout();
-            chkout.checkoutform = this;
-            chkout.Show();
+
+            using (Plexiglass p = new Plexiglass(this))
+            {
+                //p.Location = new Point(48, 15);
+                //p.Location = new Point(0, 0);
+                p.Size = this.ClientRectangle.Size;
+                p.StartPosition = FormStartPosition.CenterScreen;
+                p.BringToFront();
+
+                checkout chkout = new checkout();
+                chkout.checkoutform = this;
+                chkout.ShowDialog(this);
+            }
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
@@ -435,6 +447,7 @@ namespace cs_merchandise
 
         private void removeall_merch_Click(object sender, EventArgs e)
         {
+            btnAdditem.Text = "Add";
             orderline.Rows.Clear();
             orderline.Refresh();
             price_total.Text = "0.00";

@@ -39,13 +39,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnRecordOrder = new System.Windows.Forms.Button();
             this.cash_amount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnRecordOrder = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.checkout_totaldue = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.change = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +90,7 @@
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // bunifuDragControl1
             // 
@@ -120,6 +124,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.cash_amount);
             this.panel1.Controls.Add(this.label6);
@@ -135,20 +141,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(537, 10);
             this.panel7.TabIndex = 39;
-            // 
-            // btnRecordOrder
-            // 
-            this.btnRecordOrder.BackColor = System.Drawing.Color.Green;
-            this.btnRecordOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecordOrder.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecordOrder.ForeColor = System.Drawing.Color.White;
-            this.btnRecordOrder.Location = new System.Drawing.Point(12, 448);
-            this.btnRecordOrder.Name = "btnRecordOrder";
-            this.btnRecordOrder.Size = new System.Drawing.Size(456, 67);
-            this.btnRecordOrder.TabIndex = 38;
-            this.btnRecordOrder.Text = "Record Order";
-            this.btnRecordOrder.UseVisualStyleBackColor = false;
-            this.btnRecordOrder.Click += new System.EventHandler(this.btnRecordOrder_Click);
             // 
             // cash_amount
             // 
@@ -169,12 +161,26 @@
             this.cash_amount.TabIndex = 37;
             this.cash_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // btnRecordOrder
+            // 
+            this.btnRecordOrder.BackColor = System.Drawing.Color.Green;
+            this.btnRecordOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordOrder.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecordOrder.ForeColor = System.Drawing.Color.White;
+            this.btnRecordOrder.Location = new System.Drawing.Point(12, 448);
+            this.btnRecordOrder.Name = "btnRecordOrder";
+            this.btnRecordOrder.Size = new System.Drawing.Size(456, 67);
+            this.btnRecordOrder.TabIndex = 38;
+            this.btnRecordOrder.Text = "Record Order";
+            this.btnRecordOrder.UseVisualStyleBackColor = false;
+            this.btnRecordOrder.Click += new System.EventHandler(this.btnRecordOrder_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
             this.panel2.Location = new System.Drawing.Point(478, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 387);
+            this.panel2.Size = new System.Drawing.Size(10, 523);
             this.panel2.TabIndex = 39;
             // 
             // panel4
@@ -182,7 +188,7 @@
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Location = new System.Drawing.Point(-9, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 387);
+            this.panel4.Size = new System.Drawing.Size(10, 527);
             this.panel4.TabIndex = 40;
             // 
             // label1
@@ -234,23 +240,48 @@
             this.change.Text = "CHANGE";
             this.change.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(-28, 524);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(537, 10);
+            this.panel5.TabIndex = 44;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Location = new System.Drawing.Point(-7, -9);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(537, 10);
+            this.panel6.TabIndex = 45;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(-29, 151);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(537, 10);
+            this.panel8.TabIndex = 46;
+            // 
             // checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(480, 527);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.change);
             this.Controls.Add(this.checkout_totaldue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnRecordOrder);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.login_close);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "checkout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -281,5 +312,8 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMetroTextbox change;
         private Bunifu.Framework.UI.BunifuMetroTextbox checkout_totaldue;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel6;
     }
 }
