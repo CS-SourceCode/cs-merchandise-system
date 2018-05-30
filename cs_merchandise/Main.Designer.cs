@@ -75,6 +75,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.browser_reports = new System.Windows.Forms.TabPage();
             this.browser_users = new System.Windows.Forms.TabPage();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.admin_panel = new System.Windows.Forms.Panel();
             this.btnUsers_active = new System.Windows.Forms.Panel();
             this.btnReports_active = new System.Windows.Forms.Panel();
@@ -980,6 +981,13 @@
             this.browser_users.TabIndex = 4;
             this.browser_users.Text = "Users";
             this.browser_users.UseVisualStyleBackColor = true;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // admin_panel
             // 
