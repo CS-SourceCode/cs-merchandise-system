@@ -22,6 +22,16 @@ namespace cs_merchandise
         {
             return _cmd.LastInsertedId.ToString();
         }
+
+        private string tableNamer(string tableName)
+        {
+            string [] naming = tableName.Split(',');
+            if(naming.Length > 2)
+                return naming[0] + " AS " + naming[1];
+            else
+                return tableName;
+        }
+
         private void RefreshCmd()
         {
             _cmd = new MySqlCommand();
@@ -58,6 +68,7 @@ namespace cs_merchandise
         public DatabaseConn Select(string table, params string[] fields)
         {
             _flag = false;
+            table = tableNamer(table);
             RefreshCmd();
             _sql = "SELECT " + string.Join(", ", fields) + " FROM " + table + " ";
             return this;
@@ -74,6 +85,7 @@ namespace cs_merchandise
             {
                 RefreshCmd();
                 _flag = true;
+                table = tableNamer(table);
                 _sql = "UPDATE " + table + " SET ";
                 for (var i = 0; i < fields.Length; i++)
                 {
@@ -96,6 +108,7 @@ namespace cs_merchandise
             if (fields.Length % 2 == 0)
             {
                 RefreshCmd();
+                table = tableNamer(table);
                 _flag = true;
                 _sql = "INSERT INTO " + table + " (";
                 var values = "VALUES (";
@@ -127,5 +140,31 @@ namespace cs_merchandise
             }
             throw new Exception("Lack of fields/values arguements passed:" + string.Join(",", fields));
         }
+
+        private DatabaseConn Join(string table, string field1, string field2, string type)
+        {
+            table = tableNamer(table);
+            _sql += type + " JOIN @table ON @field1 = @field2 ";
+            _cmd.Parameters.AddWithValue("@table", table);
+            _cmd.Parameters.AddWithValue("@field1", field1);
+            _cmd.Parameters.AddWithValue("@field2", field2);
+            return this;
+        }
+
+        public DatabaseConn IJoin(string table, string field1, string field2, string type)
+        {
+            Join(table, field1, field2, "INNER")
+        }
+
+        public DatabaseConn RJoin(string table, string field1, string field2, string type)
+        {
+            Join(table, field1, field2, "RIGHT") 
+        }
+
+        public DatabaseConn LJoin(string table, string field1, string field2, string type)
+        {
+            Join(table, field1, field2, "LEFT")
+        }
+
     }
 }
