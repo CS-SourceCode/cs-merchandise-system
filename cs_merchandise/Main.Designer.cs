@@ -72,10 +72,10 @@
             this.browser_merchandise = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.browser_reports = new System.Windows.Forms.TabPage();
             this.browser_users = new System.Windows.Forms.TabPage();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.admin_panel = new System.Windows.Forms.Panel();
             this.btnUsers_active = new System.Windows.Forms.Panel();
             this.btnReports_active = new System.Windows.Forms.Panel();
@@ -442,6 +442,7 @@
             // 
             this.panel_orderdetails.BackColor = System.Drawing.Color.White;
             this.panel_orderdetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_orderdetails.Controls.Add(this.select_customer);
             this.panel_orderdetails.Controls.Add(this.item_quantity);
             this.panel_orderdetails.Controls.Add(this.label11);
             this.panel_orderdetails.Controls.Add(this.selectedCustNameTxt);
@@ -451,7 +452,6 @@
             this.panel_orderdetails.Controls.Add(this.selectedCustIDTxt);
             this.panel_orderdetails.Controls.Add(this.panel9);
             this.panel_orderdetails.Controls.Add(this.label7);
-            this.panel_orderdetails.Controls.Add(this.select_customer);
             this.panel_orderdetails.Controls.Add(this.label5);
             this.panel_orderdetails.Controls.Add(this.sell_merchandise);
             this.panel_orderdetails.Location = new System.Drawing.Point(6, 6);
@@ -639,7 +639,7 @@
             this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select_customer.ForeColor = System.Drawing.Color.White;
-            this.select_customer.Location = new System.Drawing.Point(532, 791);
+            this.select_customer.Location = new System.Drawing.Point(528, 791);
             this.select_customer.Name = "select_customer";
             this.select_customer.Size = new System.Drawing.Size(524, 59);
             this.select_customer.TabIndex = 10;
@@ -706,10 +706,9 @@
             this.panel11.Controls.Add(this.label16);
             this.panel11.Controls.Add(this.label20);
             this.panel11.Controls.Add(this.label15);
-            this.panel11.Location = new System.Drawing.Point(1388, 10);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Location = new System.Drawing.Point(926, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1018, 1337);
+            this.panel11.Size = new System.Drawing.Size(679, 855);
             this.panel11.TabIndex = 1;
             // 
             // label15
@@ -717,16 +716,16 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Purple;
-            this.label15.Location = new System.Drawing.Point(18, 15);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(12, 10);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(252, 44);
+            this.label15.Size = new System.Drawing.Size(164, 28);
             this.label15.TabIndex = 11;
             this.label15.Text = "Order Details";
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.bunifuDatepicker2);
             this.panel10.Controls.Add(this.bunifuDatepicker1);
             this.panel10.Controls.Add(this.panel12);
@@ -739,10 +738,9 @@
             this.panel10.Controls.Add(this.cluster_select);
             this.panel10.Controls.Add(this.label10);
             this.panel10.Controls.Add(this.dataGridView2);
-            this.panel10.Location = new System.Drawing.Point(8, 10);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Location = new System.Drawing.Point(6, 6);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1372, 1337);
+            this.panel10.Size = new System.Drawing.Size(914, 855);
             this.panel10.TabIndex = 0;
             // 
             // bunifuDatepicker2
@@ -752,10 +750,10 @@
             this.bunifuDatepicker2.ForeColor = System.Drawing.Color.White;
             this.bunifuDatepicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.bunifuDatepicker2.FormatCustom = null;
-            this.bunifuDatepicker2.Location = new System.Drawing.Point(572, 88);
-            this.bunifuDatepicker2.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.bunifuDatepicker2.Location = new System.Drawing.Point(381, 57);
+            this.bunifuDatepicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDatepicker2.Name = "bunifuDatepicker2";
-            this.bunifuDatepicker2.Size = new System.Drawing.Size(352, 69);
+            this.bunifuDatepicker2.Size = new System.Drawing.Size(234, 44);
             this.bunifuDatepicker2.TabIndex = 26;
             this.bunifuDatepicker2.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
             // 
@@ -766,20 +764,19 @@
             this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
             this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(992, 88);
-            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.bunifuDatepicker1.Location = new System.Drawing.Point(662, 57);
+            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(352, 69);
+            this.bunifuDatepicker1.Size = new System.Drawing.Size(234, 44);
             this.bunifuDatepicker1.TabIndex = 25;
             this.bunifuDatepicker1.Value = new System.DateTime(2018, 5, 29, 12, 40, 19, 242);
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.panel12.Location = new System.Drawing.Point(916, 140);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Location = new System.Drawing.Point(610, 90);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(82, 15);
+            this.panel12.Size = new System.Drawing.Size(55, 10);
             this.panel12.TabIndex = 32;
             // 
             // label14
@@ -787,10 +784,9 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Purple;
-            this.label14.Location = new System.Drawing.Point(928, 94);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(618, 60);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 44);
+            this.label14.Size = new System.Drawing.Size(42, 28);
             this.label14.TabIndex = 31;
             this.label14.Text = "TO";
             // 
@@ -806,10 +802,10 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Purple;
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(184, 171);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(123, 110);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(280, 79);
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(186, 45);
             this.bunifuMaterialTextbox2.TabIndex = 30;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -818,10 +814,9 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Purple;
-            this.label13.Location = new System.Drawing.Point(58, 171);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(39, 110);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 39);
+            this.label13.Size = new System.Drawing.Size(76, 23);
             this.label13.TabIndex = 29;
             this.label13.Text = "Name:";
             // 
@@ -830,10 +825,9 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Purple;
-            this.label12.Location = new System.Drawing.Point(16, 88);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(10, 57);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(171, 39);
+            this.label12.Size = new System.Drawing.Size(105, 23);
             this.label12.TabIndex = 28;
             this.label12.Text = "Order No:";
             // 
@@ -849,10 +843,10 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Purple;
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(184, 88);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(123, 57);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(280, 79);
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(186, 45);
             this.bunifuMaterialTextbox1.TabIndex = 27;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -867,13 +861,13 @@
         "HUMLET",
         "EA",
         "ACC"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(572, 171);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(381, 109);
+            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.bunifuDropdown1.onHoverColor = System.Drawing.Color.Purple;
             this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(352, 67);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(234, 43);
             this.bunifuDropdown1.TabIndex = 24;
             // 
             // cluster_select
@@ -887,13 +881,13 @@
         "HUMLET",
         "EA",
         "ACC"};
-            this.cluster_select.Location = new System.Drawing.Point(992, 171);
-            this.cluster_select.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.cluster_select.Location = new System.Drawing.Point(662, 109);
+            this.cluster_select.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cluster_select.Name = "cluster_select";
             this.cluster_select.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
             this.cluster_select.onHoverColor = System.Drawing.Color.Purple;
             this.cluster_select.selectedIndex = -1;
-            this.cluster_select.Size = new System.Drawing.Size(352, 67);
+            this.cluster_select.Size = new System.Drawing.Size(234, 43);
             this.cluster_select.TabIndex = 23;
             // 
             // label10
@@ -901,10 +895,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Purple;
-            this.label10.Location = new System.Drawing.Point(14, 15);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(9, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(194, 44);
+            this.label10.Size = new System.Drawing.Size(127, 28);
             this.label10.TabIndex = 10;
             this.label10.Text = "All Orders";
             // 
@@ -915,14 +908,13 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 250);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Location = new System.Drawing.Point(-4, 160);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1372, 988);
+            this.dataGridView2.Size = new System.Drawing.Size(918, 632);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
@@ -981,13 +973,6 @@
             this.browser_users.TabIndex = 4;
             this.browser_users.Text = "Users";
             this.browser_users.UseVisualStyleBackColor = true;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // admin_panel
             // 
@@ -1153,6 +1138,7 @@
             this.btnOrders.Text = "       Orders";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             this.btnOrders.Enter += new System.EventHandler(this.btnOrders_Enter);
             this.btnOrders.Leave += new System.EventHandler(this.btnOrders_Leave);
             // 
@@ -1170,6 +1156,7 @@
             this.btnSell.Text = "       Sell";
             this.btnSell.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             this.btnSell.Enter += new System.EventHandler(this.btnSell_Enter);
             this.btnSell.Leave += new System.EventHandler(this.btnSell_Leave);
             // 
