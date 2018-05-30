@@ -279,7 +279,7 @@
             // 
             // panel_orderline
             // 
-            this.panel_orderline.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_orderline.BackColor = System.Drawing.Color.White;
             this.panel_orderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_orderline.Controls.Add(this.price_total);
             this.panel_orderline.Controls.Add(this.label9);
@@ -427,7 +427,7 @@
             // 
             // panel_orderdetails
             // 
-            this.panel_orderdetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_orderdetails.BackColor = System.Drawing.Color.White;
             this.panel_orderdetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_orderdetails.Controls.Add(this.item_quantity);
             this.panel_orderdetails.Controls.Add(this.label11);

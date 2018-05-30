@@ -38,6 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.cash_amount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnRecordOrder = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.checkout_totaldue = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.change = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,6 +133,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 153);
             this.panel1.TabIndex = 38;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkGray;
+            this.panel8.Location = new System.Drawing.Point(-29, 151);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(537, 10);
+            this.panel8.TabIndex = 46;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DarkGray;
+            this.panel6.Location = new System.Drawing.Point(-7, -9);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(537, 10);
+            this.panel6.TabIndex = 45;
             // 
             // panel7
             // 
@@ -247,22 +263,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(537, 10);
             this.panel5.TabIndex = 44;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.DarkGray;
-            this.panel6.Location = new System.Drawing.Point(-7, -9);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(537, 10);
-            this.panel6.TabIndex = 45;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.DarkGray;
-            this.panel8.Location = new System.Drawing.Point(-29, 151);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(537, 10);
-            this.panel8.TabIndex = 46;
             // 
             // checkout
             // 
