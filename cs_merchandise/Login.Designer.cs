@@ -284,7 +284,7 @@
             // 
             // roundedLoginbtn
             // 
-            this.roundedLoginbtn.ElipseRadius = 5;
+            this.roundedLoginbtn.ElipseRadius = 10;
             this.roundedLoginbtn.TargetControl = this.btnLogin;
             // 
             // panel3

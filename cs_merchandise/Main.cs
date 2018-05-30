@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace cs_merchandise
 {
@@ -20,6 +15,7 @@ namespace cs_merchandise
         public Main()
         {
             InitializeComponent();
+
             btnDashboard_active.Show();
             btnSales_active.Hide();
             btnSell_active.Hide();
@@ -36,12 +32,15 @@ namespace cs_merchandise
             selectedCustNameTxt.Enabled = false;
             getOrderId();
 
-
+            /*
+            ExtendedPanel panel = new ExtendedPanel();
+            panel.BackColor = Color.Black;
+            panel.Opacity = 10;
+            this.Controls.Add(panel);
+            */
         }
-
-        
-
         public Login Login { get; internal set; }
+
 
         private void getOrderId()
         {
@@ -51,7 +50,7 @@ namespace cs_merchandise
 
             if (orders_dt.Rows.Count == 0)
             {
-                
+                //Should not preemptively insert into the database
                 //conn.Insert("orders", "order_id", "1").GetQueryData();
                 order_no.Text = "1";
             }
@@ -108,6 +107,7 @@ namespace cs_merchandise
 
         private void main_close_Click(object sender, EventArgs e)
         {
+            Program.looper = false;
             this.Close();
             // Prompt to Logout //
         }
@@ -395,10 +395,18 @@ namespace cs_merchandise
 
         private void btnNewCust_Click(object sender, EventArgs e)
         {
-            addcustomer addcust = new addcustomer(this);
-            addcust.main = this;
-            addcust.Show();
-            
+
+            using (Plexiglass p = new Plexiglass(this))
+            {
+                p.Location = new Point(0, 0);
+                p.Size = this.ClientRectangle.Size;
+                
+                p.BringToFront();
+                
+                addcustomer addcust = new addcustomer(this);
+                addcust.main = this;
+                addcust.ShowDialog(this);
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -408,7 +416,7 @@ namespace cs_merchandise
 
         private void Main_Leave(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -448,6 +456,11 @@ namespace cs_merchandise
             custln = customer_list.CurrentRow.Cells["lastname"].Value.ToString();
             selectedCustIDTxt.Text = currCustomerNo.ToString();
             selectedCustNameTxt.Text = custfn + " " + custln;
+        }
+
+        private void inactivepanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void sales_control_SelectedIndexChanged(object sender, EventArgs e)
@@ -551,4 +564,6 @@ namespace cs_merchandise
         }
         */
     }
+
+    
 }

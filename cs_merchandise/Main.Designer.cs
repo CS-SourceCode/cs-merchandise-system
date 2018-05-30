@@ -273,8 +273,7 @@
             // browser_sales
             // 
             this.browser_sales.Controls.Add(this.sales_control);
-            this.browser_sales.Location = new System.Drawing.Point(8, 39);
-            this.browser_sales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.browser_sales.Location = new System.Drawing.Point(4, 25);
             this.browser_sales.Name = "browser_sales";
             this.browser_sales.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.browser_sales.Size = new System.Drawing.Size(3820, 1838);
@@ -286,13 +285,11 @@
             // 
             this.sales_control.Controls.Add(this.sales_pos);
             this.sales_control.Controls.Add(this.sales_Orders);
-            this.sales_control.Location = new System.Drawing.Point(-6, 35);
-            this.sales_control.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sales_control.Location = new System.Drawing.Point(-4, 22);
             this.sales_control.Name = "sales_control";
             this.sales_control.SelectedIndex = 0;
-            this.sales_control.Size = new System.Drawing.Size(2440, 1435);
+            this.sales_control.Size = new System.Drawing.Size(1627, 918);
             this.sales_control.TabIndex = 0;
-            this.sales_control.SelectedIndexChanged += new System.EventHandler(this.sales_control_SelectedIndexChanged);
             // 
             // sales_pos
             // 
@@ -507,8 +504,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Purple;
-            this.label11.Location = new System.Drawing.Point(12, 975);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(37, 622);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(216, 39);
             this.label11.TabIndex = 18;
@@ -525,10 +521,10 @@
             this.selectedCustNameTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.selectedCustNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.selectedCustNameTxt.isPassword = false;
-            this.selectedCustNameTxt.Location = new System.Drawing.Point(18, 1135);
-            this.selectedCustNameTxt.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.selectedCustNameTxt.Location = new System.Drawing.Point(41, 724);
+            this.selectedCustNameTxt.Margin = new System.Windows.Forms.Padding(4);
             this.selectedCustNameTxt.Name = "selectedCustNameTxt";
-            this.selectedCustNameTxt.Size = new System.Drawing.Size(764, 79);
+            this.selectedCustNameTxt.Size = new System.Drawing.Size(446, 44);
             this.selectedCustNameTxt.TabIndex = 19;
             this.selectedCustNameTxt.Text = "Select Customer";
             this.selectedCustNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -539,10 +535,9 @@
             this.btnNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCust.ForeColor = System.Drawing.Color.White;
-            this.btnNewCust.Location = new System.Drawing.Point(464, 896);
-            this.btnNewCust.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewCust.Location = new System.Drawing.Point(12, 791);
             this.btnNewCust.Name = "btnNewCust";
-            this.btnNewCust.Size = new System.Drawing.Size(318, 92);
+            this.btnNewCust.Size = new System.Drawing.Size(509, 59);
             this.btnNewCust.TabIndex = 16;
             this.btnNewCust.Text = "New Customer";
             this.btnNewCust.UseVisualStyleBackColor = false;
@@ -555,14 +550,13 @@
             this.customer_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customer_list.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.customer_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customer_list.Location = new System.Drawing.Point(798, 902);
-            this.customer_list.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customer_list.Location = new System.Drawing.Point(528, 577);
             this.customer_list.Name = "customer_list";
             this.customer_list.ReadOnly = true;
             this.customer_list.RowHeadersVisible = false;
             this.customer_list.RowTemplate.Height = 24;
             this.customer_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customer_list.Size = new System.Drawing.Size(786, 325);
+            this.customer_list.Size = new System.Drawing.Size(528, 191);
             this.customer_list.TabIndex = 15;
             this.customer_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_list_CellClick);
             // 
@@ -571,8 +565,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(12, 1092);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(37, 697);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 39);
             this.label8.TabIndex = 14;
@@ -589,10 +582,10 @@
             this.selectedCustIDTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.selectedCustIDTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.selectedCustIDTxt.isPassword = false;
-            this.selectedCustIDTxt.Location = new System.Drawing.Point(18, 1017);
-            this.selectedCustIDTxt.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.selectedCustIDTxt.Location = new System.Drawing.Point(41, 649);
+            this.selectedCustIDTxt.Margin = new System.Windows.Forms.Padding(4);
             this.selectedCustIDTxt.Name = "selectedCustIDTxt";
-            this.selectedCustIDTxt.Size = new System.Drawing.Size(764, 79);
+            this.selectedCustIDTxt.Size = new System.Drawing.Size(446, 44);
             this.selectedCustIDTxt.TabIndex = 13;
             this.selectedCustIDTxt.Text = "Select Customer";
             this.selectedCustIDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -615,10 +608,9 @@
             this.removeall_merch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeall_merch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeall_merch.ForeColor = System.Drawing.Color.White;
-            this.removeall_merch.Location = new System.Drawing.Point(4, 212);
-            this.removeall_merch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.removeall_merch.Location = new System.Drawing.Point(3, 135);
             this.removeall_merch.Name = "removeall_merch";
-            this.removeall_merch.Size = new System.Drawing.Size(306, 94);
+            this.removeall_merch.Size = new System.Drawing.Size(204, 60);
             this.removeall_merch.TabIndex = 7;
             this.removeall_merch.Text = "Remove All";
             this.removeall_merch.UseVisualStyleBackColor = false;
@@ -672,10 +664,9 @@
             this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select_customer.ForeColor = System.Drawing.Color.White;
-            this.select_customer.Location = new System.Drawing.Point(18, 1237);
-            this.select_customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.select_customer.Location = new System.Drawing.Point(532, 791);
             this.select_customer.Name = "select_customer";
-            this.select_customer.Size = new System.Drawing.Size(1566, 92);
+            this.select_customer.Size = new System.Drawing.Size(524, 59);
             this.select_customer.TabIndex = 10;
             this.select_customer.Text = "Select Customer";
             this.select_customer.UseVisualStyleBackColor = false;
@@ -1173,6 +1164,7 @@
             this.btnReports.Text = "Reports";
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             this.btnReports.Enter += new System.EventHandler(this.btnReports_Enter);
             this.btnReports.Leave += new System.EventHandler(this.btnReports_Leave);
             // 
@@ -1191,6 +1183,7 @@
             this.btnUsers.Text = "Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             this.btnUsers.Enter += new System.EventHandler(this.btnUsers_Enter);
             this.btnUsers.Leave += new System.EventHandler(this.btnUsers_Leave);
             // 
@@ -1247,6 +1240,7 @@
             this.btnMerch.Text = "Merchandise";
             this.btnMerch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMerch.UseVisualStyleBackColor = false;
+            this.btnMerch.Click += new System.EventHandler(this.btnMerch_Click);
             this.btnMerch.Enter += new System.EventHandler(this.btnMerch_Enter);
             this.btnMerch.Leave += new System.EventHandler(this.btnMerch_Leave);
             // 
@@ -1265,6 +1259,7 @@
             this.btnSales.Text = "Sales";
             this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             this.btnSales.Enter += new System.EventHandler(this.btnSales_Enter);
             this.btnSales.Leave += new System.EventHandler(this.btnSales_Leave);
             // 
