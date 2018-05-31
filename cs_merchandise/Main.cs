@@ -484,6 +484,9 @@ namespace cs_merchandise
 
         private void reloadOrders()
         {
+            dataGridView2.Datasource = conn.Select("orders", "orders.order_id", "orders.order_date", "orders.order_status", "CONCAT(customer.lastname, ', ', customer.firstname) as customer)
+                                            .IJoin("customer", "orders.customer_id", "customer.customer_id")
+                                            .GetQueryData();
             using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
             {
                 databasecon.Open();
@@ -503,12 +506,29 @@ namespace cs_merchandise
 
         private void showOrderDetails()
         {
+            string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+            var customerDetails = conn.Select("order=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "o.order_date, o.payment_status, o.total_price, o.order_status " +
+                                    .NJoin("customer=c")
+                                    .Where("o.order_id", selectedOrder)
+                                    .GetQueryData();
+            orderCname.Text = customerDetails.Rows[0][0].ToString();
+            orderCcontact.Text = customerDetails.Rows[0][1].ToString();
+            orderCcluster.Text = customerDetails.Rows[0][2].ToString();
+            orderOdate.Text = customerDetails.Rows[0][3].ToString();
+            orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
+            orderOcdate.Text = customerDetails.Rows[0][5].ToString();
+            orderOstatus.Text = customerDetails.Rows[0][6].ToString();
+
+            dataGridView3.DataSouce = conn.Select("orderline=ol" "m.merch_name", "ol.quantity", "ol.price")
+                                        .NJoin("merchandise=m")
+                                        .NJoin("orders=o")
+                                        .Where("o.order_id", selectedOrder)
+                                        .GetQueryData();
             using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
             {
                 databasecon.Open();
                 string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-                string query = "SELECT CONCAT(c.firstname,' ',c.lastname) as name, c.contact, c.cluster, " +
-                    "o.order_date, o.payment_status, o.claim_date, o.order_status " +
+                string query = "SELECT 
                     "FROM orders as o " +
                     "NATURAL JOIN customer as c " +
                     "WHERE o.order_id = @id";
@@ -517,13 +537,13 @@ namespace cs_merchandise
                 command.Parameters.AddWithValue("@id", selectedOrder);
                 var customerDetails = new DataTable();
                 customerDetails.Load(command.ExecuteReader());
-                orderCname.Text = customerDetails.Rows[0][0].ToString();
-                orderCcontact.Text = customerDetails.Rows[0][1].ToString();
-                orderCcluster.Text = customerDetails.Rows[0][2].ToString();
-                orderOdate.Text = customerDetails.Rows[0][3].ToString();
-                orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
-                orderOcdate.Text = customerDetails.Rows[0][5].ToString();
-                orderOstatus.Text = customerDetails.Rows[0][6].ToString();
+                
+                
+                
+                
+                
+                
+                
                 query = "SELECT m.merch_name, ol.quantity, ol.amount_paid, ol.total_price " +
                     "FROM orderline as ol " +
                     "INNER JOIN merchandise AS m " +
@@ -539,6 +559,29 @@ namespace cs_merchandise
                 dataGridView3.DataSource = orderDetails;
             }
                 
+        }
+
+        public void claimOrder(string olID)
+        {
+            conn.Update("orderline", "claim_date" , DateTime.Now.ToString("yyyy-MM-dd"))
+                .Where("orderlineID", olID)
+                .GetQueryData();
+            
+        }
+
+        public void payOrder(string oID, string payment)
+        {
+            payOrder(oID, Convert.ToInt32(payment));
+        }
+
+        public void payOrder(string oID, int payment)
+        {
+            string present_pay = conn.Select("orders", "payment")
+                                    .Where("order_id", oID)
+                                    .GetQueryData()[0][0];
+            int total_pay =  Convert.ToInt32(present_pay) + payment;
+            conn.Update("orders", "payment", total_pay.toString())
+                .GetQueryData();
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)

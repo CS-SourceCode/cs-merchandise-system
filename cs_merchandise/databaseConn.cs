@@ -40,7 +40,7 @@ namespace cs_merchandise
 
         public dynamic GetQueryData()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=root;"))
             {
                 databasecon.Open();
                 _cmd.CommandText = _sql;
@@ -144,27 +144,33 @@ namespace cs_merchandise
         private DatabaseConn Join(string table, string field1, string field2, string type)
         {
             table = tableNamer(table);
-            _sql += type + " JOIN @table ON @field1 = @field2 ";
-            _cmd.Parameters.AddWithValue("@table", table);
-            _cmd.Parameters.AddWithValue("@field1", field1);
-            _cmd.Parameters.AddWithValue("@field2", field2);
+            _sql += type + " JOIN @" + table + " ON @" + field1 + " = @" + field2 + " ";
+            _cmd.Parameters.AddWithValue("@" + table, table);
+            _cmd.Parameters.AddWithValue("@" + field1, field1);
+            _cmd.Parameters.AddWithValue("@" + field2, field2);
             return this;
         }
 
         public DatabaseConn IJoin(string table, string field1, string field2, string type)
         {
-            Join(table, field1, field2, "INNER")
+            return Join(table, field1, field2, "INNER");
         }
 
         public DatabaseConn RJoin(string table, string field1, string field2, string type)
         {
-            Join(table, field1, field2, "RIGHT") 
+            return Join(table, field1, field2, "RIGHT");
         }
 
         public DatabaseConn LJoin(string table, string field1, string field2, string type)
         {
-            Join(table, field1, field2, "LEFT")
+            return Join(table, field1, field2, "LEFT");
         }
+
+        public DatabaseConn NJoin(string table)
+        {
+            table = tableNamer(table);
+            _sql += "NATURAL JOIN @" + table + " ";
+            _cmd.Parameters.AddWithValue("@"+table, table);
 
     }
 }
