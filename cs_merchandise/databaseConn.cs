@@ -25,8 +25,8 @@ namespace cs_merchandise
 
         private string tableNamer(string tableName)
         {
-            string [] naming = tableName.Split(',');
-            if(naming.Length > 2)
+            string[] naming = tableName.Split('=');
+            if (naming.Length > 1)
                 return naming[0] + " AS " + naming[1];
             else
                 return tableName;
@@ -144,24 +144,21 @@ namespace cs_merchandise
         private DatabaseConn Join(string table, string field1, string field2, string type)
         {
             table = tableNamer(table);
-            _sql += type + " JOIN @" + table + " ON @" + field1 + " = @" + field2 + " ";
-            _cmd.Parameters.AddWithValue("@" + table, table);
-            _cmd.Parameters.AddWithValue("@" + field1, field1);
-            _cmd.Parameters.AddWithValue("@" + field2, field2);
+            _sql += type + " JOIN " + table + " ON " + field1 + " = " + field2 + " ";
             return this;
         }
 
-        public DatabaseConn IJoin(string table, string field1, string field2, string type)
+        public DatabaseConn IJoin(string table, string field1, string field2)
         {
             return Join(table, field1, field2, "INNER");
         }
 
-        public DatabaseConn RJoin(string table, string field1, string field2, string type)
+        public DatabaseConn RJoin(string table, string field1, string field2)
         {
             return Join(table, field1, field2, "RIGHT");
         }
 
-        public DatabaseConn LJoin(string table, string field1, string field2, string type)
+        public DatabaseConn LJoin(string table, string field1, string field2)
         {
             return Join(table, field1, field2, "LEFT");
         }
@@ -169,8 +166,10 @@ namespace cs_merchandise
         public DatabaseConn NJoin(string table)
         {
             table = tableNamer(table);
-            _sql += "NATURAL JOIN @" + table + " ";
-            _cmd.Parameters.AddWithValue("@"+table, table);
+            _sql += "NATURAL JOIN " + table + " ";
+            return this;
 
+        }
     }
+
 }

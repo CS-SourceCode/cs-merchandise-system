@@ -528,15 +528,15 @@ namespace cs_merchandise
 
         private void reloadOrders()
         {
-            dataGridView2.Datasource = conn.Select("orders", "orders.order_id", "orders.order_date", "orders.order_status", "CONCAT(customer.lastname, ', ', customer.firstname) as customer)
-                                            .IJoin("customer", "orders.customer_id", "customer.customer_id")
-                                            .GetQueryData();
+            dataGridView2.DataSource = conn.Select("orders", "orders.order_id", "orders.order_date", "orders.order_status", "CONCAT(customer.lastname, ', ', customer.firstname) as customer")
+                .IJoin("customer", "orders.customer_id", "customer.customer_id")
+                .GetQueryData();
         }
 
         private void showOrderDetails()
         {
             string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            var customerDetails = conn.Select("order=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "o.order_date, o.payment_status, o.total_price, o.order_status " +
+            var customerDetails = conn.Select("orders=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "o.order_date", "o.payment_status", "o.payment", "o.order_status ")
                                     .NJoin("customer=c")
                                     .Where("o.order_id", selectedOrder)
                                     .GetQueryData();
@@ -548,7 +548,7 @@ namespace cs_merchandise
             orderOcdate.Text = customerDetails.Rows[0][5].ToString();
             orderOstatus.Text = customerDetails.Rows[0][6].ToString();
 
-            dataGridView3.DataSouce = conn.Select("orderline=ol" "m.merch_name", "ol.quantity", "ol.price")
+            dataGridView3.DataSource = conn.Select("orderline=ol", "m.merch_name", "ol.quantity", "ol.total_price")
                                         .NJoin("merchandise=m")
                                         .NJoin("orders=o")
                                         .Where("o.order_id", selectedOrder)
@@ -574,13 +574,14 @@ namespace cs_merchandise
                                     .Where("order_id", oID)
                                     .GetQueryData()[0][0];
             int total_pay =  Convert.ToInt32(present_pay) + payment;
-            conn.Update("orders", "payment", total_pay.toString())
+            conn.Update("orders", "payment", total_pay.ToString())
                 .GetQueryData();
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            showOrderDetails();
+            if(dataGridView2.SelectedRows.Count > 0)
+                showOrderDetails();
         }
 
         private void sell_merchandise_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
