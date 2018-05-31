@@ -29,7 +29,7 @@ CREATE TABLE `customer` (
   `contact` varchar(255) DEFAULT NULL,
   `cluster` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Jam','Maligad','09454122474',NULL),(2,'Jan','Ko','911',NULL),(3,'Rj','Perias','101',NULL),(4,'asdd','dsa','1234567890',NULL),(5,'assda','asddas','121221212',NULL),(6,'Test','Test','123213123',''),(7,'Test1','Test2','1232134214',''),(8,'test3','test3','12312421','CS');
+INSERT INTO `customer` VALUES (1,'Jam','Maligad','09454122474',NULL),(2,'Jan','Ko','911',NULL),(3,'Rj','Perias','101',NULL),(4,'asdd','dsa','1234567890',NULL),(5,'assda','asddas','121221212',NULL),(6,'Test','Test','123213123',''),(7,'Test1','Test2','1232134214',''),(8,'test3','test3','12312421','CS'),(9,'dsa','sad','2133213213','HUMLET'),(10,'Father','Denny','123','CS');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,14 +79,14 @@ CREATE TABLE `orderline` (
   `order_id` int(11) DEFAULT NULL,
   `merch_id` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
-  `amount_paid` decimal(15,2) DEFAULT NULL,
   `total_price` decimal(15,2) DEFAULT NULL,
+  `date_claimed` date DEFAULT NULL,
   PRIMARY KEY (`orderline_id`),
   KEY `merch_id_idx` (`merch_id`),
   KEY `order_id_idx` (`order_id`),
   CONSTRAINT `merch_id` FOREIGN KEY (`merch_id`) REFERENCES `merchandise` (`merch_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +95,7 @@ CREATE TABLE `orderline` (
 
 LOCK TABLES `orderline` WRITE;
 /*!40000 ALTER TABLE `orderline` DISABLE KEYS */;
+INSERT INTO `orderline` VALUES (1,11,1,1,250.00,NULL),(2,11,2,1,350.00,NULL),(3,12,1,1,250.00,NULL),(4,12,2,1,350.00,NULL),(5,12,3,1,450.00,NULL),(6,12,4,1,550.00,NULL);
 /*!40000 ALTER TABLE `orderline` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,14 +109,14 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_date` date DEFAULT NULL,
-  `order_status` varchar(45) DEFAULT NULL,
+  `order_status` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
-  `claim_date` date DEFAULT NULL,
   `payment_status` varchar(45) DEFAULT NULL,
+  `payment` decimal(15,2) DEFAULT NULL,
   PRIMARY KEY (`order_id`),
   KEY `customer_id_idx` (`customer_id`),
   CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,6 +125,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'2018-05-30',1,2,'DOWN',0.00),(2,'2018-05-30',1,1,'DOWN',0.00),(3,'2018-05-30',1,1,'DOWN',0.00),(4,'2018-05-30',1,1,'DOWN',0.00),(5,'2018-05-30',1,1,'DOWN',0.00),(6,'2018-05-30',1,1,'DOWN',0.00),(7,'2018-05-30',1,1,'DOWN',0.00),(8,'2018-05-30',1,1,'DOWN',0.00),(9,'2018-05-30',1,1,'DOWN',0.00),(10,'2018-05-30',1,1,'DOWN',0.00),(11,'2018-05-30',1,1,'DOWN',0.00),(12,'2018-05-30',1,3,'FULLY PAID',1700.00);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-29 15:12:48
+-- Dump completed on 2018-05-31 16:45:57
