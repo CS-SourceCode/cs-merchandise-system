@@ -43,6 +43,8 @@
             this.sales_control = new System.Windows.Forms.TabControl();
             this.sales_pos = new System.Windows.Forms.TabPage();
             this.panel_orderline = new System.Windows.Forms.Panel();
+            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label21 = new System.Windows.Forms.Label();
             this.price_total = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnNewOrder = new System.Windows.Forms.Button();
@@ -55,21 +57,24 @@
             this.merch_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.merch_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_orderdetails = new System.Windows.Forms.Panel();
-            this.select_customer = new System.Windows.Forms.Button();
-            this.item_quantity = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.selectedCustNameTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.btnNewCust = new System.Windows.Forms.Button();
-            this.customer_list = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.selectedCustIDTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel_merchcontrol = new System.Windows.Forms.Panel();
             this.removeall_merch = new System.Windows.Forms.Button();
+            this.item_quantity = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.remove_merch = new System.Windows.Forms.Button();
             this.btnAdditem = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.panel_merch = new System.Windows.Forms.Panel();
             this.sell_merchandise = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel_custdetails = new System.Windows.Forms.Panel();
+            this.search_customer = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.select_customer = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.customer_list = new System.Windows.Forms.DataGridView();
+            this.btnNewCust = new System.Windows.Forms.Button();
+            this.selectedCustNameTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.selectedCustIDTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.sales_Orders = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -133,13 +138,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.roundedCorners_Orderline = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
-            this.panel_merch = new System.Windows.Forms.Panel();
             this.panel_merche = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel_merchontrole = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.panel_custdetails = new System.Windows.Forms.Panel();
             this.panel_custdetailse = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.label21 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel_orderlinee = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.addbtn_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.removebtn_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -148,6 +149,9 @@
             this.selectcustbtn_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.checkoutbtn_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.neworderbtn_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnSearchcust_e = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnSearchcust = new System.Windows.Forms.Button();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
@@ -158,9 +162,11 @@
             this.panel_orderline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderline)).BeginInit();
             this.panel_orderdetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customer_list)).BeginInit();
             this.panel_merchcontrol.SuspendLayout();
+            this.panel_merch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).BeginInit();
+            this.panel_custdetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_list)).BeginInit();
             this.sales_Orders.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -170,8 +176,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.admin_panel.SuspendLayout();
-            this.panel_merch.SuspendLayout();
-            this.panel_custdetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // roundedCorners_Main
@@ -329,12 +333,43 @@
             this.panel_orderline.Size = new System.Drawing.Size(535, 818);
             this.panel_orderline.TabIndex = 3;
             // 
+            // bunifuMetroTextbox1
+            // 
+            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Purple;
+            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.Purple;
+            this.bunifuMetroTextbox1.BorderThickness = 3;
+            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuMetroTextbox1.isPassword = false;
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(254, 623);
+            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
+            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(257, 56);
+            this.bunifuMetroTextbox1.TabIndex = 15;
+            this.bunifuMetroTextbox1.Text = "CHANGE";
+            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Purple;
+            this.label21.Location = new System.Drawing.Point(22, 632);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(193, 47);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "CHANGE";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // price_total
             // 
             this.price_total.BackColor = System.Drawing.Color.Gainsboro;
-            this.price_total.BorderColorFocused = System.Drawing.Color.Blue;
-            this.price_total.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.price_total.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.price_total.BorderColorFocused = System.Drawing.Color.Purple;
+            this.price_total.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.price_total.BorderColorMouseHover = System.Drawing.Color.Purple;
             this.price_total.BorderThickness = 3;
             this.price_total.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.price_total.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,9 +413,9 @@
             // order_no
             // 
             this.order_no.BackColor = System.Drawing.Color.Gainsboro;
-            this.order_no.BorderColorFocused = System.Drawing.Color.Blue;
-            this.order_no.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.order_no.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.order_no.BorderColorFocused = System.Drawing.Color.Purple;
+            this.order_no.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.order_no.BorderColorMouseHover = System.Drawing.Color.Purple;
             this.order_no.BorderThickness = 3;
             this.order_no.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.order_no.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -483,20 +518,32 @@
             this.panel_orderdetails.Size = new System.Drawing.Size(1061, 855);
             this.panel_orderdetails.TabIndex = 2;
             // 
-            // select_customer
+            // panel_merchcontrol
             // 
-            this.select_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.select_customer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_customer.ForeColor = System.Drawing.Color.White;
-            this.select_customer.Location = new System.Drawing.Point(451, 238);
-            this.select_customer.Name = "select_customer";
-            this.select_customer.Size = new System.Drawing.Size(530, 59);
-            this.select_customer.TabIndex = 10;
-            this.select_customer.Text = "Select Customer";
-            this.select_customer.UseVisualStyleBackColor = false;
-            this.select_customer.Click += new System.EventHandler(this.select_customer_Click);
+            this.panel_merchcontrol.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_merchcontrol.Controls.Add(this.removeall_merch);
+            this.panel_merchcontrol.Controls.Add(this.item_quantity);
+            this.panel_merchcontrol.Controls.Add(this.remove_merch);
+            this.panel_merchcontrol.Controls.Add(this.btnAdditem);
+            this.panel_merchcontrol.Location = new System.Drawing.Point(788, 20);
+            this.panel_merchcontrol.Name = "panel_merchcontrol";
+            this.panel_merchcontrol.Size = new System.Drawing.Size(234, 426);
+            this.panel_merchcontrol.TabIndex = 12;
+            // 
+            // removeall_merch
+            // 
+            this.removeall_merch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.removeall_merch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removeall_merch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeall_merch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeall_merch.ForeColor = System.Drawing.Color.White;
+            this.removeall_merch.Location = new System.Drawing.Point(14, 222);
+            this.removeall_merch.Name = "removeall_merch";
+            this.removeall_merch.Size = new System.Drawing.Size(204, 60);
+            this.removeall_merch.TabIndex = 7;
+            this.removeall_merch.Text = "Remove All";
+            this.removeall_merch.UseVisualStyleBackColor = false;
+            this.removeall_merch.Click += new System.EventHandler(this.removeall_merch_Click);
             // 
             // item_quantity
             // 
@@ -516,128 +563,6 @@
             this.item_quantity.Size = new System.Drawing.Size(204, 45);
             this.item_quantity.TabIndex = 20;
             this.item_quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Purple;
-            this.label11.Location = new System.Drawing.Point(31, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 23);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Customer ID:";
-            // 
-            // selectedCustNameTxt
-            // 
-            this.selectedCustNameTxt.BackColor = System.Drawing.Color.Gainsboro;
-            this.selectedCustNameTxt.BorderColorFocused = System.Drawing.Color.Blue;
-            this.selectedCustNameTxt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.selectedCustNameTxt.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.selectedCustNameTxt.BorderThickness = 3;
-            this.selectedCustNameTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.selectedCustNameTxt.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedCustNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.selectedCustNameTxt.isPassword = false;
-            this.selectedCustNameTxt.Location = new System.Drawing.Point(35, 170);
-            this.selectedCustNameTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.selectedCustNameTxt.Name = "selectedCustNameTxt";
-            this.selectedCustNameTxt.Size = new System.Drawing.Size(385, 40);
-            this.selectedCustNameTxt.TabIndex = 19;
-            this.selectedCustNameTxt.Text = "Select Customer";
-            this.selectedCustNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // btnNewCust
-            // 
-            this.btnNewCust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.btnNewCust.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCust.ForeColor = System.Drawing.Color.White;
-            this.btnNewCust.Location = new System.Drawing.Point(28, 238);
-            this.btnNewCust.Name = "btnNewCust";
-            this.btnNewCust.Size = new System.Drawing.Size(400, 59);
-            this.btnNewCust.TabIndex = 16;
-            this.btnNewCust.Text = "New Customer";
-            this.btnNewCust.UseVisualStyleBackColor = false;
-            this.btnNewCust.Click += new System.EventHandler(this.btnNewCust_Click);
-            // 
-            // customer_list
-            // 
-            this.customer_list.AllowUserToAddRows = false;
-            this.customer_list.AllowUserToDeleteRows = false;
-            this.customer_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.customer_list.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.customer_list.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.customer_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customer_list.Location = new System.Drawing.Point(451, 22);
-            this.customer_list.Name = "customer_list";
-            this.customer_list.ReadOnly = true;
-            this.customer_list.RowHeadersVisible = false;
-            this.customer_list.RowTemplate.Height = 24;
-            this.customer_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customer_list.Size = new System.Drawing.Size(528, 191);
-            this.customer_list.TabIndex = 15;
-            this.customer_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_list_CellClick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(31, 143);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 23);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Name:";
-            // 
-            // selectedCustIDTxt
-            // 
-            this.selectedCustIDTxt.BackColor = System.Drawing.Color.Gainsboro;
-            this.selectedCustIDTxt.BorderColorFocused = System.Drawing.Color.Blue;
-            this.selectedCustIDTxt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.selectedCustIDTxt.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.selectedCustIDTxt.BorderThickness = 3;
-            this.selectedCustIDTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.selectedCustIDTxt.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectedCustIDTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.selectedCustIDTxt.isPassword = false;
-            this.selectedCustIDTxt.Location = new System.Drawing.Point(35, 95);
-            this.selectedCustIDTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.selectedCustIDTxt.Name = "selectedCustIDTxt";
-            this.selectedCustIDTxt.Size = new System.Drawing.Size(385, 40);
-            this.selectedCustIDTxt.TabIndex = 13;
-            this.selectedCustIDTxt.Text = "Select Customer";
-            this.selectedCustIDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // panel_merchcontrol
-            // 
-            this.panel_merchcontrol.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_merchcontrol.Controls.Add(this.removeall_merch);
-            this.panel_merchcontrol.Controls.Add(this.item_quantity);
-            this.panel_merchcontrol.Controls.Add(this.remove_merch);
-            this.panel_merchcontrol.Controls.Add(this.btnAdditem);
-            this.panel_merchcontrol.Location = new System.Drawing.Point(788, 20);
-            this.panel_merchcontrol.Name = "panel_merchcontrol";
-            this.panel_merchcontrol.Size = new System.Drawing.Size(234, 477);
-            this.panel_merchcontrol.TabIndex = 12;
-            // 
-            // removeall_merch
-            // 
-            this.removeall_merch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
-            this.removeall_merch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removeall_merch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeall_merch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeall_merch.ForeColor = System.Drawing.Color.White;
-            this.removeall_merch.Location = new System.Drawing.Point(14, 222);
-            this.removeall_merch.Name = "removeall_merch";
-            this.removeall_merch.Size = new System.Drawing.Size(204, 60);
-            this.removeall_merch.TabIndex = 7;
-            this.removeall_merch.Text = "Remove All";
-            this.removeall_merch.UseVisualStyleBackColor = false;
-            this.removeall_merch.Click += new System.EventHandler(this.removeall_merch_Click);
             // 
             // remove_merch
             // 
@@ -669,28 +594,15 @@
             this.btnAdditem.UseVisualStyleBackColor = false;
             this.btnAdditem.Click += new System.EventHandler(this.btnAdditem_Click);
             // 
-            // label7
+            // panel_merch
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Purple;
-            this.label7.Location = new System.Drawing.Point(12, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(209, 28);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Customer Details";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(10, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 28);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Merchandise";
+            this.panel_merch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_merch.Controls.Add(this.sell_merchandise);
+            this.panel_merch.Controls.Add(this.label5);
+            this.panel_merch.Location = new System.Drawing.Point(23, 20);
+            this.panel_merch.Name = "panel_merch";
+            this.panel_merch.Size = new System.Drawing.Size(741, 426);
+            this.panel_merch.TabIndex = 21;
             // 
             // sell_merchandise
             // 
@@ -708,9 +620,180 @@
             this.sell_merchandise.RowHeadersVisible = false;
             this.sell_merchandise.RowTemplate.Height = 24;
             this.sell_merchandise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.sell_merchandise.Size = new System.Drawing.Size(707, 409);
+            this.sell_merchandise.Size = new System.Drawing.Size(707, 355);
             this.sell_merchandise.TabIndex = 0;
             this.sell_merchandise.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sell_merchandise_CellClick);
+            this.sell_merchandise.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sell_merchandise_CellContentDoubleClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(10, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(164, 28);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Merchandise";
+            // 
+            // panel_custdetails
+            // 
+            this.panel_custdetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_custdetails.Controls.Add(this.btnSearchcust);
+            this.panel_custdetails.Controls.Add(this.search_customer);
+            this.panel_custdetails.Controls.Add(this.select_customer);
+            this.panel_custdetails.Controls.Add(this.label7);
+            this.panel_custdetails.Controls.Add(this.customer_list);
+            this.panel_custdetails.Controls.Add(this.btnNewCust);
+            this.panel_custdetails.Controls.Add(this.selectedCustNameTxt);
+            this.panel_custdetails.Controls.Add(this.label11);
+            this.panel_custdetails.Controls.Add(this.label8);
+            this.panel_custdetails.Controls.Add(this.selectedCustIDTxt);
+            this.panel_custdetails.Location = new System.Drawing.Point(23, 468);
+            this.panel_custdetails.Name = "panel_custdetails";
+            this.panel_custdetails.Size = new System.Drawing.Size(999, 370);
+            this.panel_custdetails.TabIndex = 22;
+            // 
+            // search_customer
+            // 
+            this.search_customer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.search_customer.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.search_customer.HintForeColor = System.Drawing.Color.Empty;
+            this.search_customer.HintText = "Search Customer Name";
+            this.search_customer.isPassword = false;
+            this.search_customer.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.search_customer.LineIdleColor = System.Drawing.Color.Purple;
+            this.search_customer.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.search_customer.LineThickness = 3;
+            this.search_customer.Location = new System.Drawing.Point(441, 16);
+            this.search_customer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.search_customer.Name = "search_customer";
+            this.search_customer.Size = new System.Drawing.Size(528, 45);
+            this.search_customer.TabIndex = 21;
+            this.search_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // select_customer
+            // 
+            this.select_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.select_customer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.select_customer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select_customer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.select_customer.ForeColor = System.Drawing.Color.White;
+            this.select_customer.Location = new System.Drawing.Point(442, 288);
+            this.select_customer.Name = "select_customer";
+            this.select_customer.Size = new System.Drawing.Size(527, 59);
+            this.select_customer.TabIndex = 10;
+            this.select_customer.Text = "Select Customer";
+            this.select_customer.UseVisualStyleBackColor = false;
+            this.select_customer.Click += new System.EventHandler(this.select_customer_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Purple;
+            this.label7.Location = new System.Drawing.Point(12, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(209, 28);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Customer Details";
+            // 
+            // customer_list
+            // 
+            this.customer_list.AllowUserToAddRows = false;
+            this.customer_list.AllowUserToDeleteRows = false;
+            this.customer_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customer_list.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.customer_list.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.customer_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customer_list.Location = new System.Drawing.Point(441, 68);
+            this.customer_list.Name = "customer_list";
+            this.customer_list.ReadOnly = true;
+            this.customer_list.RowHeadersVisible = false;
+            this.customer_list.RowTemplate.Height = 24;
+            this.customer_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.customer_list.Size = new System.Drawing.Size(528, 207);
+            this.customer_list.TabIndex = 15;
+            this.customer_list.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_list_CellClick);
+            // 
+            // btnNewCust
+            // 
+            this.btnNewCust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.btnNewCust.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewCust.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCust.ForeColor = System.Drawing.Color.White;
+            this.btnNewCust.Location = new System.Drawing.Point(27, 288);
+            this.btnNewCust.Name = "btnNewCust";
+            this.btnNewCust.Size = new System.Drawing.Size(400, 59);
+            this.btnNewCust.TabIndex = 16;
+            this.btnNewCust.Text = "New Customer";
+            this.btnNewCust.UseVisualStyleBackColor = false;
+            this.btnNewCust.Click += new System.EventHandler(this.btnNewCust_Click);
+            // 
+            // selectedCustNameTxt
+            // 
+            this.selectedCustNameTxt.BackColor = System.Drawing.Color.Gainsboro;
+            this.selectedCustNameTxt.BorderColorFocused = System.Drawing.Color.Purple;
+            this.selectedCustNameTxt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.selectedCustNameTxt.BorderColorMouseHover = System.Drawing.Color.Purple;
+            this.selectedCustNameTxt.BorderThickness = 3;
+            this.selectedCustNameTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.selectedCustNameTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedCustNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.selectedCustNameTxt.isPassword = false;
+            this.selectedCustNameTxt.Location = new System.Drawing.Point(36, 190);
+            this.selectedCustNameTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.selectedCustNameTxt.Name = "selectedCustNameTxt";
+            this.selectedCustNameTxt.Size = new System.Drawing.Size(368, 47);
+            this.selectedCustNameTxt.TabIndex = 19;
+            this.selectedCustNameTxt.Text = "Select Customer";
+            this.selectedCustNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Purple;
+            this.label11.Location = new System.Drawing.Point(32, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 23);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "ID:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Purple;
+            this.label8.Location = new System.Drawing.Point(32, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(176, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Customer Name:";
+            // 
+            // selectedCustIDTxt
+            // 
+            this.selectedCustIDTxt.BackColor = System.Drawing.Color.Gainsboro;
+            this.selectedCustIDTxt.BorderColorFocused = System.Drawing.Color.Purple;
+            this.selectedCustIDTxt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.selectedCustIDTxt.BorderColorMouseHover = System.Drawing.Color.Purple;
+            this.selectedCustIDTxt.BorderThickness = 3;
+            this.selectedCustIDTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.selectedCustIDTxt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedCustIDTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.selectedCustIDTxt.isPassword = false;
+            this.selectedCustIDTxt.Location = new System.Drawing.Point(36, 100);
+            this.selectedCustIDTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.selectedCustIDTxt.Name = "selectedCustIDTxt";
+            this.selectedCustIDTxt.Size = new System.Drawing.Size(368, 47);
+            this.selectedCustIDTxt.TabIndex = 13;
+            this.selectedCustIDTxt.Text = "Select Customer";
+            this.selectedCustIDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // sales_Orders
             // 
@@ -1156,7 +1239,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(38, 41);
+            this.panel1.Location = new System.Drawing.Point(36, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 440);
             this.panel1.TabIndex = 1;
@@ -1478,16 +1561,6 @@
             // 
             this.bunifuFormFadeTransition1.Delay = 5;
             // 
-            // panel_merch
-            // 
-            this.panel_merch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_merch.Controls.Add(this.sell_merchandise);
-            this.panel_merch.Controls.Add(this.label5);
-            this.panel_merch.Location = new System.Drawing.Point(23, 20);
-            this.panel_merch.Name = "panel_merch";
-            this.panel_merch.Size = new System.Drawing.Size(741, 477);
-            this.panel_merch.TabIndex = 21;
-            // 
             // panel_merche
             // 
             this.panel_merche.ElipseRadius = 5;
@@ -1498,57 +1571,10 @@
             this.panel_merchontrole.ElipseRadius = 5;
             this.panel_merchontrole.TargetControl = this.panel_merchcontrol;
             // 
-            // panel_custdetails
-            // 
-            this.panel_custdetails.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_custdetails.Controls.Add(this.select_customer);
-            this.panel_custdetails.Controls.Add(this.label7);
-            this.panel_custdetails.Controls.Add(this.customer_list);
-            this.panel_custdetails.Controls.Add(this.btnNewCust);
-            this.panel_custdetails.Controls.Add(this.selectedCustNameTxt);
-            this.panel_custdetails.Controls.Add(this.label11);
-            this.panel_custdetails.Controls.Add(this.label8);
-            this.panel_custdetails.Controls.Add(this.selectedCustIDTxt);
-            this.panel_custdetails.Location = new System.Drawing.Point(23, 521);
-            this.panel_custdetails.Name = "panel_custdetails";
-            this.panel_custdetails.Size = new System.Drawing.Size(999, 317);
-            this.panel_custdetails.TabIndex = 22;
-            // 
             // panel_custdetailse
             // 
             this.panel_custdetailse.ElipseRadius = 5;
             this.panel_custdetailse.TargetControl = this.panel_custdetails;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Purple;
-            this.label21.Location = new System.Drawing.Point(22, 632);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(193, 47);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "CHANGE";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuMetroTextbox1
-            // 
-            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.Blue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.bunifuMetroTextbox1.BorderThickness = 3;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(254, 623);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(257, 56);
-            this.bunifuMetroTextbox1.TabIndex = 15;
-            this.bunifuMetroTextbox1.Text = "CHANGE";
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel_orderlinee
             // 
@@ -1590,6 +1616,30 @@
             this.neworderbtn_e.ElipseRadius = 11;
             this.neworderbtn_e.TargetControl = this.btnNewOrder;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // btnSearchcust_e
+            // 
+            this.btnSearchcust_e.ElipseRadius = 11;
+            this.btnSearchcust_e.TargetControl = this.btnSearchcust;
+            // 
+            // btnSearchcust
+            // 
+            this.btnSearchcust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(21)))), ((int)(((byte)(72)))));
+            this.btnSearchcust.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchcust.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchcust.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchcust.ForeColor = System.Drawing.Color.White;
+            this.btnSearchcust.Location = new System.Drawing.Point(882, 12);
+            this.btnSearchcust.Name = "btnSearchcust";
+            this.btnSearchcust.Size = new System.Drawing.Size(87, 41);
+            this.btnSearchcust.TabIndex = 22;
+            this.btnSearchcust.Text = "Search";
+            this.btnSearchcust.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1622,9 +1672,13 @@
             this.panel_orderline.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderline)).EndInit();
             this.panel_orderdetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customer_list)).EndInit();
             this.panel_merchcontrol.ResumeLayout(false);
+            this.panel_merch.ResumeLayout(false);
+            this.panel_merch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sell_merchandise)).EndInit();
+            this.panel_custdetails.ResumeLayout(false);
+            this.panel_custdetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_list)).EndInit();
             this.sales_Orders.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -1636,10 +1690,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.admin_panel.ResumeLayout(false);
-            this.panel_merch.ResumeLayout(false);
-            this.panel_merch.PerformLayout();
-            this.panel_custdetails.ResumeLayout(false);
-            this.panel_custdetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1766,5 +1816,9 @@
         private Bunifu.Framework.UI.BunifuElipse selectcustbtn_e;
         private Bunifu.Framework.UI.BunifuElipse checkoutbtn_e;
         private Bunifu.Framework.UI.BunifuElipse neworderbtn_e;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox search_customer;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse btnSearchcust_e;
+        private System.Windows.Forms.Button btnSearchcust;
     }
 }

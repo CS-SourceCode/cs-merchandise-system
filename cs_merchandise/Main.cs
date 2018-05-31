@@ -589,36 +589,64 @@ namespace cs_merchandise
             showOrderDetails();
         }
 
-        /*
-        DataGridView GetSelectedRows(DataGridView dgv)
+        private void sell_merchandise_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var dt = new DataTable();
-            foreach (DataGridViewColumn column in dgv.Columns)
+            temp_qty = Convert.ToInt32(item_quantity.Text);
+            // Create a new row first as it will include the columns you've created at design-time.
+            bool Found = false;
+            if (orderline.Rows.Count > 0)
             {
-                if (column.Visible)
+                foreach (DataGridViewRow row1 in orderline.Rows)
                 {
-                    dt.Columns.Add();
+                    if (Convert.ToString(row1.Cells[0].Value) == temp_merchname)
+                    {
+                        //Update the Quantity of the found row
+                        row1.Cells[1].Value = temp_qty;
+                        row1.Cells[2].Value = temp_price * temp_qty;
+                        Found = true;
+                    }
+
+                }
+                if (!Found)
+                {
+
+                    int rowId = orderline.Rows.Add();
+
+                    // Grab the new row!
+                    DataGridViewRow row = orderline.Rows[rowId];
+
+                    // Add the data
+                    row.Cells["merch_name"].Value = temp_merchname;
+                    row.Cells["merch_quantity"].Value = temp_qty;
+                    row.Cells["merch_price"].Value = temp_price * temp_qty;
+                    row.Cells["merch_id"].Value = temp_merchid;
                 }
             }
-
-            object[] cellValues = new object[dgv.Columns.Count-1];
-            foreach (DataGridViewRow row in dgv.Rows)
+            else
             {
-                if (!row.Selected) continue;
 
-                for (int i = 0; i < row.Cells.Count - 1; i++)
-                {
+                int rowId = orderline.Rows.Add();
 
-                    cellValues[i] = row.Cells[i].Value;
-                }
-                dt.Rows.Add(cellValues);
-                
+                // Grab the new row!
+                DataGridViewRow row = orderline.Rows[rowId];
+
+                // Add the data
+                row.Cells["merch_name"].Value = temp_merchname;
+                row.Cells["merch_quantity"].Value = temp_qty;
+                row.Cells["merch_price"].Value = temp_price * temp_qty;
+                row.Cells["merch_id"].Value = temp_merchid;
             }
-            DataGridView x=orderline;
-            x.Rows.Add(dt);
-            return x;
+
+            price_total.Text = (from DataGridViewRow row in orderline.Rows
+                                where row.Cells[2].FormattedValue.ToString() != string.Empty
+                                select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum().ToString();
+            total_price = (from DataGridViewRow row in orderline.Rows
+                           where row.Cells[2].FormattedValue.ToString() != string.Empty
+                           select Convert.ToDecimal(row.Cells[2].FormattedValue)).Sum();
+
+            btnAdditem.Text = "Update";
         }
-        */
+
     }
 
     

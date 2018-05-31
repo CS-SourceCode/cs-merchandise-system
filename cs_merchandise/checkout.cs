@@ -45,5 +45,15 @@ namespace cs_merchandise
             }
             parent.checkoutOrder(cash, cashchange, payment_status);
         }
+
+        private void btnCheckoutback_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void login_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

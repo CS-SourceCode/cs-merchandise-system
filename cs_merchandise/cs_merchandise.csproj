@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="images\CSSEC_Logo %28Final%29.png" />
     <Content Include="images\CS_Final.png" />
+    <None Include="images\search.jpg" />
     <Content Include="images\Source Code.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
