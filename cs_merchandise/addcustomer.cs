@@ -20,6 +20,7 @@ namespace cs_merchandise
         {
             mainMenu = x;
             InitializeComponent();
+            cluster_select.selectedIndex = 0;
         }
 
         private void addcustomer_Load(object sender, EventArgs e)
@@ -34,22 +35,31 @@ namespace cs_merchandise
 
         private void btnNewCust_Click(object sender, EventArgs e)
         {
-            string firstname = fname.Text;
-            string lastname = lname.Text;
-            var tempcust_dt = conn.Select("customer", "*")
-                        .Where("firstname", firstname, "lastname", lastname)
-                        .GetQueryData();
-
-            if (tempcust_dt.Rows.Count == 1)
+            int parse;
+            if (fname.Text == "" || lname.Text == "" || cluster_select.selectedValue == "" || (contact.Text == "" || !int.TryParse(contact.Text, out parse)))
             {
-                MessageBox.Show("Customer already exists!");
+                MessageBox.Show("Please make sure all fields are filled in correctly.");
+
             }
             else
             {
-                conn.Insert("customer", "firstname", fname.Text, "lastname", lname.Text, "contact", contact.Text, "cluster", cluster_select.selectedValue).GetQueryData();
+                string firstname = fname.Text;
+                string lastname = lname.Text;
+                
+                var tempcust_dt = conn.Select("customer", "*")
+                            .Where("firstname", firstname, "lastname", lastname)
+                            .GetQueryData();
+
+                if (tempcust_dt.Rows.Count == 1)
+                {
+                    MessageBox.Show("Customer already exists!");
+                }
+                else
+                {
+                    conn.Insert("customer", "firstname", fname.Text, "lastname", lname.Text, "contact", contact.Text, "cluster", cluster_select.selectedValue).GetQueryData();
+                }
+                mainMenu.setCustomerlist();
             }
-            mainMenu.setCustomerlist();
-            
         }
 
         private void btnCloseNewCust_Click(object sender, EventArgs e)
