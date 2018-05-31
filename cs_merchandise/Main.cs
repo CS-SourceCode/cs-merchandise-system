@@ -528,60 +528,54 @@ namespace cs_merchandise
 
         private void reloadOrders()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
-            {
-                databasecon.Open();
-                string query = "SELECT " +
-                               "orders.order_id, orders.order_date, orders.order_status, CONCAT(customer.lastname, ', ', customer.firstname) as customer, " +
-                               "orders.payment_status " +
-                               "FROM orders " +
-                               "INNER JOIN customer  ON orders.customer_id=customer.customer_id";
-                var command = new MySqlCommand(query);
-                command.Connection = databasecon;
-                var holder = new DataTable();
-                holder.Load(command.ExecuteReader());
-                dataGridView2.DataSource = holder;
-            }
-
+            dataGridView2.Datasource = conn.Select("orders", "orders.order_id", "orders.order_date", "orders.order_status", "CONCAT(customer.lastname, ', ', customer.firstname) as customer)
+                                            .IJoin("customer", "orders.customer_id", "customer.customer_id")
+                                            .GetQueryData();
         }
 
         private void showOrderDetails()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
-            {
-                databasecon.Open();
-                string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-                string query = "SELECT CONCAT(c.firstname,' ',c.lastname) as name, c.contact, c.cluster, " +
-                    "o.order_date, o.payment_status, o.order_status " +
-                    "FROM orders as o " +
-                    "NATURAL JOIN customer as c " +
-                    "WHERE o.order_id = @id";
-                var command = new MySqlCommand(query);
-                command.Connection = databasecon;
-                command.Parameters.AddWithValue("@id", selectedOrder);
-                var customerDetails = new DataTable();
-                customerDetails.Load(command.ExecuteReader());
-                orderCname.Text = customerDetails.Rows[0][0].ToString();
-                orderCcontact.Text = customerDetails.Rows[0][1].ToString();
-                orderCcluster.Text = customerDetails.Rows[0][2].ToString();
-                orderOdate.Text = customerDetails.Rows[0][3].ToString();
-                orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
-                orderOstatus.Text = customerDetails.Rows[0][5].ToString();
-                query = "SELECT m.merch_name, ol.quantity, o.payment, ol.total_price " +
-                    "FROM orderline as ol " +
-                    "INNER JOIN merchandise AS m " +
-                    "ON ol.merch_id = m.merch_id " +
-                    "INNER JOIN orders AS o " +
-                    "ON ol.order_id = o.order_id " +
-                    "WHERE o.order_id = @id";
-                command = new MySqlCommand(query);
-                command.Connection = databasecon;
-                command.Parameters.AddWithValue("@id", selectedOrder);
-                var orderDetails = new DataTable();
-                orderDetails.Load(command.ExecuteReader());
-                dataGridView3.DataSource = orderDetails;
-            }
-                
+            string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+            var customerDetails = conn.Select("order=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "o.order_date, o.payment_status, o.total_price, o.order_status " +
+                                    .NJoin("customer=c")
+                                    .Where("o.order_id", selectedOrder)
+                                    .GetQueryData();
+            orderCname.Text = customerDetails.Rows[0][0].ToString();
+            orderCcontact.Text = customerDetails.Rows[0][1].ToString();
+            orderCcluster.Text = customerDetails.Rows[0][2].ToString();
+            orderOdate.Text = customerDetails.Rows[0][3].ToString();
+            orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
+            orderOcdate.Text = customerDetails.Rows[0][5].ToString();
+            orderOstatus.Text = customerDetails.Rows[0][6].ToString();
+
+            dataGridView3.DataSouce = conn.Select("orderline=ol" "m.merch_name", "ol.quantity", "ol.price")
+                                        .NJoin("merchandise=m")
+                                        .NJoin("orders=o")
+                                        .Where("o.order_id", selectedOrder)
+                                        .GetQueryData();     
+        }
+
+        public void claimOrder(string olID)
+        {
+            conn.Update("orderline", "claim_date" , DateTime.Now.ToString("yyyy-MM-dd"))
+                .Where("orderlineID", olID)
+                .GetQueryData();
+            
+        }
+
+        public void payOrder(string oID, string payment)
+        {
+            payOrder(oID, Convert.ToInt32(payment));
+        }
+
+        public void payOrder(string oID, int payment)
+        {
+            string present_pay = conn.Select("orders", "payment")
+                                    .Where("order_id", oID)
+                                    .GetQueryData()[0][0];
+            int total_pay =  Convert.ToInt32(present_pay) + payment;
+            conn.Update("orders", "payment", total_pay.toString())
+                .GetQueryData();
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
