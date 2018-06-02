@@ -63,8 +63,9 @@ namespace cs_merchandise
             this.payment = payment;
             this.change = change;
 
-            conn.Insert("orders", "order_date", DateTime.Now.ToString("yyyy-MM-dd")
-                /*order_date.ToString("dd/MM/yyyy")*/, "order_status", "1", "customer_id", customer_id.ToString(), "payment_status", paystatus, "payment", payment.ToString()).GetQueryData();
+            conn.Insert("orders", "order_date", DateTime.Now.ToString("yyyy-MM-dd"), "order_status", "1", "customer_id", customer_id.ToString(), "payment_status", paystatus).GetQueryData();
+            conn.Insert("order_payment", "order_id", conn.lastID(), "payment", payment.ToString(), "payment_date",
+                DateTime.Now.ToString("yyyy-MM-dd")).GetQueryData();
             //orderline.ColumnCount = 5;
             string temp_orderid;
             temp_orderid = conn.lastID();
@@ -548,7 +549,7 @@ namespace cs_merchandise
             orderOcdate.Text = customerDetails.Rows[0][5].ToString();
             orderOstatus.Text = customerDetails.Rows[0][6].ToString();
 
-            dataGridView3.DataSource = conn.Select("orderline=ol", "m.merch_name", "ol.quantity", "ol.total_price")
+            dataGridView3.DataSource = conn.Select("orderline=ol", "m.merch_name", "ol.quantity")
                                         .NJoin("merchandise=m")
                                         .NJoin("orders=o")
                                         .Where("o.order_id", selectedOrder)
@@ -570,11 +571,16 @@ namespace cs_merchandise
 
         public void payOrder(string oID, int payment)
         {
+            // toDo: create a group by function params[] paren
+            // toDo: 1 select for payment SUM()
+            // toDo: 1 insert for payment
             string present_pay = conn.Select("orders", "payment")
                                     .Where("order_id", oID)
                                     .GetQueryData()[0][0];
             int total_pay =  Convert.ToInt32(present_pay) + payment;
-            conn.Update("orders", "payment", total_pay.ToString())
+            conn.Insert("order_payment", "order_id", oID, "payment", payment.ToString())
+            if(total_pay > )
+            conn.Update("orders", "payment_status", "1")
                 .GetQueryData();
         }
 
