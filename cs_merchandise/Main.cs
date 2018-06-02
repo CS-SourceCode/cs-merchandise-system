@@ -642,6 +642,15 @@ namespace cs_merchandise
             btnAdditem.Text = "Update";
         }
 
+        private void panel_allorders_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     

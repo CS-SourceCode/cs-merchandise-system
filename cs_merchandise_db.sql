@@ -68,6 +68,60 @@ INSERT INTO `merchandise` VALUES (1,'CS Shirt XS',250.00),(2,'CS Shirt S',350.00
 UNLOCK TABLES;
 
 --
+-- Table structure for table `order_claim`
+--
+
+DROP TABLE IF EXISTS `order_claim`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order_claim` (
+  `claim_id` int(11) NOT NULL,
+  `orderline_id` int(11) DEFAULT NULL,
+  `quantity_no` int(11) DEFAULT NULL,
+  `date_claimed` date DEFAULT NULL,
+  PRIMARY KEY (`claim_id`),
+  KEY `orderline_id_idx` (`orderline_id`),
+  CONSTRAINT `orderline_id` FOREIGN KEY (`orderline_id`) REFERENCES `orderline` (`orderline_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_claim`
+--
+
+LOCK TABLES `order_claim` WRITE;
+/*!40000 ALTER TABLE `order_claim` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_claim` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order_payment`
+--
+
+DROP TABLE IF EXISTS `order_payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order_payment` (
+  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) DEFAULT NULL,
+  `payment` decimal(10,2) DEFAULT NULL,
+  `payment_date` date DEFAULT NULL,
+  PRIMARY KEY (`payment_id`),
+  KEY `order_id_idx` (`order_id`),
+  CONSTRAINT `o_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_payment`
+--
+
+LOCK TABLES `order_payment` WRITE;
+/*!40000 ALTER TABLE `order_payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `orderline`
 --
 
@@ -80,7 +134,7 @@ CREATE TABLE `orderline` (
   `merch_id` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `total_price` decimal(15,2) DEFAULT NULL,
-  `date_claimed` date DEFAULT NULL,
+  `quantity_claimed` int(11) DEFAULT NULL,
   PRIMARY KEY (`orderline_id`),
   KEY `merch_id_idx` (`merch_id`),
   KEY `order_id_idx` (`order_id`),
@@ -108,11 +162,9 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_date` date DEFAULT NULL,
   `order_status` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `payment_status` varchar(45) DEFAULT NULL,
-  `payment` decimal(15,2) DEFAULT NULL,
   PRIMARY KEY (`order_id`),
   KEY `customer_id_idx` (`customer_id`),
   CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -125,7 +177,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'2018-05-30',1,2,'DOWN',0.00),(2,'2018-05-30',1,1,'DOWN',0.00),(3,'2018-05-30',1,1,'DOWN',0.00),(4,'2018-05-30',1,1,'DOWN',0.00),(5,'2018-05-30',1,1,'DOWN',0.00),(6,'2018-05-30',1,1,'DOWN',0.00),(7,'2018-05-30',1,1,'DOWN',0.00),(8,'2018-05-30',1,1,'DOWN',0.00),(9,'2018-05-30',1,1,'DOWN',0.00),(10,'2018-05-30',1,1,'DOWN',0.00),(11,'2018-05-30',1,1,'DOWN',0.00),(12,'2018-05-30',1,3,'FULLY PAID',1700.00);
+INSERT INTO `orders` VALUES (1,1,2,'DOWN'),(2,1,1,'DOWN'),(3,1,1,'DOWN'),(4,1,1,'DOWN'),(5,1,1,'DOWN'),(6,1,1,'DOWN'),(7,1,1,'DOWN'),(8,1,1,'DOWN'),(9,1,1,'DOWN'),(10,1,1,'DOWN'),(11,1,1,'DOWN'),(12,1,3,'FULLY PAID');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-31 16:45:57
+-- Dump completed on 2018-06-02 15:13:38
