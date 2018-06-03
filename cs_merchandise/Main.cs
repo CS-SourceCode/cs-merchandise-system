@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -553,7 +552,6 @@ namespace cs_merchandise
             orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
             orderOcdate.Text = customerDetails.Rows[0][5].ToString();
             orderOstatus.Text = customerDetails.Rows[0][6].ToString();
-            payOrder(selectedOrder, 200);
             dataGridView3.DataSource = conn.Select("orderline=ol", "m.merch_name", "ol.quantity", "ol.quantity_claimed")
                                         .NJoin("merchandise=m")
                                         .NJoin("orders=o")
