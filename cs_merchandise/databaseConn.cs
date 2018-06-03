@@ -13,23 +13,16 @@ namespace cs_merchandise
         private string _sql = "";
         private bool _flag;
 
-        public DatabaseConn()
-        {
-            RefreshCmd();
-        }
+        public DatabaseConn() => RefreshCmd();
 
-        public string lastID()
-        {
-            return _cmd.LastInsertedId.ToString();
-        }
+        public string lastID => _cmd.LastInsertedId.ToString();
 
         private string tableNamer(string tableName)
         {
             string[] naming = tableName.Split('=');
             if (naming.Length > 1)
                 return naming[0] + " AS " + naming[1];
-            else
-                return tableName;
+            return tableName;
         }
 
         private void RefreshCmd()
@@ -40,7 +33,7 @@ namespace cs_merchandise
 
         public dynamic GetQueryData()
         {
-            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=;"))
+            using (var databasecon = new MySqlConnection("Server=localhost;Database=cs_merchandise;Uid=root;Pwd=root;"))
             {
                 databasecon.Open();
                 _cmd.CommandText = _sql;
@@ -55,15 +48,9 @@ namespace cs_merchandise
             }
         }
 
-        public DataTable GetData()
-        {
-            return _holder;
-        }
+        public DataTable GetData() => _holder;
 
-        public MySqlCommand getCmd()
-        {
-            return _cmd;
-        }
+        public MySqlCommand getCmd() => _cmd;
 
         public DatabaseConn Select(string table, params string[] fields)
         {
@@ -74,10 +61,7 @@ namespace cs_merchandise
             return this;
         }
 
-        public DatabaseConn Select(string table, string[] fields, string[] wheres)
-        {
-            return Select(table, fields).Where(wheres);
-        }
+        public DatabaseConn Select(string table, string[] fields, string[] wheres) => Select(table, fields).Where(wheres);
 
         public DatabaseConn Update(string table, params string[] fields)
         {
@@ -98,10 +82,7 @@ namespace cs_merchandise
             throw new Exception("Lack of fields/values arguements passed:" + string.Join(",", fields));
         }
 
-        public DatabaseConn Update(string table, string[] fields, string[] wheres)
-        {
-            return Update(table, fields).Where(wheres);
-        }
+        public DatabaseConn Update(string table, string[] fields, string[] wheres) => Update(table, fields).Where(wheres);
 
         public DatabaseConn Insert(string table, params string[] fields)
         {
@@ -127,18 +108,29 @@ namespace cs_merchandise
 
         public DatabaseConn Where(params string[] fields)
         {
-            if (fields.Length % 2 == 0)
+            if (fields.Length % 2 != 0)
+                throw new Exception("Lack of fields/values arguements passed:" + string.Join(",", fields));
+            _sql += "WHERE ";
+            for (var i = 0; i < fields.Length; i++)
             {
-                _sql += "WHERE ";
-                for (var i = 0; i < fields.Length; i++)
-                {
-                    _sql += fields[i] + " = @" + fields[i] + (i + 2 < fields.Length ? " AND " : "");
-                    _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]);
-                    //Every other parameter added as parameterized value
-                }
-                return this;
+                _sql += fields[i] + " = @" + fields[i] + (i + 2 < fields.Length ? " AND " : " ");
+                _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i]);
+                //Every other parameter added as parameterized value
             }
-            throw new Exception("Lack of fields/values arguements passed:" + string.Join(",", fields));
+            return this;
+        }
+        public DatabaseConn Like(params string[] fields)
+        {
+            if (fields.Length % 2 != 0)
+                throw new Exception("Lack of fields/values arguements passed:" + string.Join(",", fields));
+            _sql += "WHERE ";
+            for (var i = 0; i < fields.Length; i++)
+            {
+                _sql += fields[i] + " LIKE @" + fields[i] + (i + 2 < fields.Length ? " AND " : " ");
+                _cmd.Parameters.AddWithValue("@" + fields[i], fields[++i] + "%");
+                //Every other parameter added as parameterized value
+            }
+            return this;
         }
 
         private DatabaseConn Join(string table, string field1, string field2, string type)
@@ -148,20 +140,11 @@ namespace cs_merchandise
             return this;
         }
 
-        public DatabaseConn IJoin(string table, string field1, string field2)
-        {
-            return Join(table, field1, field2, "INNER");
-        }
+        public DatabaseConn IJoin(string table, string field1, string field2) => Join(table, field1, field2, "INNER");
 
-        public DatabaseConn RJoin(string table, string field1, string field2)
-        {
-            return Join(table, field1, field2, "RIGHT");
-        }
+        public DatabaseConn RJoin(string table, string field1, string field2) => Join(table, field1, field2, "RIGHT");
 
-        public DatabaseConn LJoin(string table, string field1, string field2)
-        {
-            return Join(table, field1, field2, "LEFT");
-        }
+        public DatabaseConn LJoin(string table, string field1, string field2) => Join(table, field1, field2, "LEFT");
 
         public DatabaseConn NJoin(string table)
         {
@@ -169,6 +152,17 @@ namespace cs_merchandise
             _sql += "NATURAL JOIN " + table + " ";
             return this;
 
+        }
+
+        public DatabaseConn Group(params string[] fields)
+        {
+            _sql += "GROUP BY (";
+            foreach (var field in fields)
+            {
+                _sql += field + ", ";
+            }
+            _sql = _sql.Remove(_sql.Length -2, 2) + ") ";
+            return this;
         }
     }
 
