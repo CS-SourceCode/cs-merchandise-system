@@ -13,9 +13,12 @@ namespace cs_merchandise
         private string _sql = "";
         private bool _flag;
 
-        public DatabaseConn() => RefreshCmd();
+        public DatabaseConn()
+        {
+            RefreshCmd();
+        }
 
-        public string lastID => _cmd.LastInsertedId.ToString();
+    public string lastID => _cmd.LastInsertedId.ToString();
 
         private string tableNamer(string tableName)
         {
@@ -50,7 +53,11 @@ namespace cs_merchandise
 
         public DataTable GetData() => _holder;
 
-        public MySqlCommand getCmd() => _cmd;
+        public MySqlCommand GetCmd()
+        {
+            _cmd.CommandText = _sql;
+            return _cmd;
+        }
 
         public DatabaseConn Select(string table, params string[] fields)
         {
@@ -132,6 +139,16 @@ namespace cs_merchandise
             }
             return this;
         }
+
+        private DatabaseConn Join(DatabaseConn inner)
+        {
+            MySqlCommand commands= inner.GetCmd();
+            _sql += "(" + commands.CommandText + ") ";
+            foreach(var parameter in commands.Parameters)
+                _cmd.Parameters.Add(parameter);
+            return this;
+        }
+
 
         private DatabaseConn Join(string table, string field1, string field2, string type)
         {
