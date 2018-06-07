@@ -529,7 +529,7 @@ namespace cs_merchandise
 
         private void reloadOrders()
         {
-            dataGridView2.DataSource = conn.Select("orders=o", "o.order_id", "op.payment_date AS 'Order Date'", "o.order_status", "CONCAT(c.lastname, ', ', c.firstname) as customer")
+            dataGridView2.DataSource = conn.Select("orders=o", "o.order_id", "MIN(op.payment_date) AS 'Order Date'", "o.order_status", "CONCAT(c.lastname, ', ', c.firstname) as customer")
                 .NJoin("order_payment=op")
                 .NJoin("customer=c")
                 .Group("order_id")
@@ -539,7 +539,7 @@ namespace cs_merchandise
         private void showOrderDetails()
         {
             string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
-            var customerDetails = conn.Select("orders=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "op.payment_date", "o.payment_status", "SUM(op.payment)", "o.order_status ")
+            var customerDetails = conn.Select("orders=o", "CONCAT(c.firstname,' ',c.lastname) as name", "c.contact", "c.cluster", "MIN(op.payment_date)", "o.payment_status", "SUM(op.payment)", "o.order_status ")
                                     .NJoin("customer=c")
                                     .NJoin("order_payment=op")
                                     .Where("o.order_id", selectedOrder)
