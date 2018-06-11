@@ -553,35 +553,36 @@ namespace cs_merchandise
             orderOpstatus.Text = customerDetails.Rows[0][4].ToString();
             orderOcdate.Text = customerDetails.Rows[0][5].ToString();
             orderOstatus.Text = customerDetails.Rows[0][6].ToString();
-            dataGridView3.DataSource = conn.Select("orderline=ol", "m.merch_name", "ol.quantity", "ol.quantity_claimed")
+            dataGridView3.DataSource = conn.Select("orderline=ol", "ol.orderline_id", "m.merch_name", "ol.quantity", "ol.quantity_claimed")
                                         .NJoin("merchandise=m")
                                         .NJoin("orders=o")
                                         .Where("o.order_id", selectedOrder)
                                         .GetQueryData();
-
+            _connData = conn.GetData();
+            dataGridView3.Visible = false;
             dataGridView3.Columns[0].ReadOnly = true;
             dataGridView3.Columns[1].ReadOnly = true;
-            /*
-            foreach (var cols in dataGridView3.Columns)
-            {
-                
-            }
-            */
+            dataGridView3.Columns[2].ReadOnly = true;
         }
+        private DataTable _connData;
+        
+        public void claimOrder(string olID, string quantity) => claimOrder(olID, Convert.ToDecimal(quantity));
 
-        public void claimOrder(string olID, string quantity)
+        public void claimOrder(string olID, decimal quantity)
         {
-            var quantityClaimed = conn.Select("orderline", "quantity_claimed")
+            var itemDetails = conn.Select("orderline", "quantity", "quantity_claimed")
                 .Where("orderlineID", olID)
                 .GetQueryData();
-            quantityClaimed += int.Parse(quantity);
-            conn.Update("orderline", "quantity_claimed", quantityClaimed)
+            decimal quantityClaimed = Convert.ToDecimal(itemDetails.Rows[0][1].ToString());
+            decimal total = Convert.ToDecimal(itemDetails.Rows[0][0].ToString());
+            quantity = total < quantity ? total : quantity;
+            quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
+            conn.Update("orderline", "quantity_claimed", quantity.ToString())
                 .Where("orderline_id", olID)
                 .GetQueryData();
-            conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantity, "date_claimed",
+            conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantityClaimed.ToString(), "date_claimed",
                     DateTime.Now.ToString("yyyy-MM-dd"))
                 .GetQueryData();
-
         }
 
         public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToDecimal(payment));
@@ -712,7 +713,13 @@ namespace cs_merchandise
         //CLAIM//
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var quantities = _connData;
+            int i = 0;
+            foreach (DataRowCollection quantity in quantities.Rows)
+            {
+                var claiming = dataGridView3.Rows[i++].Cells[3].ToString();
+                claimOrder(quantity[1].ToString(), claiming);
+            }
         }
     }
 
