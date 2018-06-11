@@ -559,7 +559,7 @@ namespace cs_merchandise
                                         .Where("o.order_id", selectedOrder)
                                         .GetQueryData();
             _connData = conn.GetData();
-            dataGridView3.Visible = false;
+            dataGridView3.Columns[0].Visible = false;
             dataGridView3.Columns[0].ReadOnly = true;
             dataGridView3.Columns[1].ReadOnly = true;
             dataGridView3.Columns[2].ReadOnly = true;
@@ -570,19 +570,23 @@ namespace cs_merchandise
 
         public void claimOrder(string olID, decimal quantity)
         {
+            MessageBox.Show(olID);
             var itemDetails = conn.Select("orderline", "quantity", "quantity_claimed")
-                .Where("orderlineID", olID)
+                .Where("orderline_id", olID)
                 .GetQueryData();
             decimal quantityClaimed = Convert.ToDecimal(itemDetails.Rows[0][1].ToString());
             decimal total = Convert.ToDecimal(itemDetails.Rows[0][0].ToString());
             quantity = total < quantity ? total : quantity;
-            quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
-            conn.Update("orderline", "quantity_claimed", quantity.ToString())
-                .Where("orderline_id", olID)
-                .GetQueryData();
+            if (quantityClaimed < quantity)
+            {
+                quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
+                conn.Update("orderline", "quantity_claimed", quantity.ToString())
+                    .Where("orderline_id", olID)
+                    .GetQueryData();
             conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantityClaimed.ToString(), "date_claimed",
                     DateTime.Now.ToString("yyyy-MM-dd"))
                 .GetQueryData();
+            }
         }
 
         public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToDecimal(payment));
@@ -715,10 +719,10 @@ namespace cs_merchandise
         {
             var quantities = _connData;
             int i = 0;
-            foreach (DataRowCollection quantity in quantities.Rows)
+            foreach (DataRow quantity in quantities.Rows)
             {
-                var claiming = dataGridView3.Rows[i++].Cells[3].ToString();
-                claimOrder(quantity[1].ToString(), claiming);
+                var claiming = dataGridView3.Rows[i++].Cells[3].Value.ToString();
+                claimOrder(quantity[0].ToString(), claiming);
             }
         }
     }

@@ -163,6 +163,7 @@
             this.guide1 = new System.Windows.Forms.Panel();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.guide2 = new System.Windows.Forms.Panel();
+            this.claim_amount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.main_browser.SuspendLayout();
             this.browser_dashboard.SuspendLayout();
             this.panel_orders2.SuspendLayout();
@@ -1092,6 +1093,8 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.claim_amount1});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
@@ -1786,6 +1789,11 @@
             this.guide2.Size = new System.Drawing.Size(29, 30);
             this.guide2.TabIndex = 20;
             // 
+            // claim_amount1
+            // 
+            this.claim_amount1.HeaderText = "CLAIM";
+            this.claim_amount1.Name = "claim_amount1";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1986,5 +1994,6 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn claim_amount1;
     }
 }
