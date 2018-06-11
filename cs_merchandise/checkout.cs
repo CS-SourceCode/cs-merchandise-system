@@ -17,9 +17,11 @@ namespace cs_merchandise
         decimal cash;
         decimal cashchange;
         string payment_status;
+        Boolean _flag;
 
-        public checkout(Main main, decimal total)
+        public checkout(Main main, decimal total, Boolean flag = false)
         {
+            _flag = flag;
             InitializeComponent();
             parent = main;
             totalprice = total;
@@ -31,19 +33,28 @@ namespace cs_merchandise
         private void btnRecordOrder_Click(object sender, EventArgs e)
         {
             cash = Convert.ToDecimal(cash_amount.Text);
-            if(totalprice > cash)
+            if (_flag)
             {
-                cashchange = totalprice - cash;
-                payment_status = "DOWN";
-                MessageBox.Show("Insufficient Cash; this transaction will be recorded as DOWN Payment.");
+                string selectedOrder = parent.dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+                parent.payOrder(selectedOrder, cash);
             }
-            else if(totalprice <= cash)
+            else
             {
-                cashchange = totalprice - cash;
-                payment_status = "FULLY PAID";
-                MessageBox.Show("This transaction will be recorded as FULLY PAID.");
+                if (totalprice > cash)
+                {
+                    cashchange = totalprice - cash;
+                    payment_status = "DOWN";
+                    MessageBox.Show("Insufficient Cash; this transaction will be recorded as DOWN Payment.");
+                }
+                else if (totalprice <= cash)
+                {
+                    cashchange = totalprice - cash;
+                    payment_status = "FULLY PAID";
+                    MessageBox.Show("This transaction will be recorded as FULLY PAID.");
+                }
+                parent.checkoutOrder(cash, cashchange, payment_status);
             }
-            parent.checkoutOrder(cash, cashchange, payment_status);
+            this.Close();
         }
 
         private void btnCheckoutback_Click(object sender, EventArgs e)

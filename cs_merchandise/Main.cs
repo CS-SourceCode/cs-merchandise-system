@@ -63,16 +63,17 @@ namespace cs_merchandise
             this.payment = payment;
             this.change = change;
 
-            conn.Insert("orders", "order_date", DateTime.Now.ToString("yyyy-MM-dd"), "order_status", "1", "customer_id", customer_id.ToString(), "payment_status", paystatus).GetQueryData();
+            conn.Insert("orders", "order_status", "1", "customer_id", customer_id.ToString(), "payment_status", paystatus).GetQueryData();
+            string temp_orderid;
+            temp_orderid = conn.lastID;
             conn.Insert("order_payment", "order_id", conn.lastID, "payment", payment.ToString(), "payment_date",
                 DateTime.Now.ToString("yyyy-MM-dd")).GetQueryData();
             //orderline.ColumnCount = 5;
-            string temp_orderid;
-            temp_orderid = conn.lastID;
+           
             foreach (DataGridViewRow rows in orderline.Rows)
             {
                 MessageBox.Show(rows.Cells[0].Value.ToString());
-                conn.Insert("orderline", "order_id", temp_orderid, "merch_id", rows.Cells[3].Value.ToString(), "quantity", rows.Cells[1].Value.ToString(), "total_price", rows.Cells[2].Value.ToString()).GetQueryData();
+                conn.Insert("orderline", "order_id", temp_orderid, "merch_id", rows.Cells[3].Value.ToString(), "quantity", rows.Cells[1].Value.ToString(), "total_price", rows.Cells[2].Value.ToString(), "quantity_claimed", "0").GetQueryData();
             }
 
 
@@ -82,7 +83,7 @@ namespace cs_merchandise
         {
             order_no.Enabled = false;
             price_total.Enabled = false;
-            var orders_dt = conn.Select("orders", "order_id").GetQueryData();
+            var orders_dt = conn.Select("orders", "MAX(order_id)").GetQueryData();
 
             if (orders_dt.Rows.Count == 0)
             {
@@ -92,7 +93,7 @@ namespace cs_merchandise
             }
             else
             {
-                int order_id = orders_dt.Rows[orders_dt.Rows.Count - 1][0] + 1;
+                int order_id = orders_dt.Rows[0][0] + 1;
                 order_no.Text = order_id.ToString();
             }
 
@@ -487,7 +488,7 @@ namespace cs_merchandise
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            
+            getOrderId();
         }
 
         private void removeall_merch_Click(object sender, EventArgs e)
@@ -556,7 +557,16 @@ namespace cs_merchandise
                                         .NJoin("merchandise=m")
                                         .NJoin("orders=o")
                                         .Where("o.order_id", selectedOrder)
-                                        .GetQueryData();     
+                                        .GetQueryData();
+
+            dataGridView3.Columns[0].ReadOnly = true;
+            dataGridView3.Columns[1].ReadOnly = true;
+            /*
+            foreach (var cols in dataGridView3.Columns)
+            {
+                
+            }
+            */
         }
 
         public void claimOrder(string olID, string quantity)
@@ -574,29 +584,30 @@ namespace cs_merchandise
 
         }
 
-        public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToInt32(payment));
+        public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToDecimal(payment));
 
-        public void payOrder(string oID, int payment)
+        public void payOrder(string oID, decimal payment)
         {
+            var test = new DatabaseConn();
             // toDo: 1 insert for payment
-            var present_pay = conn.Select("order_payment", "SUM(payment)")
+            var present_pay = test.Select("order_payment", "SUM(payment)")
                                     .NJoin("orders")
                                     .Where("order_id", oID)
                                     .Group("order_id")
                                     .GetQueryData()
                                     .Rows[0][0];
-            int total_pay =  Convert.ToInt32(present_pay) + payment;
+            decimal total_pay =  Convert.ToDecimal(present_pay) + payment;
             MessageBox.Show(total_pay.ToString());
-            conn.Insert("order_payment", "order_id", oID, "payment", payment.ToString(), "payment_date",
+            test.Insert("order_payment", "order_id", oID, "payment", payment.ToString(), "payment_date",
                 DateTime.Now.ToString("yyyy-MM-dd"))
                 .GetQueryData();
-            var total_price = conn.Select("orderline", "SUM(total_price)")
+            var total_price = test.Select("orderline", "SUM(total_price)")
                 .Where("order_id", oID)
                 .Group("order_id")
                 .GetQueryData()
                 .Rows[0][0];
             if(total_pay >= total_price)
-                conn.Update("orders", "payment_status", "1")
+                test.Update("orders", "payment_status", "1")
                     .Where("order_id",oID)
                     .GetQueryData();
         }
@@ -671,6 +682,35 @@ namespace cs_merchandise
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //PAY DUE//
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string selectedOrder = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+            var total_price = conn.Select("orderline", "SUM(total_price)")
+                .Where("order_id", selectedOrder)
+                .Group("order_id")
+                .GetQueryData()
+                .Rows[0][0];
+            using (Plexiglass p = new Plexiglass(this))
+            {
+                //p.Location = new Point(48, 15);
+                //p.Location = new Point(0, 0);
+                p.Size = this.ClientRectangle.Size;
+                p.StartPosition = FormStartPosition.CenterScreen;
+                p.BringToFront();
+
+                checkout chkout = new checkout(this, Convert.ToDecimal(total_price), true);
+                chkout.checkoutform = this;
+                chkout.ShowDialog(this);
+            }
+        }
+
+        //CLAIM//
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
