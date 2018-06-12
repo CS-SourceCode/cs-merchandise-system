@@ -579,7 +579,6 @@ namespace cs_merchandise
             decimal max = total - quantityClaimed;
             quantity = quantity > max ? max : quantity;
             quantityClaimed += quantity;
-            quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
             conn.Update("orderline", "quantity_claimed", quantityClaimed.ToString())
                 .Where("orderline_id", olID)
                 .GetQueryData();
@@ -720,7 +719,7 @@ namespace cs_merchandise
             int i = 0;
             foreach (DataRow quantity in quantities.Rows)
             {
-                var claiming = dataGridView3.Rows[i++].Cells[3].Value.ToString();
+                var claiming = dataGridView3.Rows[i++].Cells[4].Value.ToString();
                 claimOrder(quantity[0].ToString(), claiming);
             }
         }
