@@ -559,24 +559,42 @@ namespace cs_merchandise
                                         .Where("o.order_id", selectedOrder)
                                         .GetQueryData();
             _connData = conn.GetData();
-            dataGridView3.Columns[0].Visible = false;
-            dataGridView3.Columns[0].ReadOnly = true;
+            dataGridView3.Columns[0].DisplayIndex = 4;
+            dataGridView3.Columns[1].Visible = false;
             dataGridView3.Columns[1].ReadOnly = true;
             dataGridView3.Columns[2].ReadOnly = true;
+            dataGridView3.Columns[3].ReadOnly = true;
+            dataGridView4.DataSource = conn.Select("order_claim=oc", "m.merch_name", "oc.quantity_no", "oc.date_claimed")
+                                           .NJoin("orderline=ol")
+                                           .NJoin("merchandise=m")
+                                           .Where("ol.order_id",selectedOrder)
+                                           .GetQueryData();
         }
         private DataTable _connData;
         
-        public void claimOrder(string olID, string quantity) => claimOrder(olID, Convert.ToDecimal(quantity));
+        public void claimOrder(string olID, string quantity)
+        {
+            try
+            {
+                claimOrder(olID, Convert.ToDecimal(quantity));
+            }
+            catch (FormatException x)
+            {
+                MessageBox.Show("Invalid Input :" + quantity);
+            }
+        }
 
         public void claimOrder(string olID, decimal quantity)
         {
-            MessageBox.Show(olID);
+            if(quantity == 0 )
+                return;
             var itemDetails = conn.Select("orderline", "quantity", "quantity_claimed")
                 .Where("orderline_id", olID)
                 .GetQueryData();
             decimal quantityClaimed = Convert.ToDecimal(itemDetails.Rows[0][1].ToString());
             decimal total = Convert.ToDecimal(itemDetails.Rows[0][0].ToString());
             decimal max = total - quantityClaimed;
+            //checks if claimed quantity is more than possible, if true will set quantity to max possible
             quantity = quantity > max ? max : quantity;
             quantityClaimed += quantity;
             conn.Update("orderline", "quantity_claimed", quantityClaimed.ToString())
@@ -585,6 +603,7 @@ namespace cs_merchandise
             conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantity.ToString(), "date_claimed",
                 DateTime.Now.ToString("yyyy-MM-dd"))
                 .GetQueryData();
+            showOrderDetails();
         }
 
         public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToDecimal(payment));
@@ -613,6 +632,7 @@ namespace cs_merchandise
                 test.Update("orders", "payment_status", "1")
                     .Where("order_id",oID)
                     .GetQueryData();
+            showOrderDetails();
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
@@ -719,7 +739,8 @@ namespace cs_merchandise
             int i = 0;
             foreach (DataRow quantity in quantities.Rows)
             {
-                var claiming = dataGridView3.Rows[i++].Cells[4].Value.ToString();
+                //checks if the value is null, if true claiming is set to 0
+                var claiming = dataGridView3.Rows[i++].Cells[0].Value?.ToString() ?? 0.ToString();
                 claimOrder(quantity[0].ToString(), claiming);
             }
         }
