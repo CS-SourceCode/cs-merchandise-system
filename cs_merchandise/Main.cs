@@ -576,17 +576,16 @@ namespace cs_merchandise
                 .GetQueryData();
             decimal quantityClaimed = Convert.ToDecimal(itemDetails.Rows[0][1].ToString());
             decimal total = Convert.ToDecimal(itemDetails.Rows[0][0].ToString());
-            quantity = total < quantity ? total : quantity;
-            if (quantityClaimed < quantity)
-            {
-                quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
-                conn.Update("orderline", "quantity_claimed", quantity.ToString())
-                    .Where("orderline_id", olID)
-                    .GetQueryData();
-            conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantityClaimed.ToString(), "date_claimed",
-                    DateTime.Now.ToString("yyyy-MM-dd"))
+            decimal max = total - quantityClaimed;
+            quantity = quantity > max ? max : quantity;
+            quantityClaimed += quantity;
+            quantityClaimed = Convert.ToDecimal(quantity) - quantityClaimed;
+            conn.Update("orderline", "quantity_claimed", quantityClaimed.ToString())
+                .Where("orderline_id", olID)
                 .GetQueryData();
-            }
+            conn.Insert("order_claim", "orderline_id", olID, "quantity_no", quantity.ToString(), "date_claimed",
+                DateTime.Now.ToString("yyyy-MM-dd"))
+                .GetQueryData();
         }
 
         public void payOrder(string oID, string payment) => payOrder(oID, Convert.ToDecimal(payment));
